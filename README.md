@@ -13,3 +13,6 @@ Cristiano  Bonato  Both
 
 -----
 
+1. [Instalação do My5GCore](docs/core-install.md)
+2. [Instalação do Ambiente de desenvolvimento](docs/env-install.md)
+
