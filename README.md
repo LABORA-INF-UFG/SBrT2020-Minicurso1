@@ -1,12 +1,17 @@
+<div align='center'>
 # SBrT 2020 - Minicurso 6
 
 # Understanding 5G core through an open-source implementation
 
-<div align='center' style='padding: 5%; font-size: 13px;'>
+</div>
+
+<div align='center' style='padding: 10%; font-size: 11px;'>
 
 João Paulo Lobianco Silva (Instituto de Informática (INF) - Universidade Federal de Goiás (UFG)), Samuel Wanberg Lourenço Nery (INF/UFG), Rogério S. e Silva (INF/UFG), Antonio Oliveira-Jr (INF/UFG & Fraunhofer Portugal AICOS Kleber Cardoso (INF/UFG) e Cristiano Bonato Both (Universidade do Vale do Rio dos Sinos - UNISINOS)
 
 </div>
+
+<div align='justified' style='font-size: 14px;'>
 
 This tutorial explores 5GC internals through an open-source implementation called [**my5Gcore**](https://github.com/my5g/my5Gcore/). The tutorial is divided into sections, including installation and development environment setup, code overview, 5G system procedures execution and a non-3GPP IoT use case. Each section provides videos and manuals to replicate these steps. All the procedures can be reproduced using only a regular computer, e.g., a notebook and the materials provided in this repository. [**my5Gcore**](https://github.com/my5g/my5Gcore/) is a fork of the [free5gc project](https://github.com/free5gc/free5gc/) and integrates the [**my5G initiative**](https://github.com/my5g/). The [**my5G initiative**](https://github.com/my5g/) is  an attempt to make 5G systems widely available.
 
@@ -27,6 +32,7 @@ This tutorial explores 5GC internals through an open-source implementation calle
      2. PDU Session Establishment Procedure ([tutorial](docs/pdu-session-establishment-procedure.md), [video](http://youtubecom/))
   4. Non-3GPP IoT Use-Case ([tutorial](docs/non3gpp-iot-use-case.md), [video](http://youtubecom/)) - this section aims to demonstrate the untrusted non-3GPP access to the my5Gcore using a Low Power Wide Area (LoRa/LoRaWAN) wireless network through a docker containers.
 
+</div>
 
 ## How to cite
 
