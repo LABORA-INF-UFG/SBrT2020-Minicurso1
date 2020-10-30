@@ -28,10 +28,10 @@ This tutorial explores 5GC internals through an open-source implementation calle
      1. Go packages ([tutorial](docs/go-packages.md), [video](http://youtubecom/))
      2. Reference points ([tutorial](docs/reference-points.md), [video](http://youtubecom/))
      3. Code debugging ([tutorial](docs/code-debugging.md), [video](http://youtubecom/))
-  3. 5G system procedures - this sections presents a set of procedures for registration and session establishment through untrusted non-3GPP access.
-     1. Initial Registration Procedure ([tutorial](docs/initial-registration-procedure.md), [video](http://youtubecom/))
-     2. PDU Session Establishment Procedure ([tutorial](docs/pdu-session-establishment-procedure.md), [video](http://youtubecom/))
-  4. Non-3GPP IoT Use-Case ([tutorial](docs/non3gpp-iot-use-case.md), [video](http://youtubecom/)) - this section aims to demonstrate the untrusted non-3GPP access to the my5Gcore using a Low Power Wide Area (LoRa/LoRaWAN) wireless network through a docker containers.
+  3. 5G system procedures - this sections presents procedures for registration and session establishment through untrusted non-3GPP access.
+     1. Initial registration procedure ([tutorial](docs/initial-registration-procedure.md), [video](http://youtubecom/))
+     2. PDU session establishment procedure ([tutorial](docs/pdu-session-establishment-procedure.md), [video](http://youtubecom/))
+  4. Non-3GPP IoT use-case ([tutorial](docs/non3gpp-iot-use-case.md), [video](http://youtubecom/)) - this section aims to demonstrate the untrusted non-3GPP access to the my5Gcore using a Low Power Wide Area (LoRa/LoRaWAN) wireless network through a docker containers.
 
 </div>
 
@@ -40,11 +40,11 @@ This tutorial explores 5GC internals through an open-source implementation calle
 **TODO**: adequar para nosso documento
 ```
 @misc{cardoso2020softwarized,
-    title={A softwarized perspective of the 5G networks},
-    author={Kleber Vieira Cardoso and Cristiano Bonato Both and Lúcio Rene Prade and Ciro J. A. Macedo and Victor Hugo L. Lopes},
+    title={Entendendo o núcleo 5G na prática, através de uma implementação de código aberto},
+    author={João Paulo Lobianco Silva and  Samuel Wanberg Lourenço Nery and Rogério S. e Silva and Antonio Oliveira-Jr Kleber Vieira Cardoso and Cristiano Bonato Both},
     year={2020},
-    eprint={2006.10409},
-    archivePrefix={arXiv},
-    primaryClass={cs.NI}
+    eprint={},
+    archivePrefix={},
+    primaryClass={}
 }
 ```
