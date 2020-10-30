@@ -39,7 +39,7 @@ This tutorial explores 5GC internals through an open-source implementation calle
 
 **TODO**: adequar para nosso documento
 ```
-@misc{cardoso2020softwarized,
+@misc{??????,
     title={Entendendo o núcleo 5G na prática, através de uma implementação de código aberto},
     author={João Paulo Lobianco Silva and  Samuel Wanberg Lourenço Nery and Rogério S. e Silva and Antonio Oliveira-Jr Kleber Vieira Cardoso and Cristiano Bonato Both},
     year={2020},
