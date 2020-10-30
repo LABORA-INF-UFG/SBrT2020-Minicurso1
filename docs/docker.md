@@ -1,7 +1,7 @@
 Docker
 ========================
 
-<div align='justify'> 
+<div align='center'> 
 
 ##### Nota 22/01/2020 - 09:19:04 
 
