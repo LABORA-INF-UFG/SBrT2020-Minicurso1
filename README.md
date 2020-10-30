@@ -2,7 +2,7 @@
 
 # Understanding 5G core through an open-source implementation
 
-<center style="padding: 10%;">
+<div style='padding: 10%; font-size: 13px;'>
 João Paulo Lobianco Silva (Instituto de Informática (INF) - Universidade Federal de Goiás (UFG)), Samuel Wanberg Lourenço Nery (INF/UFG), Rogério S. e Silva (INF/UFG), Antonio Oliveira-Jr (INF/UFG & Fraunhofer Portugal AICOS Kleber Cardoso (INF/UFG) e Cristiano Bonato Both (Universidade do Vale do Rio dos Sinos - UNISINOS)</center>
 
 
@@ -13,17 +13,17 @@ This tutorial explores 5GC internals through an open-source implementation calle
 -----
 * [Article](https://arxiv.org/abs/2006.10409) <!-- TODO: Adequar p/ nosso documento -->
 * Sections
-  1. my5Gcore installation and development environment 
+  1. Installation and development environment - this section shows the steps required to install dependencies, download the source code, compile network functions, execute my5Gcore and also setup the environment for local development.
      1. my5Gcore installation ([tutorial](docs/core-install.md), [video](http://youtubecom/))
      2. Setting-up development environment ([tutorial](docs/env-install.md), [video](http://youtubecom/))
-  2. Code overview 
+  2. Code overview - this sections shows how my5Gcode is organized and how to debug a network function using GoLand IDE.
      1. Go packages ([tutorial](docs/go-packages.md), [video](http://youtubecom/))
      2. Reference points ([tutorial](docs/reference-points.md), [video](http://youtubecom/))
      3. Code debugging ([tutorial](docs/code-debugging.md), [video](http://youtubecom/))
   3. 5G system procedures
      1. Initial Registration Procedure ([tutorial](docs/initial-registration-procedure.md), [video](http://youtubecom/))
      2. PDU Session Establishment Procedure ([tutorial](docs/pdu-session-establishment-procedure.md), [video](http://youtubecom/))
-    1. Non-3GPP IoT Use-Case ([tutorial](docs/non3gpp-iot-use-case.md), [video](http://youtubecom/))
+  4. Non-3GPP IoT Use-Case ([tutorial](docs/non3gpp-iot-use-case.md), [video](http://youtubecom/)) - descrição
 
 
 ## How to cite
