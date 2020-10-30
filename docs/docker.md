@@ -9,6 +9,8 @@ Docker
 #### Desinstalando versões anteriores
 > ```$ sudo apt-get remove docker docker-engine docker.io containerd runc ```
 
+asfdgvlkasfglkasgf asdfgç kjm adsfrgl adkgf adflogkj rpgoij nsdfgljh nqrogtjn osdaidfvj nqóerigj n´qoirjgn ´qerjtg kasfglkasgf asdfgç kjm adsfrgl adkgf adflogkj rpgoij nsdfgljh nqrogtjn osdaidfvj nqóerigj n´qoirjgn ´qerjtg kasfglkasgf asdfgç kjm adsfrgl adkgf adflogkj rpgoij nsdfgljh nqrogtjn osdaidfvj nqóerigj n´qoirjgn ´qerjtg kasfglkasgf asdfgç kjm adsfrgl adkgf adflogkj rpgoij nsdfgljh nqrogtjn osdaidfvj nqóerigj n´qoirjgn ´qerjtg kasfglkasgf asdfgç kjm adsfrgl adkgf adflogkj rpgoij nsdfgljh nqrogtjn osdaidfvj nqóerigj n´qoirjgn ´qerjtg kasfglkasgf asdfgç kjm adsfrgl adkgf adflogkj rpgoij nsdfgljh nqrogtjn osdaidfvj nqóerigj n´qoirjgn ´qerjtg kasfglkasgf asdfgç kjm adsfrgl adkgf adflogkj rpgoij nsdfgljh nqrogtjn osdaidfvj nqóerigj n´qoirjgn ´qerjtg kasfglkasgf asdfgç kjm adsfrgl adkgf adflogkj rpgoij nsdfgljh nqrogtjn osdaidfvj nqóerigj n´qoirjgn ´qerjtg
+
 #### Atualizando o sistema e instalando dependências
  *Atualizando o índice de pacotes APT** 
 > ```$ sudo apt update ```
