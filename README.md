@@ -18,7 +18,7 @@ This tutorial explores 5GC internals through an open-source implementation calle
 
 
 ## Material
------
+
 * [Article](https://arxiv.org/abs/2006.10409) <!-- TODO: Adequar p/ nosso documento -->
 * Sections
   1. Installation and development environment - this section shows the steps required to install dependencies, download the source code, compile network functions, execute my5Gcore and also setup the environment for local development.
