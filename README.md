@@ -1,4 +1,5 @@
 <div align='center'>
+  
 # SBrT 2020 - Minicurso 6
 
 # Understanding 5G core through an open-source implementation
