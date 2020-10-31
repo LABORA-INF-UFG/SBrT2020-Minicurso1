@@ -24,7 +24,7 @@ This tutorial explores 5GC internals through an open-source implementation calle
   * Installation and development environment - this section shows the steps required to install dependencies, download the source code, compile network functions, execute my5Gcore and also setup the environment for local development.
      * my5Gcore installation ([tutorial](docs/installation-dev-env-setup/core-install.md), [video](http://youtubecom/))
      * Setting-up development environment ([tutorial](docs/installation-dev-env-setup/env-install.md), [video](http://youtubecom/))
-  * Code overview - this sections shows how my5Gcode source code is organized and how to debug network functions using GoLand IDE.
+  * Code overview - this sections shows how my5Gcore source code is organized and how to debug network functions using GoLand IDE.
      * Go packages ([tutorial](docs/code-overview/go-packages.md), [video](http://youtubecom/))
      * Reference points ([tutorial](docs/code-overview/reference-points.md), [video](http://youtubecom/))
      * Code debugging ([tutorial](docs/code-overview/code-debugging.md), [video](http://youtubecom/))
