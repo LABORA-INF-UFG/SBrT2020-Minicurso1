@@ -28,7 +28,7 @@ This tutorial explores 5GC internals through an open-source implementation calle
      * Go packages ([tutorial](docs/code-overview/go-packages.md), [video](http://youtubecom/))
      * Reference points ([tutorial](docs/code-overview/reference-points.md), [video](http://youtubecom/))
      * Code debugging ([tutorial](docs/code-overview/code-debugging.md), [video](http://youtubecom/))
-  * 5G system procedures - this sections presents procedures for registration and session establishment via untrusted non-3GPP access.
+  * 5G system procedures - this sections presents step-by-step execution of the procedures for registration and session establishment via untrusted non-3GPP access.
      * Initial registration procedure ([tutorial](docs/5gs-procedures/initial-registration-procedure.md), [video](http://youtubecom/))
      * PDU session establishment procedure ([tutorial](docs/5gs-procedures/pdu-session-establishment-procedure.md), [video](http://youtubecom/))
   * Non-3GPP IoT use-case ([tutorial](docs/non3gpp-iot-use-case/non3gpp-iot-use-case.md), [video](http://youtubecom/)) - this section aims to demonstrate the untrusted non-3GPP access to the my5Gcore using a Low Power Wide Area (LoRa/LoRaWAN) wireless network and docker containers.
