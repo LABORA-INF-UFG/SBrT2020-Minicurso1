@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://github.com/LABORA-INF-UFG/my5Gcore"><img width="40%" src="../figs/my5g-logo-transp.png" alt="free5GC"/></a>
+<a href="https://github.com/LABORA-INF-UFG/my5Gcore"><img width="40%" src="../figs/my5g-logo.png" alt="free5GC"/></a>
 
 ![GitHub](https://img.shields.io/github/license/LABORA-INF-UFG/my5GCore?color=blue) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/LABORA-INF-UFG/my5GCore?include_prereleases) ![GitHub All Releases](https://img.shields.io/github/downloads/LABORA-INF-UFG/my5GCore/total) ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/LABORA-INF-UFG/my5GCore) ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/LABORA-INF-UFG/my5GCore) ![GitHub repo file count](https://img.shields.io/github/directory-file-count/LABORA-INF-UFG/my5GCore)
  ![GitHub repo size](https://img.shields.io/github/repo-size/LABORA-INF-UFG/my5GCore) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/labora-inf-ufg/my5gcore/My5Gcore%20Workflow) ![GitHub last commit](https://img.shields.io/github/last-commit/LABORA-INF-UFG/my5GCore) ![GitHub contributors](https://img.shields.io/github/contributors/LABORA-INF-UFG/my5GCore) ![Github All Contributors](https://img.shields.io/github/all-contributors/LABORA-INF-UFG/my5GCore)
@@ -113,7 +113,7 @@ for bug reports and feature requests. -->
     ```
 
 3. Required packages for user plane
-    ``` bash
+    ```bash
     sudo apt -y update
     sudo apt -y install gcc cmake autoconf build-essential
     sudo apt -y install libtool pkg-config libmnl-dev libyaml-dev 
@@ -122,7 +122,7 @@ for bug reports and feature requests. -->
     ```
 
 4. Network Setting
-    ``` bash
+    ```bash
     sudo sysctl -w net.ipv4.ip_forward=1
     sudo iptables -t nat -A POSTROUTING -o <dn_interface> -j MASQUERADE
     sudo systemctl stop ufw
@@ -134,12 +134,7 @@ for bug reports and feature requests. -->
     ```bash
     cd ~
     git clone git@github.com:LABORA-INF-UFG/my5Gcore.git
-    cd my5Gcore
-    ```
-
-    (Optional) If you want to use the nightly version, runs:
-    ```bash
-    cd ~/free5gc
+    cd ~/my5Gcore
     git checkout master
     git submodule sync
     git submodule update --init --jobs `nproc`
@@ -149,25 +144,17 @@ for bug reports and feature requests. -->
 
 2. Run the script to install dependent packages
     ```bash
-    cd ~/free5gc
+    cd ~/my5Gcore
     go mod download
     ```
-    **In step 2, the folder name should remain free5gc. Please do not modify it or the compilation would fail.**
-
 3. Compile network function services in `free5gc` individually, e.g. AMF (redo this step for each NF), or
     ```bash
-    cd ~/free5gc
-    go build -o bin/amf -x src/amf/amf.go
+    cd ~/my5Gcore
+    make all 
     ```
-    **To build all network functions in one command**
-    ```bash
-    ./build.sh
-    ```
-
-
 ### C. Install User Plane Function (UPF)
     
-1. Please check Linux kernel version if it is `5.0.0-23-generic`
+1. Please check Linux kernel version if it is `5.0.0-23-generic` or higher
     ```bash
     uname -r
     ```
@@ -175,29 +162,19 @@ for bug reports and feature requests. -->
 
     Get Linux kernel module 5G GTP-U
     ```bash
+    cd ~
     git clone -b v0.1.0 https://github.com/PrinzOwO/gtp5g.git
     cd gtp5g
     make
     sudo make install
     ```
-2. Build from sources
-    ```bash
-    cd ~/free5gc/src/upf
-    mkdir build
-    cd build
-    cmake ..
-    make -j`nproc`
-    ```
-    
-**Note: UPF's config is located at** `free5gc/src/upf/build/config/upfcfg.yaml
-   `
 
 ## Run
 
 ### A. Run Core Network 
 Option 1. Run network function service individually, e.g. AMF (redo this for each NF), or
 ```bash
-cd ~/free5gc
+cd ~/my5Gcore
 ./bin/amf
 ```
 
