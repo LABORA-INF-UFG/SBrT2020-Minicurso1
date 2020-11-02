@@ -1,15 +1,21 @@
-<p align="center">
-<a href="https://free5gc.org"><img width="40%" src="https://forum.free5gc.org/uploads/default/original/1X/324695bfc6481bd556c11018f2834086cf5ec645.png" alt="free5GC"/></a>
-</p>
+<div align="center">
 
-<p align="center">
-<a href="https://github.com/free5gc/free5gc/releases"><img src="https://img.shields.io/github/v/release/free5gc/free5gc?color=orange" alt="Release"/></a>
-<a href="https://github.com/free5gc/free5gc/blob/master/LICENSE.txt"><img src="https://img.shields.io/github/license/free5gc/free5gc?color=blue" alt="License"/></a>
-<a href="https://forum.free5gc.org"><img src="https://img.shields.io/discourse/topics?server=https%3A%2F%2Fforum.free5gc.org&color=lightblue" alt="Forum"/></a>
-<a href="https://www.codefactor.io/repository/github/free5gc/free5gc"><img src="https://www.codefactor.io/repository/github/free5gc/free5gc/badge" alt="CodeFactor" /></a>
-<a href="https://goreportcard.com/report/github.com/free5gc/free5gc"><img src="https://goreportcard.com/badge/github.com/free5gc/free5gc" alt="Go Report Card" /></a>
-<a href="https://github.com/free5gc/free5gc/pulls"><img src="https://img.shields.io/badge/PRs-Welcome-brightgreen" alt="PRs Welcome"/></a>
-</p>
+<a href="https://github.com/LABORA-INF-UFG/my5Gcore"><img width="40%" src="../figs/my5g-logo-transp.png" alt="free5GC"/></a>
+
+![GitHub](https://img.shields.io/github/license/LABORA-INF-UFG/my5GCore?color=blue) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/LABORA-INF-UFG/my5GCore?include_prereleases) ![GitHub All Releases](https://img.shields.io/github/downloads/LABORA-INF-UFG/my5GCore/total) ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/LABORA-INF-UFG/my5GCore) ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/LABORA-INF-UFG/my5GCore) ![GitHub repo file count](https://img.shields.io/github/directory-file-count/LABORA-INF-UFG/my5GCore)
+ ![GitHub repo size](https://img.shields.io/github/repo-size/LABORA-INF-UFG/my5GCore) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/labora-inf-ufg/my5gcore/My5Gcore%20Workflow) ![GitHub last commit](https://img.shields.io/github/last-commit/LABORA-INF-UFG/my5GCore) ![GitHub contributors](https://img.shields.io/github/contributors/LABORA-INF-UFG/my5GCore) ![Github All Contributors](https://img.shields.io/github/all-contributors/LABORA-INF-UFG/my5GCore)
+</div>
+
+<!-- 
+![YouTube Video Comments](https://img.shields.io/youtube/comments/my5G-initiative?style=social)
+
+![GitHub forks](https://img.shields.io/github/forks/LABORA-INF-UFG/my5GCore?label=Forks&style=social)
+
+![GitHub followers](https://img.shields.io/github/followers/LABORA-INF-UFG?style=social)
+
+![GitHub watchers](https://img.shields.io/github/watchers/LABORA-INF-UFG/my5Gcore?style=social) 
+
+-->
 
 
 ## Table of Contents
@@ -37,22 +43,22 @@
 
 ## Hardware Tested
 There are no gNB and UE for standalone 5GC available in the market yet.
-
+<!-- 
 ## Questions
 For questions and support please use the [official forum](https://forum.free5gc.org). The issue list of this repo is exclusively
-for bug reports and feature requests.
+for bug reports and feature requests. -->
 
 ## Recommended Environment
 - Software
     - OS: Ubuntu 18.04
     - gcc 7.3.0
     - Go 1.14.4 linux/amd64
-    - kernel version 5.0.0-23-generic (MUST for UPF)
+    - kernel version 5.0.0-23-generic or higher (MUST for UPF)
     
-**Note: Please use Ubuntu 18.04 and kernel version 5.0.0-23-generic** 
+    **Note: Tested on Ubuntu 20.04 and kernel version 5.4.0-52-generic** 
 
 
-You can use `go version` to check your current Go version.
+    You can use `go version` to check your current Go version.
 ```bash
 - Hardware
     - CPU: Intel i5 processor
@@ -71,9 +77,7 @@ You can use `go version` to check your current Go version.
 ## Installation
 ### A. Pre-requisite
 
-0. Required kernel version `5.0.0-23-generic`. This request is from the module
-   [gtp5g](https://github.com/PrinzOwO/gtp5g) that we has used. Any more details
-   please check [here](https://github.com/PrinzOwO/gtp5g)
+0. Required kernel version `5.0.0-23-generic`. This request is from the module [gtp5g](https://github.com/PrinzOwO/gtp5g) that we has used. Any more details please check [here](https://github.com/PrinzOwO/gtp5g)
    ```bash
    # Check kernel version
    $ uname -r
@@ -109,14 +113,16 @@ You can use `go version` to check your current Go version.
     ```
 
 3. Required packages for user plane
-    ```bash
+    ``` bash
     sudo apt -y update
-    sudo apt -y install git gcc cmake autoconf libtool pkg-config libmnl-dev libyaml-dev
+    sudo apt -y install gcc cmake autoconf build-essential
+    sudo apt -y install libtool pkg-config libmnl-dev libyaml-dev 
     go get -u github.com/sirupsen/logrus
+    go get -u github.com/calee0219/fatal
     ```
 
 4. Network Setting
-    ```bash
+    ``` bash
     sudo sysctl -w net.ipv4.ip_forward=1
     sudo iptables -t nat -A POSTROUTING -o <dn_interface> -j MASQUERADE
     sudo systemctl stop ufw
@@ -124,11 +130,11 @@ You can use `go version` to check your current Go version.
 
 ### B. Install Control Plane Entities
     
-1. Clone free5GC project
+1. Clone my5GCore project
     ```bash
     cd ~
-    git clone --recursive -b v3.0.3 -j `nproc` https://github.com/free5gc/free5gc.git
-    cd free5gc
+    git clone git@github.com:LABORA-INF-UFG/my5Gcore.git
+    cd my5Gcore
     ```
 
     (Optional) If you want to use the nightly version, runs:
