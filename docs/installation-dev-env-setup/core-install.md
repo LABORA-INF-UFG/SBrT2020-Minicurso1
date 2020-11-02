@@ -2,7 +2,9 @@
 
 <a href="https://github.com/LABORA-INF-UFG/my5Gcore"><img width="40%" src="../figs/my5g-logo.png" alt="free5GC"/></a>
 
-![GitHub](https://img.shields.io/github/license/LABORA-INF-UFG/my5GCore?color=blue) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/LABORA-INF-UFG/my5GCore?include_prereleases) ![GitHub All Releases](https://img.shields.io/github/downloads/LABORA-INF-UFG/my5GCore/total) ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/LABORA-INF-UFG/my5GCore) ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/LABORA-INF-UFG/my5GCore) ![GitHub repo file count](https://img.shields.io/github/directory-file-count/LABORA-INF-UFG/my5GCore)
+![GitHub](https://img.shields.io/github/license/LABORA-INF-UFG/my5GCore?color=blue) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/LABORA-INF-UFG/my5GCore?include_prereleases) ![GitHub All Releases](https://img.shields.io/github/downloads/LABORA-INF-UFG/my5GCore/total) ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/LABORA-INF-UFG/my5GCore) ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/LABORA-INF-UFG/my5GCore) 
+
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/LABORA-INF-UFG/my5GCore)
  ![GitHub repo size](https://img.shields.io/github/repo-size/LABORA-INF-UFG/my5GCore) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/labora-inf-ufg/my5gcore/My5Gcore%20Workflow) ![GitHub last commit](https://img.shields.io/github/last-commit/LABORA-INF-UFG/my5GCore) ![GitHub contributors](https://img.shields.io/github/contributors/LABORA-INF-UFG/my5GCore)
 </div>
 
@@ -27,19 +29,18 @@
 
 
 - [Hardware Tested](#hardware-tested)
-- [Questions](#questions)
 - [Recommended Environment](#recommended-environment)
 - [Installation](#installation)
   - [A. Pre-requisite](#a-pre-requisite)
   - [B. Install Control Plane Entities](#b-install-control-plane-entities)
   - [C. Install User Plane Function (UPF)](#c-install-user-plane-function-upf)
-- [Run](#run)
+- [Instalation Test](#my5GCore-installation-test)
   - [A. Run Core Network](#a-run-core-network)
-  - [B. Run N3IWF (Individually)](#b-run-n3iwf-individually)
+<!-- - [B. Run N3IWF (Individually)](#b-run-n3iwf-individually)
   - [C. Run all in one with outside RAN](#c-run-all-in-one-with-outside-ran)
-  - [D. Deploy with container](#d-deploy-with-container)
-- [Test](#test)
-- [Release Note](#release-note)
+  - [D. Deploy with container](#d-deploy-with-container) -->
+<!-- - [Test](#test)
+- [Release Note](#release-note) -->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -171,14 +172,16 @@ for bug reports and feature requests. -->
     sudo make install
     ```
 
-## Run
+## my5GCore installation test
 
 ### A. Run Core Network 
 Option 1. Run network function service individually, e.g. AMF (redo this for each NF), or
 ```bash
 cd ~/my5Gcore
-./bin/amf
+...
 ```
+
+<!--
 
 **Note: For N3IWF needs specific configuration in section B** 
 
@@ -271,5 +274,5 @@ i. TestULCL
 **For more details, you can reference to our [wiki](https://github.com/free5gc/free5gc/wiki)**
 
 ## Release Note
-Detailed changes for each release are documented in the [release notes](https://github.com/free5gc/free5gc/releases).
+Detailed changes for each release are documented in the [release notes](https://github.com/free5gc/free5gc/releases). -->
 
