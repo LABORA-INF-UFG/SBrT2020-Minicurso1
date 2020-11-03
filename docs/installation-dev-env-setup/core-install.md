@@ -180,24 +180,25 @@ for bug reports and feature requests. -->
 
 To run each network function separately.
 ```bash
+./bin/<some-NF> [-free5gccfg <common-configuration-file>] [-udmcfg <nf-configuration-file>] & 
 # NRF
-~/my5GCore/bin/nrf -free5gccfg sample/my5g_basic_config/free5GC.conf -nrfcfg sample/my5g_basic_config/nrfcfg.conf & 
+~/my5GCore/bin/nrf & 
 # AMF
-./bin/amf -free5gccfg sample/my5g_basic_config/free5GC.conf -amfcfg sample/my5g_basic_config/amfcfg.conf & 
+./bin/amf & 
 # SMF
-./bin/smf -free5gccfg sample/my5g_basic_config/free5GC.conf -smfcfg sample/my5g_basic_config/smfcfg.conf & 
+./bin/smf & 
 # UDR
-./bin/udr -free5gccfg sample/my5g_basic_config/free5GC.conf -udrcfg sample/my5g_basic_config/udrcfg.conf & 
+./bin/udr & 
 # PCF
-./bin/pcf -free5gccfg sample/my5g_basic_config/free5GC.conf -pcfcfg sample/my5g_basic_config/pcfcfg.conf &  
+./bin/pcf &  
 # UDM
-./bin/udm -free5gccfg sample/my5g_basic_config/free5GC.conf -udmcfg sample/my5g_basic_config/udmcfg.conf & 
+./bin/udm
 # NSSF
-./bin/nssf -free5gccfg sample/my5g_basic_config/free5GC.conf -nssfcfg sample/my5g_basic_config/nssfcfg.conf & 
+./bin/nssf &
 # AUSF
-./bin/ausf -free5gccfg sample/my5g_basic_config/free5GC.conf -ausfcfg sample/my5g_basic_config/ausfcfg.conf &  
+./bin/ausf &  
 # N3IWF
-./bin/n3iwf -free5gccfg sample/my5g_basic_config/free5GC.conf -n3iwfcfg sample/my5g_basic_config/n3iwfcfg.conf & 
+./bin/n3iwf & 
 ```
 
 Shell script
@@ -207,4 +208,3 @@ cd ~/my5Gcore
 ./run.sh
 ```
 Check "log output" for errors (highlighted in <span style="color=red">\[red\]</span>)
-
