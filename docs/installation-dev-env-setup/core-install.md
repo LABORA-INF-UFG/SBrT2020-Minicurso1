@@ -1,12 +1,15 @@
+<!-- 
 <div align="center">
 
 <a href="https://github.com/LABORA-INF-UFG/my5Gcore"><img width="40%" src="../figs/my5g-logo.png" alt="free5GC"/></a>
 
 ![GitHub](https://img.shields.io/github/license/LABORA-INF-UFG/my5GCore?color=blue) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/LABORA-INF-UFG/my5GCore?include_prereleases) ![GitHub All Releases](https://img.shields.io/github/downloads/LABORA-INF-UFG/my5GCore/total) ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/LABORA-INF-UFG/my5GCore) ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/LABORA-INF-UFG/my5GCore) 
 
-![GitHub repo file count](https://img.shields.io/github/directory-file-count/LABORA-INF-UFG/my5GCore)
+
  ![GitHub repo size](https://img.shields.io/github/repo-size/LABORA-INF-UFG/my5GCore) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/labora-inf-ufg/my5gcore/My5Gcore%20Workflow) ![GitHub last commit](https://img.shields.io/github/last-commit/LABORA-INF-UFG/my5GCore) ![GitHub contributors](https://img.shields.io/github/contributors/LABORA-INF-UFG/my5GCore)
 </div>
+
+ -->
 
 <!-- 
 ![YouTube Video Comments](https://img.shields.io/youtube/comments/my5G-initiative?style=social)
@@ -18,9 +21,9 @@
 ![GitHub watchers](https://img.shields.io/github/watchers/LABORA-INF-UFG/my5Gcore?style=social) 
 
  ![Github All Contributors](https://img.shields.io/github/all-contributors/LABORA-INF-UFG/my5GCore)
-
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/LABORA-INF-UFG/my5GCore)
 -->
-
+# my5GCore Setup
 
 ## Table of Contents
 
@@ -36,11 +39,6 @@
   - [C. Install User Plane Function (UPF)](#c-install-user-plane-function-upf)
 - [Instalation Test](#my5GCore-installation-test)
   - [A. Run Core Network](#a-run-core-network)
-<!-- - [B. Run N3IWF (Individually)](#b-run-n3iwf-individually)
-  - [C. Run all in one with outside RAN](#c-run-all-in-one-with-outside-ran)
-  - [D. Deploy with container](#d-deploy-with-container) -->
-<!-- - [Test](#test)
-- [Release Note](#release-note) -->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -56,26 +54,22 @@ for bug reports and feature requests. -->
     - OS: Ubuntu 18.04
     - gcc 7.3.0
     - Go 1.14.4 linux/amd64
-    - kernel version 5.0.0-23-generic or higher (MUST for UPF)
-    
-        **Note: Tested on Ubuntu 20.04 and kernel version 5.4.0-52-generic** 
+    - kernel version 5.0.0-23-generic or higher (for UPF)
 
+        Notes:  
+            - Also tested on Ubuntu 20.04 with  5.4.0-52-generic kernel version.  
+            - You can use `go version` to check your current Go version.
+- Hardware
+    - CPU: Intel i5 processor
+    - RAM: 4GB
+    - Hard drive: 160G
+    - NIC card: 1Gbps ethernet card
 
-    You can use `go version` to check your current Go version.
-    ```bash
-    - Hardware
-        - CPU: Intel i5 processor
-        - RAM: 4GB
-        - Hard drive: 160G
-        - NIC card: 1Gbps ethernet card
-
-    - Hardware recommended
-        - CPU: Intel i7 processor
-        - RAM: 8GB
-        - Hard drive: 160G
-        - NIC card: 10Gbps ethernet card
-    ```
-
+- Hardware recommended
+    - CPU: Intel i7 processor
+    - RAM: 8GB
+    - Hard drive: 160G
+    - NIC card: 10Gbps ethernet card
 
 ## Installation
 ### A. Pre-requisite
@@ -182,103 +176,35 @@ for bug reports and feature requests. -->
 ## my5GCore installation test
 
 ### Run Core Network 
+> *Only for network function services installation check. my5GCore requires another settings to run. See them on [Setting-up development environment](./env-install.md) 
+
+To run each network function separately.
 ```bash
+# NRF
+~/my5GCore/bin/nrf -free5gccfg sample/my5g_basic_config/free5GC.conf -nrfcfg sample/my5g_basic_config/nrfcfg.conf & 
+# AMF
+./bin/amf -free5gccfg sample/my5g_basic_config/free5GC.conf -amfcfg sample/my5g_basic_config/amfcfg.conf & 
+# SMF
+./bin/smf -free5gccfg sample/my5g_basic_config/free5GC.conf -smfcfg sample/my5g_basic_config/smfcfg.conf & 
+# UDR
+./bin/udr -free5gccfg sample/my5g_basic_config/free5GC.conf -udrcfg sample/my5g_basic_config/udrcfg.conf & 
+# PCF
+./bin/pcf -free5gccfg sample/my5g_basic_config/free5GC.conf -pcfcfg sample/my5g_basic_config/pcfcfg.conf &  
+# UDM
+./bin/udm -free5gccfg sample/my5g_basic_config/free5GC.conf -udmcfg sample/my5g_basic_config/udmcfg.conf & 
+# NSSF
+./bin/nssf -free5gccfg sample/my5g_basic_config/free5GC.conf -nssfcfg sample/my5g_basic_config/nssfcfg.conf & 
+# AUSF
+./bin/ausf -free5gccfg sample/my5g_basic_config/free5GC.conf -ausfcfg sample/my5g_basic_config/ausfcfg.conf &  
+# N3IWF
+./bin/n3iwf -free5gccfg sample/my5g_basic_config/free5GC.conf -n3iwfcfg sample/my5g_basic_config/n3iwfcfg.conf & 
+```
+
+Shell script
+```bash
+# bash
 cd ~/my5Gcore
 ./run.sh
 ```
-
-<!--
-
-**Note: For N3IWF needs specific configuration in section B** 
-
-Option 2. Run whole core network with command
-```
-./run.sh
-```
-
-### B. Run N3IWF (Individually)
-To run N3IWF, make sure the machine is equipped with three network interfaces. (one is for connecting AMF, another is for connecting UPF, the other is for IKE daemon)
-
-We need to configure each interface with a suitable IP address.
-
-We have to create an interface for IPSec traffic:
-```bash
-# replace <...> to suitable value
-sudo ip link add ipsec0 type vti local <IKEBindAddress> remote 0.0.0.0 key <IPSecInterfaceMark>
-```
-Assign an address to this interface, then bring it up:
-```bash
-# replace <...> to suitable value
-sudo ip address add <IPSecInterfaceAddress/CIDRPrefix> dev ipsec0
-sudo ip link set dev ipsec0 up
-```
-
-Run N3IWF (root privilege is required):
-```bash
-cd ~/free5gc/
-sudo ./bin/n3iwf
-```
-
-### C. Run all in one with outside RAN
-
-Reference to [sample config](./sample/ran_attach_config) if need to connect the
-outside RAN with all in one free5GC core network.
-
-### D. Deploy with container
-
-Reference to [free5gc-compose](https://github.com/free5gc/free5gc-compose/) as
-the sample for container deployment.
-
-## Test
-Start Wireshark to capture any interface with `pfcp||icmp||gtp` filter and run the tests below to simulate the procedures:
-```bash
-cd ~/free5gc
-chmod +x ./test.sh
-```
-a. TestRegistration
-```bash
-(In directory: ~/free5gc)
-./test.sh TestRegistration
-```
-b. TestServiceRequest
-```bash
-./test.sh TestServiceRequest
-```
-c. TestXnHandover
-```bash
-./test.sh TestXnHandover
-```
-d. TestDeregistration
-```bash
-./test.sh TestDeregistration
-```
-e. TestPDUSessionReleaseRequest
-```bash
-./test.sh TestPDUSessionReleaseRequest
-```
-
-f. TestPaging
-```!
-./test.sh TestPaging
-```
-
-g. TestN2Handover
-```!
-./test.sh TestN2Handover
-```
-
-h. TestNon3GPP
-```bash
-./test.sh TestNon3GPP
-```
-
-i. TestULCL
-```bash
-./test_ulcl.sh -om 3 TestRegistration
-```
-
-**For more details, you can reference to our [wiki](https://github.com/free5gc/free5gc/wiki)**
-
-## Release Note
-Detailed changes for each release are documented in the [release notes](https://github.com/free5gc/free5gc/releases). -->
+Check "log output" for errors (highlighted in <span style="color=red">\[red\]</span>)
 
