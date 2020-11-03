@@ -26,24 +26,24 @@ João Paulo Lobianco Silva (Instituto de Informática (INF) - Universidade Feder
 
 <div align='justified'>
 
-This tutorial explores 5GC internals through an open-source implementation called [**my5Gcore**](https://github.com/my5g/my5Gcore/). The tutorial is divided into sections, including installation and development environment setup, code overview, 5G system procedures execution and a non-3GPP IoT use case. Each section provides videos and manuals to replicate these steps. All the procedures can be reproduced using only a regular computer, e.g., a notebook and the materials provided in this repository. [**my5Gcore**](https://github.com/my5g/my5Gcore/) is a fork of the [free5gc project](https://github.com/free5gc/free5gc/) and integrates the [**my5G initiative**](https://github.com/my5g/). The [**my5G initiative**](https://github.com/my5g/) is  an attempt to make 5G systems widely available.
+This tutorial explores 5GC internals through an open-source implementation called [**my5Gcore**](https://github.com/my5g/my5Gcore/). The tutorial is divided into sections, including installation and development environment setup, code overview, 5G system procedures execution, and a non-3GPP IoT use case. Each section provides videos and manuals to replicate these steps. All the procedures can be reproduced using only a regular computer, e.g., a notebook, and the materials provided in this repository. [**my5Gcore**](https://github.com/my5g/my5Gcore/) is a fork of the [free5GC project](https://github.com/free5gc/free5gc/) and integrates the [**my5G initiative**](https://github.com/my5g/). The [**my5G initiative**](https://github.com/my5g/) is an attempt to make 5G systems widely available.
 
 
 ## Material
 
 * [Article](https://arxiv.org/abs/2006.10409) <!-- TODO: Adequar p/ nosso documento -->
 * Sections
-  * Installation and development environment - this section shows the steps required to install dependencies, download the source code, compile network functions, execute my5Gcore and also setup the environment for local development.
+  * Installation and development environment - shows the steps required to install dependencies, download the source code, compile network functions, execute my5Gcore and setup a local development environment.
      * my5Gcore installation ([tutorial](docs/installation-dev-env-setup/core-install.md), [video](http://youtubecom/))
      * Setting-up development environment ([tutorial](docs/installation-dev-env-setup/env-install.md), [video](http://youtubecom/))
-  * Code overview - this sections shows how my5Gcore source code is organized and how to debug network functions using GoLand IDE.
+  * Code overview - presents how my5Gcore source code is organized and how to debug network functions using GoLand IDE.
      * Go packages ([tutorial](docs/code-overview/go-packages.md), [video](http://youtubecom/))
      * Reference points ([tutorial](docs/code-overview/reference-points.md), [video](http://youtubecom/))
      * Code debugging ([tutorial](docs/code-overview/code-debugging.md), [video](http://youtubecom/))
-  * 5G system procedures - this sections presents step-by-step execution of the procedures for registration and session establishment via untrusted non-3GPP access.
+  * 5G system procedures - shows step-by-step execution of registration and session establishment procedures via untrusted non-3GPP access.
      * Initial registration procedure ([tutorial](docs/5gs-procedures/initial-registration-procedure.md), [video](http://youtubecom/))
      * PDU session establishment procedure ([tutorial](docs/5gs-procedures/pdu-session-establishment-procedure.md), [video](http://youtubecom/))
-  * Non-3GPP IoT use-case ([tutorial](docs/non3gpp-iot-use-case/non3gpp-iot-use-case.md), [video](http://youtubecom/)) - this section aims to demonstrate the untrusted non-3GPP access to the my5Gcore using a Low Power Wide Area (LoRa/LoRaWAN) wireless network and docker containers.
+  * Non-3GPP IoT use-case ([tutorial](docs/non3gpp-iot-use-case/non3gpp-iot-use-case.md), [video](http://youtubecom/)) - aims to demonstrate the untrusted non-3GPP access to the my5Gcore using a Low Power Wide Area (LoRa/LoRaWAN) wireless network and docker containers.
 
 </div>
 
