@@ -45,7 +45,7 @@
 
 3. Now, the IDE should be able to recognize the imports from external libraries and packages under `free5gc/src/`
 
-## Running NF components in GoLand
+<!-- ## Running NF components in GoLand
 
 1. On the Project View on the left, navigate through the component you want to run
 
@@ -124,4 +124,4 @@ sudo ip netns exec UEns ./bin/ue
 ```
 cd ./go/src/free5gc/
 sudo ./setup_dev.sh down
-```
+``` -->

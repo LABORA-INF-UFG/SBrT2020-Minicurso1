@@ -1,4 +1,4 @@
-<!-- 
+
 <div align="center">
 
 <a href="https://github.com/LABORA-INF-UFG/my5Gcore"><img width="40%" src="../figs/my5g-logo.png" alt="free5GC"/></a>
@@ -9,7 +9,7 @@
  ![GitHub repo size](https://img.shields.io/github/repo-size/LABORA-INF-UFG/my5GCore) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/labora-inf-ufg/my5gcore/My5Gcore%20Workflow) ![GitHub last commit](https://img.shields.io/github/last-commit/LABORA-INF-UFG/my5GCore) ![GitHub contributors](https://img.shields.io/github/contributors/LABORA-INF-UFG/my5GCore)
 </div>
 
- -->
+
 
 <!-- 
 ![YouTube Video Comments](https://img.shields.io/youtube/comments/my5G-initiative?style=social)
@@ -180,7 +180,7 @@ for bug reports and feature requests. -->
 
 To run each network function separately.
 ```bash
-./bin/<some-NF> [-free5gccfg <common-configuration-file>] [-udmcfg <nf-configuration-file>] & 
+./bin/<some-NF> [-free5gccfg <core-configuration-file>] [-udmcfg <nf-configuration-file>] & 
 # NRF
 ~/my5GCore/bin/nrf & 
 # AMF
