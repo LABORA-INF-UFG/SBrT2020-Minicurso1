@@ -110,9 +110,7 @@ These packages are responsable for exposing the services implemented in producer
 
 ## Generating source code for the service-based interfaces using OpenAPI
 
-The 3GPP SA technical specification group defines a set of OpenAPI compliant files that can be used to automate source code generation for the service based interfaces of core network functions.
-
-[This repo](https://github.com/jdegre/5GC_APIs) gathers many of these YAML files in only one place. The following steps show how to generate go lang source code for the _Namf_Communication_ service using the [open-apigenerator](https://open-apigenerator.tech/).
+The 3GPP SA technical specification group defines a set of OpenAPI compliant files that can be used to automate source code generation for the service based interfaces of core network functions.[This repo](https://github.com/jdegre/5GC_APIs) gathers many of these YAML files in only one place. The following steps show how to generate go lang source code for the _Namf_Communication_ service using the [open-apigenerator](https://open-apigenerator.tech/).
 
 1. Download the OpenAPI YAML file for the _Namf_Communication_ service
 ```bash
