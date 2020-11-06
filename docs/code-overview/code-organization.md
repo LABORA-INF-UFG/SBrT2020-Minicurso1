@@ -51,7 +51,7 @@ The configurations include, IP addresses, port numbers, supported services list 
 
 **context package**
 
-This package is defines some of the data structures that the network function stores in RAM during the execution (execution context). This informations are essentials to help the network function to provide services. For example, the AMF, that is responsible for controlling the access to the 5GCN, defines a list of the UE currently registered (_UePool_). The image below shows the _AMFContext_ data structure.
+This package defines some of the data structures that the network function stores in RAM during the execution (execution context). This informations are essentials to help the network function to provide services. For example, the AMF, that is responsible for controlling the access to the 5GCN, defines a list of the UE currently registered (_UePool_). The image below shows the _AMFContext_ data structure.
 
 <p align="left">
     <img src="../../media/images/code-organization/amf-context.png" alt="AMF Context"/> 
@@ -62,7 +62,7 @@ This package is defines some of the data structures that the network function st
 
 The most important method in this package is _start_. This method is responsable for:
 
-1. Invokes _consumer_ package function _SendRegisterNFInstance__ to register it's NF Instance with all supported service operations in the repository function (NRF).
+1. Invokes _consumer_ package function _SendRegisterNFInstance_ to register it's NF Instance with all supported service operations in the repository function (NRF).
 2. Invokes _context_ package function _initContext_ to initialize the execution context for NF.
 3. Initialize HTTP/HTTPS server to offer service to other NF.
 4. Initialize non HTTP/HTTPS servers (for some special NF that interact in different reference points)
@@ -74,7 +74,7 @@ This package implement the services supported by the NF. TS 23.501 section 7.2 h
 For example, the AMF provides 4 services:
 
 1. _Namf_Communication_
-2. _Namf_Communication_
+2. _Namf_EventExposure_
 3. _Namf_MT_
 4. _Namf_Location_
 
