@@ -18,7 +18,6 @@ The 5G core contains a set of network functions that interact with each other to
 
 ## Most important Go packages in my5Gcore
 
----
 **main package**
 
 It's the entry point of the application. Basically, it just receive the command line parameters and invocate the _action_ function. The _action_ function:
@@ -109,7 +108,6 @@ These packages are responsable for exposing the services implemented in producer
 </p>
 
 
----
 ## Generating source code for the service-based interfaces using OpenAPI
 
 The 3GPP SA technical specification group defines a set of OpenAPI compliant files that can be used to automate source code generation for the service based interfaces of core network functions.
