@@ -40,7 +40,7 @@ This tutorial explores 5GC internals through an open-source implementation calle
      * my5Gcore installation ([tutorial](docs/installation-dev-env-setup/core-install.md), [video](http://youtubecom/))
      * Setting-up development environment ([tutorial](docs/installation-dev-env-setup/env-install.md), [video](http://youtubecom/))
   * Code overview - presents how my5Gcore source code is organized and how to debug network functions using GoLand IDE.
-     * Source code organization ([tutorial](docs/code-overview/code-organization.md), [video](http://youtubecom/))
+     * Source code organization ([tutorial](docs/code-overview/code-organization.md), [video1](http://youtubecom/), [video2](http://youtubecom/))
      * Reference points ([tutorial](docs/code-overview/reference-points.md), [video](http://youtubecom/))
      * Code debugging ([tutorial](docs/code-overview/code-debugging.md), [video](http://youtubecom/))
   * 5G system procedures - shows step-by-step execution of registration and session establishment procedures via untrusted non-3GPP access.
