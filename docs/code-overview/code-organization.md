@@ -36,7 +36,7 @@ It's the entry point of the application. Basically, it just receive the command 
 
 **factory package**
 
-This package is responsable for loading and initilizing network-function specific configurations. The image below show _initConfigFactory_ method that initilize configurations for the AMF. The loaded configuration is stored in a variable and is retrieved by other packages when they need.
+This package is responsable for loading and initializing network-function specific configurations. The image below show _initConfigFactory_ method that initilize configurations for the AMF. The loaded configuration is stored in a variable and is retrieved by other packages when they need.
 
 <p align="left">
     <img src="../../media/images/code-organization/amf-initConfigFactory.png" alt="Method that loads AMF configuration (initConfigFactory)"/> 
