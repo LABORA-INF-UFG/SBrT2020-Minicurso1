@@ -1,4 +1,20 @@
+<div align="center">
+
+<a href="https://github.com/LABORA-INF-UFG/my5Gcore"><img width="40%" src="../figs/my5g-logo.png" alt="free5GC"/></a>
+</div> 
+
 # Setting up development environment
+
+## Table of Contents
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Installing useful tools](#installing-useful-tools)
+- [Opening the project in GoLand](#opening-the-project-in-goland)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 ## Installing useful tools
 
@@ -31,17 +47,17 @@
 ## Opening the project in GoLand
 
 1. Open the project with GoLand 
-    - The project folder should be `~/go/src/free5gc`
+    - The project folder should be `~/my5Gcore`
 
 2. Check that **$GOPATH** and **$GOROOT** are recognized by GoLand and points to the right folders
     - Acess menus: File -> Settings
     - **$GOROOT** and **$GOPATH** should look like below:
     
-    ![$GOROOT](media/img/setup-dev-workflow-1.png)
+    ![$GOROOT](../figs/setup-dev-workflow-1.png)
     
     - **$GOPATH** should show your user instead of _ubuntu18_base_
     
-    ![2](media/img/setup-dev-workflow-2.png)
+    ![2](../figs/setup-dev-workflow-2.png)
 
 3. Now, the IDE should be able to recognize the imports from external libraries and packages under `free5gc/src/`
 
@@ -49,27 +65,27 @@
 
 1. On the Project View on the left, navigate through the component you want to run
 
-![Selecionando o arquivo ".go" no projeto](media/img/setup-dev-workflow-3.png)
+![Selecionando o arquivo ".go" no projeto](../figs/setup-dev-workflow-3.png)
 
 2. Right click on the component (*.go) and choose RUN
     - Optional: Use the CTRL + F9 (shortcut)
 
 3. After this, the run window will show
 
-![run](media/img/setup-dev-workflow-4.jpeg)
+![run](../figs/setup-dev-workflow-4.jpeg)
 
 
 4. Now the “command” will be available on the toolbar
 
-![5](media/img/setup-dev-workflow-5.png)
+![5](../figs/setup-dev-workflow-5.png)
 
 5. Next time just choose the command in the toolbar and run or debug clicking on the buttons
 
-![6](media/img/setup-dev-workflow-6.png)
+![6](../figs/setup-dev-workflow-6.png)
 
 6. To stop a running or debugging component click the Stop button on the toolbar
 
-![7](media/img/setup-dev-workflow-7.png)
+![7](../figs/setup-dev-workflow-7.png)
 
 Obs: Do the same for the other NF components. All the components are in `free5gc/src/{component}/{component}.go`. For example, SMF is in `free5gc/src/smf/smf.go`.
 
@@ -79,7 +95,7 @@ Obs: Do the same for the other NF components. All the components are in `free5gc
 
     - For example, to start debugging the AUSF, set a breakpoint in the first line of code of the main function of the `free5gc/src/ausf/ausf.go` file.
 
-![8](media/img/setup-dev-workflow-8.png)
+![8](../figs/setup-dev-workflow-8.png)
 
 
 ## Steps to try out Ping
