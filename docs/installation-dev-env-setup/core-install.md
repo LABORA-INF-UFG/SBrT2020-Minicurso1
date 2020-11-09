@@ -36,7 +36,7 @@
   - [A. Pre-requisite](#a-pre-requisite)
   - [B. Install my5G-core entities](#b-install-my5g-core-entities)
 - [Checking](#checking)
-  - [A. Run Core Network](#a-run-core-network)
+  - [A. Run the Core Network](#a-run-the-core-network)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
