@@ -18,7 +18,7 @@
 
 ## Installing useful tools
 
-1. Before continue, follow the my5GCore installation steps from [here](https://github.com/LABORA-INF-UFG/my5Gcore)
+1. Before continue, follow the my5GCore installation steps from [here](core-install.md)
 
 2. Install some tools required to develop, monitor and containerize:
     -
