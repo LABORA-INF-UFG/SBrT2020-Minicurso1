@@ -22,7 +22,7 @@
 ![GitHub repo file count](https://img.shields.io/github/directory-file-count/LABORA-INF-UFG/my5GCore)
 
 -->
-# my5GCore Setup
+# my5G-core Setup
 
 ## Table of Contents
 
@@ -34,9 +34,8 @@
 - [Recommended Environment](#recommended-environment)
 - [Installation](#installation)
   - [A. Pre-requisite](#a-pre-requisite)
-  - [B. Install Control Plane Entities](#b-install-control-plane-entities)
-  - [C. Install User Plane Function (UPF)](#c-install-user-plane-function-upf)
-- [Instalation Test](#my5GCore-installation-test)
+  - [B. Install my5G-core entities](#b-install-my5g-core-entities)
+- [Checking](#checking)
   - [A. Run Core Network](#a-run-core-network)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -147,9 +146,9 @@ for bug reports and feature requests. -->
     sudo systemctl stop ufw
     ```
 
-### B. Install my5GCore entities
+### B. Install my5G-core entities
     
-1. Clone my5GCore project
+1. Clone my5G-core project
     ```bash
     cd ~
     git clone https://github.com/my5G/my5Gcore.git
@@ -166,7 +165,7 @@ for bug reports and feature requests. -->
     cd ~/my5Gcore
     go mod download
     ```
-3. Compile network function services in `my5gCore`
+3. Compile network function services in `my5g-core`
     ```bash
     cd ~/my5Gcore
     make all 
@@ -197,4 +196,4 @@ for bug reports and feature requests. -->
     cd ~/my5Gcore
     ./run.sh
     ```
-> Check "log output" for errors (highlighted in <span style='color:red'>red.</span>)
+> Check "log output" for errors (highlighted in <span       style='color:red'>red.</span>)
