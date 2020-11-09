@@ -59,7 +59,7 @@
     
     ![$GOROOT](../figs/go-setup_1.png)
     
-    - **$GOPATH** should show your user instead of _ubuntu18_base_
+    - **$GOPATH** should show your user instead of _my5GCore_
     
     ![2](../figs/go-setup_2.png)
 
