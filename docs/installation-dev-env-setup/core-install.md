@@ -153,7 +153,8 @@ for bug reports and feature requests. -->
     cd ~/my5Gcore
     make all 
     ```
-4. Customize the NFs as desired. The NFs configuration file is `free5gc/src/upf/build/config/upfcfg.yaml`.
+4. Customize the NFs as desired. The NF configuration file is `~/my5Gcore/config/<someNF>cfg.conf`, for example: `~/my5Gcore/config/amfcfg.conf`. Samples files are located on: `~/my5Gcore/sample/` 
+
 ## Checking
 
 ### A. Run the Core Network 
@@ -179,4 +180,5 @@ for bug reports and feature requests. -->
     cd ~/my5Gcore
     ./run.sh
     ```
-> Check "log output" for errors (highlighted in <span       style='color:red'>red.</span>)
+> Check "log output" for errors (highlighted in <span       style='color:red'>red.</span>)   
+> Adjust the configuration files to resolve the warning messages (in <span       style='color:yellow'>yellow.</span>)
