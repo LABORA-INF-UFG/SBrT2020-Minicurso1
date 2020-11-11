@@ -156,6 +156,7 @@ for bug reports and feature requests. -->
 4. Customize the NFs as desired. The NF configuration file is `~/my5Gcore/config/<someNF>cfg.conf`, for example: `~/my5Gcore/config/amfcfg.conf`. Samples files are located on: `~/my5Gcore/sample/` 
 
 ## Checking
+The goal is to validate the installation procedures in order to check if everything is ok.
 
 ### A. Run the Core Network 
 
