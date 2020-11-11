@@ -52,9 +52,9 @@ This tutorial explores 5GC internals through an open-source implementation calle
 
 ## How to cite
 
-**TODO**: adequar para nosso documento
+It is a pleasure to share our knowledge and you are free to use! Please, cite our work as we can continue contributing. Thank you!
 ```
-@misc{SBrT2020_minicurso6,
+@misc{SBrT2020_minicurso6, 
     title={Entendendo o núcleo 5G na prática, através de uma implementação de código aberto},
     author={João Paulo Lobianco Silva and Samuel Wanberg Lourenço Nery and Rogério S. e Silva and Antonio Oliveira-Jr and Kleber Vieira Cardoso and Cristiano Bonato Both},
     year={2020},
