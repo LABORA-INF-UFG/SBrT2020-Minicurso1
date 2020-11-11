@@ -23,7 +23,7 @@
 
 <div align='center'>
 
-João Paulo Lobianco Silva (Instituto de Informática (INF) - Universidade Federal de Goiás (UFG)), Samuel Wanberg Lourenço Nery (INF/UFG), Rogério S. e Silva (INF/UFG), Antonio Oliveira-Jr (INF/UFG & Fraunhofer Portugal AICOS Kleber Cardoso (INF/UFG) e Cristiano Bonato Both (Universidade do Vale do Rio dos Sinos - UNISINOS)
+João Paulo Lobianco Silva (INF/UFG), Samuel Wanberg Lourenço Nery (INF/UFG), Rogério S. e Silva (INF/UFG), Antonio Oliveira-Jr (INF/UFG & Fraunhofer Portugal AICOS), Kleber Cardoso (INF/UFG) e Cristiano Bonato Both (UNISINOS)
 
 </div>
 
