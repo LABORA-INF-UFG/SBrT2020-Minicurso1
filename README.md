@@ -54,12 +54,12 @@ This tutorial explores 5GC internals through an open-source implementation calle
 
 **TODO**: adequar para nosso documento
 ```
-@misc{??????,
+@misc{SBrT2020_minicurso6,
     title={Entendendo o núcleo 5G na prática, através de uma implementação de código aberto},
-    author={João Paulo Lobianco Silva and  Samuel Wanberg Lourenço Nery and Rogério S. e Silva and Antonio Oliveira-Jr Kleber Vieira Cardoso and Cristiano Bonato Both},
+    author={João Paulo Lobianco Silva and Samuel Wanberg Lourenço Nery and Rogério S. e Silva and Antonio Oliveira-Jr and Kleber Vieira Cardoso and Cristiano Bonato Both},
     year={2020},
-    eprint={},
-    archivePrefix={},
+    eprint={XXXVIII Simpósio Brasileiro de Telecomunicações e Processamento de Sinais - SBrT 2020},
+    url={https://github.com/LABORA-INF-UFG/SBrT2020-Minicurso6},
     primaryClass={}
 }
 ```
