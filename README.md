@@ -29,7 +29,7 @@ João Paulo Lobianco Silva (INF/UFG), Samuel Wanberg Lourenço Nery (INF/UFG), R
 
 <div align='justified'>
 
-This tutorial explores 5GC internals through an open-source implementation called [**my5Gcore**](https://github.com/my5g/my5Gcore/). The tutorial is divided into sections, including installation and development environment setup, code overview, 5G system procedures execution, and a non-3GPP IoT use case. Each section provides videos and manuals to replicate these steps. All the procedures can be reproduced using only a regular computer, e.g., a notebook, and the materials provided in this repository. [**my5Gcore**](https://github.com/my5g/my5Gcore/) is a fork of the [free5GC project](https://github.com/free5gc/free5gc/) and integrates the [**my5G initiative**](https://github.com/my5g/). The [**my5G initiative**](https://github.com/my5g/) is an attempt to make 5G systems widely available.
+This tutorial explores 5GC internals through an open-source implementation called [**my5G-core**](https://github.com/my5g/my5Gcore/). The tutorial is divided into sections, including installation and development environment setup, code overview, 5G system procedures execution, and a non-3GPP IoT use case. Each section provides videos and manuals to replicate these steps. All the procedures can be reproduced using only a regular computer, e.g., a notebook, and the materials provided in this repository. [**my5G-core**](https://github.com/my5g/my5Gcore/) is a fork of the [free5GC project](https://github.com/free5gc/free5gc/) and integrates the [**my5G initiative**](https://github.com/my5g/). The [**my5G initiative**](https://github.com/my5g/) is an attempt to make 5G systems widely available.
 
 
 ## Material
