@@ -13,6 +13,8 @@
 
 ---
 
+</div> 
+
 <div align='center'>
   
 # SBrT 2020 - Minicurso 6
@@ -23,22 +25,21 @@
 
 <div align='center'>
 
-João Paulo Lobianco Silva (Instituto de Informática (INF) - Universidade Federal de Goiás (UFG)), Samuel Wanberg Lourenço Nery (INF/UFG), Rogério S. e Silva (INF/UFG), Antonio Oliveira-Jr (INF/UFG & Fraunhofer Portugal AICOS Kleber Cardoso (INF/UFG) e Cristiano Bonato Both (Universidade do Vale do Rio dos Sinos - UNISINOS)
+João Paulo Lobianco Silva (INF/UFG), Samuel Wanberg Lourenço Nery (INF/UFG), Rogério S. e Silva (INF/UFG), Antonio Oliveira-Jr (INF/UFG & Fraunhofer Portugal AICOS), Kleber Cardoso (INF/UFG) e Cristiano Bonato Both (UNISINOS)
 
 </div>
 
 <div align='justified'>
 
-This tutorial explores 5GC internals through an open-source implementation called [**my5Gcore**](https://github.com/my5g/my5Gcore/). The tutorial is divided into sections, including installation and development environment setup, code overview, 5G system procedures execution, and a non-3GPP IoT use case. Each section provides videos and manuals to replicate these steps. All the procedures can be reproduced using only a regular computer, e.g., a notebook, and the materials provided in this repository. [**my5Gcore**](https://github.com/my5g/my5Gcore/) is a fork of the [free5GC project](https://github.com/free5gc/free5gc/) and integrates the [**my5G initiative**](https://github.com/my5g/). The [**my5G initiative**](https://github.com/my5g/) is an attempt to make 5G systems widely available.
-
+This tutorial explores 5GC internals through an open-source implementation called [**my5G-core**](https://github.com/my5g/my5Gcore/). The tutorial is divided into sections, including installation and development environment setup, code overview, 5G system procedures execution, and a non-3GPP IoT use case. Each section provides videos and manuals to replicate these steps. All the procedures can be reproduced using only a regular computer, e.g., a notebook, and the materials provided in this repository. [**my5G-core**](https://github.com/my5g/my5Gcore/) is a fork of the [free5GC project](https://github.com/free5gc/free5gc/) and integrates the [**my5G initiative**](https://github.com/my5g/). The [**my5G initiative**](https://github.com/my5g/) is an attempt to make 5G systems widely available.
 
 ## Material
 
 * [Article](https://arxiv.org/abs/2006.10409) <!-- TODO: Adequar p/ nosso documento -->
 * Sections
   * Installation and development environment - shows the steps required to install dependencies, download the source code, compile network functions, execute my5Gcore and setup a local development environment.
-     * my5Gcore installation ([tutorial](docs/installation-dev-env-setup/core-install.md), [video](http://youtubecom/))
-     * Setting-up development environment ([tutorial](docs/installation-dev-env-setup/env-install.md), [video](http://youtubecom/))
+     * my5Gcore Setup ([tutorial](docs/installation-dev-env-setup/core-install.md), [video](http://youtubecom/))
+     * Setting up development environment ([tutorial](docs/installation-dev-env-setup/env-install.md), [video](http://youtubecom/))
   * Code overview - presents how my5Gcore source code is organized and how to debug network functions using GoLand IDE.
      * Source code organization ([tutorial](docs/code-overview/code-organization.md), [video1](http://youtubecom/), [video2](http://youtubecom/))
      * Reference points ([tutorial](docs/code-overview/reference-points.md), [video](http://youtubecom/))
@@ -52,14 +53,12 @@ This tutorial explores 5GC internals through an open-source implementation calle
 
 ## How to cite
 
-**TODO**: adequar para nosso documento
+It is a pleasure to share our knowledge and you are free to use! Please, cite our work as we can continue contributing. Thank you!
 ```
-@misc{??????,
+@misc{SBrT2020_minicurso6, 
     title={Entendendo o núcleo 5G na prática, através de uma implementação de código aberto},
-    author={João Paulo Lobianco Silva and  Samuel Wanberg Lourenço Nery and Rogério S. e Silva and Antonio Oliveira-Jr Kleber Vieira Cardoso and Cristiano Bonato Both},
+    author={João Paulo Lobianco Silva and Samuel Wanberg Lourenço Nery and Rogério S. e Silva and Antonio Oliveira-Jr and Kleber Vieira Cardoso and Cristiano Bonato Both},
     year={2020},
-    eprint={},
-    archivePrefix={},
-    primaryClass={}
+    howpublished={XXXVIII Simpósio Brasileiro de Telecomunicações e Processamento de Sinais - SBrT 2020, Minicurso 6, Available at: \url{https://github.com/LABORA-INF-UFG/SBrT2020-Minicurso6}},
 }
 ```

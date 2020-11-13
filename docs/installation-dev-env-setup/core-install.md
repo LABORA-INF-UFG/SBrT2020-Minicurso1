@@ -1,29 +1,10 @@
-
 <div align="center">
 
-<a href="https://github.com/LABORA-INF-UFG/my5Gcore"><img width="40%" src="../figs/my5g-logo.png" alt="free5GC"/></a>
+<a href="https://github.com/LABORA-INF-UFG/my5Gcore"><img width="20%" src="../figs/my5g-logo.png" alt="free5GC"/></a>
 
-![GitHub](https://img.shields.io/github/license/LABORA-INF-UFG/my5GCore?color=blue) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/LABORA-INF-UFG/my5GCore?include_prereleases) ![GitHub All Releases](https://img.shields.io/github/downloads/LABORA-INF-UFG/my5GCore/total) ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/LABORA-INF-UFG/my5GCore) ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/LABORA-INF-UFG/my5GCore) 
+</div> 
 
-
- ![GitHub repo size](https://img.shields.io/github/repo-size/LABORA-INF-UFG/my5GCore) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/labora-inf-ufg/my5gcore/My5Gcore%20Workflow) ![GitHub last commit](https://img.shields.io/github/last-commit/LABORA-INF-UFG/my5GCore) ![GitHub contributors](https://img.shields.io/github/contributors/LABORA-INF-UFG/my5GCore)
-</div>
-
-
-
-<!-- 
-![YouTube Video Comments](https://img.shields.io/youtube/comments/my5G-initiative?style=social)
-
-![GitHub forks](https://img.shields.io/github/forks/LABORA-INF-UFG/my5GCore?label=Forks&style=social)
-
-![GitHub followers](https://img.shields.io/github/followers/LABORA-INF-UFG?style=social)
-
-![GitHub watchers](https://img.shields.io/github/watchers/LABORA-INF-UFG/my5Gcore?style=social) 
-
- ![Github All Contributors](https://img.shields.io/github/all-contributors/LABORA-INF-UFG/my5GCore)
-![GitHub repo file count](https://img.shields.io/github/directory-file-count/LABORA-INF-UFG/my5GCore)
--->
-# my5GCore Setup
+# my5G-core Setup
 
 ## Table of Contents
 
@@ -35,10 +16,9 @@
 - [Recommended Environment](#recommended-environment)
 - [Installation](#installation)
   - [A. Pre-requisite](#a-pre-requisite)
-  - [B. Install Control Plane Entities](#b-install-control-plane-entities)
-  - [C. Install User Plane Function (UPF)](#c-install-user-plane-function-upf)
-- [Instalation Test](#my5GCore-installation-test)
-  - [A. Run Core Network](#a-run-core-network)
+  - [B. Install my5G-core entities](#b-install-my5g-core-entities)
+- [Checking](#checking)
+  - [A. Run the Core Network](#a-run-the-core-network)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -148,12 +128,12 @@ for bug reports and feature requests. -->
     sudo systemctl stop ufw
     ```
 
-### B. Install my5GCore entities
+### B. Install my5G-core entities
     
-1. Clone my5GCore project
+1. Clone my5G-core project
     ```bash
     cd ~
-    git clone https://github.com/LABORA-INF-UFG/my5Gcore.git
+    git clone https://github.com/my5G/my5Gcore.git
     cd ~/my5Gcore
     git checkout master
     git submodule sync
@@ -167,44 +147,38 @@ for bug reports and feature requests. -->
     cd ~/my5Gcore
     go mod download
     ```
-3. Compile network function services in `my5gCore`
+3. Compile network function services in `my5g-core`
     ```bash
     cd ~/my5Gcore
     make all 
     ```
+4. Customize the NFs as desired. The NF configuration file is `~/my5Gcore/config/<someNF>cfg.conf`, for example: `~/my5Gcore/config/amfcfg.conf`. Samples files are located on: `~/my5Gcore/sample/` 
 
-## my5GCore installation test
+## Checking
+The goal is to validate the installation procedures in order to check if everything is ok.
 
-### Run Core Network 
-> *Only for network function services installation check. my5GCore requires another settings to run. See them on [Setting-up development environment](./env-install.md) 
+### A. Run the Core Network 
 
-To run each network function separately.
-```bash
-./bin/<some-NF> [-free5gccfg <core-configuration-file>] [-udmcfg <nf-configuration-file>] & 
-# NRF
-~/my5GCore/bin/nrf & 
-# AMF
-./bin/amf & 
-# SMF
-./bin/smf & 
-# UDR
-./bin/udr & 
-# PCF
-./bin/pcf &  
-# UDM
-./bin/udm
-# NSSF
-./bin/nssf &
-# AUSF
-./bin/ausf &  
-# N3IWF
-./bin/n3iwf & 
-```
+1. Run network function services individually.  
+``` ./bin/<some-NF> [-free5gccfg <core-configuration-file>] [-udmcfg <nf-configuration-file>] & ```
 
-Shell script
-```bash
-# bash
-cd ~/my5Gcore
-./run.sh
-```
-Check "log output" for errors (highlighted in <span style="color=red">\[red\]</span>)
+    For example, to run the AMF:
+
+    ```bash
+    cd ~/my5Gcore
+    ./bin/amf
+    ```
+    to run with customized settings:
+    ```bash
+    # AMF
+    ./bin/amf -free5gccfg sample/my5g_basic_config/free5GC.conf -amfcfg sample/my5g_basic_config/amfcfg.conf &
+    ```
+    **Note: The N3IWF needs specific configuration, which is detailed in section B.** 
+2. Run whole core network
+    ```bash
+    # bash
+    cd ~/my5Gcore
+    ./run.sh
+    ```
+> Check "log output" for errors (highlighted in <span       style='color:red'>red.</span>)   
+> Adjust the configuration files to resolve the warning messages (in <span       style='color:yellow'>yellow.</span>)
