@@ -180,5 +180,5 @@ The goal is to validate the installation procedures in order to check if everyth
     cd ~/my5Gcore
     ./run.sh
     ```
-> Check "log output" for errors (highlighted in <span       style='color:red'>red.</span>)   
+> Check "log output" for errors (highlighted in <span       style='color:red'>red.</span>)          
 > Adjust the configuration files to resolve the warning messages (in <span       style='color:yellow'>yellow.</span>)
