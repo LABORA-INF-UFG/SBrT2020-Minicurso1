@@ -81,7 +81,7 @@ The SMF establishes a connection with UPF to manage how UPF should proccess inco
 
 
 <p align="left">
-    <img src="../../media/images/reference-points/amfcfg.png" alt="UPF  PFCP server address in config file"/> 
+    <img src="../../media/images/reference-points/upfcfg.png" alt="UPF  PFCP server address in config file"/> 
 </p>
 
 1. The address for the PFCP server in UPF config file (_src/upf/build/config/upfcfg.yaml_).
