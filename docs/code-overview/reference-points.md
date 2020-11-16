@@ -10,6 +10,9 @@
 
 This document explains the difference between service-based interfaces and referente points, focusing especially in reference points without corresponding service-based interfaces.
 
+<p align="left">
+    <img src="../../media/images/reference-points/sbi-rp.png" alt="SBI x Reference points"/> 
+</p>
 
 ## Service-based interfaces
 
@@ -41,10 +44,6 @@ The 5G System Architecture contains many reference points but here we only discu
 * N4: Reference point between the SMF and the UPF.
 * N6: Reference point between the UPF and a Data Network.
 * N9: Reference point between two UPFs.
-
-<p align="left">
-    <img src="../../media/images/reference-points/sbi-rp.png" alt="SBI x Reference points"/> 
-</p>
 
 Next, we discuss some of these reference-points.
 
