@@ -71,7 +71,7 @@ This is the connection between AMF and (R)AN. This connection uses a SCTP as tra
     <img src="../../media/images/reference-points/amfcfg.png" alt="AMF NGAP/SCTP server address in config file"/> 
 </p>
 
-1. The address for the NGAP/SCTP server in AMF config file (_src/upf/build/config/upfcfg.yaml_).
+1. The address for the NGAP/SCTP server in AMF config file (_config/amfcfg.conf_).
 
 
 
@@ -84,7 +84,7 @@ The SMF establishes a connection with UPF to manage how UPF should proccess inco
     <img src="../../media/images/reference-points/amfcfg.png" alt="UPF  PFCP server address in config file"/> 
 </p>
 
-1. The address for the PFCP server in UPF config file (_config/amfcfg.conf_).
+1. The address for the PFCP server in UPF config file (_src/upf/build/config/upfcfg.yaml_).
 
 
 
