@@ -2,45 +2,88 @@
 
 ## Expected result
 
-This document explains the difference between HTTP based reference points and non-HTTP based reference points.
+This document explains the difference between service-based interfaces and referente points, focusing especially in reference points without corresponding service-based interfaces.
 
 
-## What to expect from a network function (NF)
+## Service-based interfaces
 
-The 5G core contains a set of network functions that interact with each other to provide services. So, the building blocks of my5Gcore are these network functions. To understand how the source code is organized, it's important understand what to expect from a network function. In a simplified way, a network function should:
+The 5G System Architecture contains the following service-based interfaces:
 
+* Namf: Service-based interface exhibited by AMF.
+* Nsmf: Service-based interface exhibited by SMF.
+* Nnef: Service-based interface exhibited by NEF.
+* Npcf: Service-based interface exhibited by PCF.
+* Nudm: Service-based interface exhibited by UDM.
+* Naf: Service-based interface exhibited by AF.
+* Nnrf: Service-based interface exhibited by NRF.
+* Nnssf: Service-based interface exhibited by NSSF.
+* Nausf: Service-based interface exhibited by AUSF.
+* Nudr: Service-based interface exhibited by UDR.
+* Nudsf: Service-based interface exhibited by UDSF.
+* N5g-eir: Service-based interface exhibited by 5G-EIR.
+* Nnwdaf: Service-based interface exhibited by NWDAF.
 
-## Most important Go packages in my5Gcore
+These service-based interfaces use HTTP/REST APIs to produce and consume services in 5GC and are therefore stateless, which means there is no need to keep an active connection between the parties accross two or more services requests.
 
----
-**main package**
+## Reference points
 
-It's the entry point of the application. Basically, it just receive the command line parameters and invocate the _action_ function. The _action_ function:
-  * initiallize the general configuration for the core
-  * initialize the specific configuration the the network function
-  * invokes the start method from the _service_ package
+The 5G System Architecture contains many reference points but here we only discusses the ones without a corresponding service-based interface. They use other protocols like SCTP, TCP, PFCP, NAS, IKE, GRE, GTP and in many cases, require a stateful connection to be established and mantained. Here we have a list of these referece-points:
 
-<p align="left">
-    <img src="../../media/images/code-organization/main-package-amf.png" alt="Sample main package for AMF"/> 
-</p>
-
-1. Recovery command-line parameters
-2. Initialize general core configurations
-3. Initialize specific network-function configurations
-4. Invoke _start_ method from the _service_ package.
-
-**factory package**
-
-This package is responsable for loading and initilizing network-function specific configurations. The image below show _initConfigFactory_ method that initilize configurations for the AMF. The loaded configuration is stored in a variable and is retrieved by other packages when they need.
-
-<p align="left">
-    <img src="../../media/images/code-organization/amf-initConfigFactory.png" alt="Method that loads AMF configuration (initConfigFactory)"/> 
-</p>
-
-The configurations include, IP addresses, port numbers, supported services list and identifiers.
+* N1: Reference point between the UE and the AMF.
+* N2: Reference point between the (R)AN and the AMF.
+* N3: Reference point between the (R)AN and the UPF.
+* N4: Reference point between the SMF and the UPF.
+* N6: Reference point between the UPF and a Data Network.
+* N9: Reference point between two UPFs.
 
 <p align="left">
-    <img src="../../media/images/code-organization/amfcfg.png" alt="Example AMF config file"/> 
+    <img src="../../media/images/reference-points/sbi-rp.png" alt="SBI x Reference points"/> 
 </p>
+
+Next, we discuss some of these reference-points.
+
+**N1**
+
+It represents a logical connection between a UE and AMF. This connection is used for all CP NAS signalling between UE and 5GC. The N1 signalling connection comprises the Uu/NWu and the N2 connection.
+
+<p align="left">
+    <img src="../../media/images/reference-points/N1-signalling-connection.png" alt="N1 signalling connection"/> 
+</p>
+
+
+**N2**
+
+This is the connection between AMF and (R)AN. This connection uses a SCTP as transport protocol and NGAP for application layer. When AMF is started it runs an SCTP/NGAP server, that waits for connections from the (R)AN. Later, when the N3IWF is started it connects to this SCTP server in AMF. All communications between (R)AN and 5GCN goes through this connection.
+
+<p align="left">
+    <img src="../../media/images/reference-points/amf-run-ngap-server.png" alt="AMF starts NGAP server"/> 
+</p>
+
+1. During the inicialization, AMF starts the SCTP/NGAP server.
+   
+
+<p align="left">
+    <img src="../../media/images/reference-points/amfcfg.png" alt="AMF NGAP/SCTP server address in config file"/> 
+</p>
+
+1. The address for the NGAP/SCTP server in AMF config file (_src/upf/build/config/upfcfg.yaml_).
+
+
+
+**N4**
+
+The SMF establishes a connection with UPF to manage how UPF should proccess incomming traffic. During the inicialization, UPF starts a PFCP server, that waits for connections from SMFs. Later, when SMF starts, it connects to this PFCP server and establishes a PFCP Association with UPF.
+
+
+<p align="left">
+    <img src="../../media/images/reference-points/amfcfg.png" alt="UPF  PFCP server address in config file"/> 
+</p>
+
+1. The address for the PFCP server in UPF config file (_config/amfcfg.conf_).
+
+
+
+
+
 
 
