@@ -1,0 +1,81 @@
+version: "3"
+
+services:
+  chirpstack-network-server:
+    image: chirpstack/chirpstack-network-server:3
+    volumes:
+      - ./configuration/chirpstack-network-server:/etc/chirpstack-network-server
+    networks:
+     my5gcore-compose_lorawan:
+       aliases:
+          - ns.lorawan.org
+
+  chirpstack-application-server:
+    image: chirpstack/chirpstack-application-server:3
+    ports:
+      - 8080:8080
+    volumes:
+      - ./configuration/chirpstack-application-server:/etc/chirpstack-application-server
+    networks:
+     my5gcore-compose_lorawan:
+       aliases:
+          - ap.lorawan.org
+
+  chirpstack-gateway-bridge:
+    image: chirpstack/chirpstack-gateway-bridge:3
+    ports:
+      - 1700:1700/udp
+    volumes:
+      - ./configuration/chirpstack-gateway-bridge:/etc/chirpstack-gateway-bridge
+    networks:
+     my5gcore-compose_lorawan:
+       aliases:
+          - br.lorawan.org
+
+  chirpstack-geolocation-server:
+    image: chirpstack/chirpstack-geolocation-server:3
+    volumes:
+      - ./configuration/chirpstack-geolocation-server:/etc/chirpstack-geolocation-server
+    networks:
+     my5gcore-compose_lorawan:
+       aliases:
+          - geo.lorawan.org
+
+  postgresql:
+    image: postgres:9.6-alpine
+    environment:
+      - POSTGRES_PASSWORD=root
+    volumes:
+      - ./configuration/postgresql/initdb:/docker-entrypoint-initdb.d
+      - postgresqldata:/var/lib/postgresql/data
+    networks:
+     my5gcore-compose_lorawan:
+       aliases:
+          - postegresql.lorawan.org
+
+  redis:
+    image: redis:5-alpine
+    volumes:
+      - redisdata:/data
+    networks:
+     my5gcore-compose_lorawan:
+       aliases:
+          - redis.lorawan.org
+
+  mosquitto:
+    image: eclipse-mosquitto
+    ports:
+      - 1883:1883
+    networks:
+     my5gcore-compose_lorawan:
+       aliases:
+          - mosquitto.lorawan.org
+
+networks:
+  my5gcore-compose_lorawan:
+    external: true
+
+volumes:
+  postgresqldata:
+  redisdata:
+

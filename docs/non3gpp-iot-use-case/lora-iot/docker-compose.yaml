@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  my5gcore-ue:
+    container_name: non3gpp-ue
+    build:
+      context: ./nf_ue
+      args:
+        DEBUG_TOOLS: "true"
+    ports:
+      - "10000:10000"
+    #command: sh -c "./bin/ue"
+    command: sh -c "./ipsec --ue ue --n3iwf n3iwf  && ./bin/ue "
+    # command: sh -c " ./ipsec --ue ue --n3iwf n3iwf.my5Gcore.org && while true; do echo 'Hit CTRL+C'; sleep 10000; done "
+    volumes:
+      - ${CONFIG}/uecfg.conf:/my5gcore/config/uecfg.conf
+      - ${CONFIG}/free5GC.conf:/my5gcore/config/free5GC.conf
+      - ${CONFIG}/ue-ipsec.sh:/my5gcore/ue/ue-ipsec.sh
+      - ${CONFIG}/initial_registration.sh:/my5gcore/initial_registration.sh
+      - ${CONFIG}/ipsec:/my5gcore/ipsec
+    environment:
+      GIN_MODE: release
+    extra_hosts:
+      - "ue:192.168.127.2"
+      - "n3iwf:192.168.127.1"
+    networks:
+     my5gcore-compose_5gcorenetwork:
+       aliases:
+          - ue.my5Gcore.org
+    cap_add:
+      - ALL
+
+networks:
+  my5gcore-compose_5gcorenetwork:
+    external: true
