@@ -62,7 +62,7 @@ Obs: Do the same for the other NF components. All the components are in `my5G-co
     gtp
 
     # monitor traffic in NWu
-    isakmp or gre or nas-5gs
+    isakmp or gre or nas-5gs or esp
 
     # monitor traffic in N3
     pfcp
@@ -71,11 +71,17 @@ Obs: Do the same for the other NF components. All the components are in `my5G-co
     ngap
     ```
 
+    Here there is an overview of the most important protocols in service-based interfaces and reference points.
+
+    ![5GS protocols](../../media/images/code-debugging/5gs-protocols.png)
+
+
 3. Sample: monitoring PFCP traffic in N4 reference point.
 
+    
     ```bash
     # stop all running NFs
-    
+
     # start wireshark
     wireshark -kni any --display-filter pfcp &
 
@@ -85,23 +91,42 @@ Obs: Do the same for the other NF components. All the components are in `my5G-co
     ./run.sh
     ```
 
-    ![6](../../media/images/code-debugging/pfcp-wireshark.png)
+    ![PFCP wireshark sniffing](../../media/images/code-debugging/pfcp-wireshark.png)
 
     1. Establishing a PFCP Association between SMF and UPF. SMF will use this association to send rules to UPF, instructing how to process incomming packets.
 
 
-## Monitoring  GTP tunnels
+## Monitoring  GTP5G tunnels
 
-1. Listing GTP-5G links
-   ```bash
-   cd ~/my5G-core/src/upf/lib/libgtp5gnl/tools/
-   ./gtp5g-link list
-   ```
-2. Monitoring 
-   ```bash
-   # far tunnels
-   watch -d -n 1 ./src/upf/lib/libgtp5gnl/tools/gtp5g-tunnel list far
+SMF uses the PFCP protocol to send rules to UPF and these rules instruct how UPF should process incomming packets.
 
-   # prd tunnels
-   watch -d -n 1 ./src/upf/lib/libgtp5gnl/tools/gtp5g-tunnel list prd
+1. Download and installing libgtp5gnl
+    ```bash
+
+    git clone https://github.com/PrinzOwO/libgtp5gnl.git ~/libgtp5gnl
+    cd ~/libgtp5gnl
+    autoreconf -iv
+    ./configure --prefix=`pwd`
+    make
+    ```
+2. Monitoring Current Rules
+   ```bash
+   cd ~/libgtp5gnl
+   # monitoring Forwarding Action Rule (FAR) rules
+   sudo watch -d -n 1 ./tools/gtp5g-tunnel list far
+
+   # monitoring Packet Detection Rule (PDR) tunnels
+   sudo watch -d -n 1 ./tools/gtp5g-tunnel list pdr
    ```
+3. Testing (Split the terminal)
+    ```bash
+    # stop my5G-core if it's running (CTRL+C)
+
+    # execute TestNon3GPP
+    cd ~/my5G-core
+    sudo ./test.sh TestNon3GPP
+
+    # observe the rules being created in UPF
+    # Tip: You can combine the wireshark monitoring (pfcp) and inspect the packets
+    # to see how SMF sends the rules for packet processing to UPF
+    ```
