@@ -12,13 +12,15 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [Hardware Tested](#hardware-tested)
-- [Recommended Environment](#recommended-environment)
-- [Installation](#installation)
-  - [A. Pre-requisite](#a-pre-requisite)
-  - [B. Install my5G-core entities](#b-install-my5g-core-entities)
-- [Checking](#checking)
-  - [A. Run the Core Network](#a-run-the-core-network)
+- [my5G-core Setup](#my5g-core-setup)
+  - [Table of Contents](#table-of-contents)
+  - [Hardware Tested](#hardware-tested)
+  - [Recommended Environment](#recommended-environment)
+  - [Installation](#installation)
+    - [A. Pre-requisite](#a-pre-requisite)
+    - [B. Install my5G-core entities](#b-install-my5g-core-entities)
+  - [Checking](#checking)
+    - [A. Run the Core Network](#a-run-the-core-network)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

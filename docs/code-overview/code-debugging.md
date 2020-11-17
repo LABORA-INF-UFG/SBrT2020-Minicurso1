@@ -6,19 +6,17 @@
 
 # Debugging
 
-
 ## Setting a break-point
 
 1. To start debugging some component since the beginning, you must set a breakpoint on the main function in the main package of the component.
 
     - For example, to start debugging the NRF, set a breakpoint in the first line of code of the main function of the `my5G-core/src/nrf/nrf.go` file.
 
-![8](../../media/images/code-debugging/set-break-point-nrf.png)
+![Setting break-point in NRF](../../media/images/code-debugging/set-break-point-nrf.png)
 
 1. package main
 2. Entry point for the application (_main_ function).
 3. Function _action_ is invoked in _main_.
-
 
 
 ## Running NF components in GoLand
@@ -47,7 +45,7 @@
 
 ![7](../../media/images/code-debugging/7.png)
 
-Obs: Do the same for the other NF components. All the components are in `my5G-core/src/{component}/{component}.go`. For example, for SMF it's in `my5G-core/src/smf/smf.go`.
+Obs: Do the same for the other NF components. All the components are in `~/my5G-core/src/{component}/{component}.go`. For example, for SMF it's in `~/my5G-core/src/smf/smf.go`.
 
 ## Network traffic sniffing
 
@@ -81,6 +79,7 @@ Obs: Do the same for the other NF components. All the components are in `my5G-co
     
     ```bash
     # stop all running NFs
+    cd ~/my5G-core
 
     # start wireshark
     wireshark -kni any --display-filter pfcp &
@@ -102,31 +101,63 @@ SMF uses the PFCP protocol to send rules to UPF and these rules instruct how UPF
 
 1. Download and installing libgtp5gnl
     ```bash
-
     git clone https://github.com/PrinzOwO/libgtp5gnl.git ~/libgtp5gnl
     cd ~/libgtp5gnl
     autoreconf -iv
     ./configure --prefix=`pwd`
     make
     ```
-2. Monitoring Current Rules
-   ```bash
-   cd ~/libgtp5gnl
-   # monitoring Forwarding Action Rule (FAR) rules
-   sudo watch -d -n 1 ./tools/gtp5g-tunnel list far
-
-   # monitoring Packet Detection Rule (PDR) tunnels
-   sudo watch -d -n 1 ./tools/gtp5g-tunnel list pdr
-   ```
-3. Testing (Split the terminal)
+2. Listing packet processing rules
     ```bash
-    # stop my5G-core if it's running (CTRL+C)
+    cd ~/libgtp5gnl
+    
+    # monitoring Packet Detection Rule (PDR) tunnels
+    sudo ./tools/gtp5g-tunnel list pdr
 
-    # execute TestNon3GPP
-    cd ~/my5G-core
-    sudo ./test.sh TestNon3GPP
-
-    # observe the rules being created in UPF
-    # Tip: You can combine the wireshark monitoring (pfcp) and inspect the packets
-    # to see how SMF sends the rules for packet processing to UPF
+    # monitoring Forwarding Action Rule (FAR) rules
+    sudo ./tools/gtp5g-tunnel list far
     ```
+3. Testing and monitoring packet processing rules
+   ```bash
+   # stop my5G-core if it's running (CTRL+C)
+
+   # start wireshark sniffing for PFCP traffic (Split terminal)
+   wireshark -kni any --display-filter pfcp &
+
+   # the test will run UPF in another network namespace
+   cd ~/libgtp5gnl   
+
+   # monitoring Packet Detection Rule (PDR) rules (Split terminal)
+   sudo ip netns exec UPFns watch -d -n 1 ./tools/gtp5g-tunnel list pdr
+
+   # monitoring Forwarding Action Rule (FAR) rules (Split terminal)
+   sudo ip netns exec UPFns watch -d -n 1 ./tools/gtp5g-tunnel list far
+
+   # change the sleep time in ~/my5G-core/test.sh line 125 to 120 this will give you time to analyse the rules before the UPF is terminated.
+
+   # execute TestNon3GPP
+   cd ~/my5G-core
+   sudo ./test.sh TestNon3GPP
+
+   # observe the rules being created in UPF
+   # Tip: You can combine the wireshark monitoring (pfcp) and inspect the packets to see how SMF sends the rules for packet processing to UPF   
+   ```
+
+![PFCP Session Establishment](../../media/images/code-debugging/pfcp-session-establishment.png)
+
+1. SMF instructs the UPF to create rules for packet detection and forwarding.
+2. Indicates the creation of a PDR.
+3. Specifies the rule ID.
+4. Tunnel Endpoint ID and IP address.
+5. UE IPv4 address.
+6. Information about how to desencapsulate incomming packet.
+
+OBS.: Check *conf/uerouting.yaml* file to see routing information fo UE.
+
+
+![GTP5G Tunnels in UPF](../../media/images/code-debugging/gtp5g-tunnels.png)
+
+1. Information to allow UPF to identify these packets
+2. The detection rule references a forwarding rule action to be executed when a packet matches this rule.
+3. Action = 2 means forward the packet. Other possible actions could be drop, duplicate or buffer.
+4. The detection rule that triggers this forwarding action.
