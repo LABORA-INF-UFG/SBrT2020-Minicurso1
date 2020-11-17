@@ -15,16 +15,10 @@
 2. Install some tools required to develop, monitor and containerize:
 
     ```
-    sudo apt update
-    ```
-    ```
-    sudo apt install tcpdump wireshark curl snap
+    sudo apt update && sudo apt install tcpdump wireshark curl snap
     ```
     ```
     curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh
-    ```
-    ```
-    wget -q https://download.jetbrains.com/go/goland-2020.1.tar.gz
     ```
     ```
     sudo snap install goland --classic
