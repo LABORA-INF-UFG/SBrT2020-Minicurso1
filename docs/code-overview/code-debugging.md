@@ -12,38 +12,38 @@
 
     - For example, to start debugging the NRF, set a breakpoint in the first line of code of the main function of the `my5G-core/src/nrf/nrf.go` file.
 
-![Setting break-point in NRF](../../media/images/code-debugging/set-break-point-nrf.png)
+    ![Setting break-point in NRF](../../media/images/code-debugging/set-break-point-nrf.png)
 
-1. package main
-2. Entry point for the application (_main_ function).
-3. Function _action_ is invoked in _main_.
+   1. package main
+   2. Entry point for the application (_main_ function).
+   3. Function _action_ is invoked in _main_.
 
 
 ## Running NF components in GoLand
 
 1. On the Project View on the left, navigate through the component you want to run
 
-![Select the Go lang file ".go" in the project](../../media/images/code-debugging/3.png)
+    ![Select the Go lang file ".go" in the project](../../media/images/code-debugging/3.png)
 
 2. Right click on the component (*.go) and choose Debug
     - Optional: Use the SHIFT + F9 (shortcut)
 
 3. After this, the run window will show
 
-![run](../../media/images/code-debugging/4.jpeg)
+    ![run](../../media/images/code-debugging/4.jpeg)
 
 
 4. Now the “command” will be available on the toolbar
 
-![5](../../media/images/code-debugging/5.png)
+    ![5](../../media/images/code-debugging/5.png)
 
 5. Next time just choose the command in the toolbar and run or debug clicking on the buttons
 
-![6](../../media/images/code-debugging/6.png)
+    ![6](../../media/images/code-debugging/6.png)
 
 6. To stop a running or debugging component click the Stop button on the toolbar
 
-![7](../../media/images/code-debugging/7.png)
+    ![7](../../media/images/code-debugging/7.png)
 
 Obs: Do the same for the other NF components. All the components are in `~/my5G-core/src/{component}/{component}.go`. For example, for SMF it's in `~/my5G-core/src/smf/smf.go`.
 
@@ -143,21 +143,21 @@ SMF uses the PFCP protocol to send rules to UPF and these rules instruct how UPF
    # Tip: You can combine the wireshark monitoring (pfcp) and inspect the packets to see how SMF sends the rules for packet processing to UPF   
    ```
 
-![PFCP Session Establishment](../../media/images/code-debugging/pfcp-session-establishment.png)
+    ![PFCP Session Establishment](../../media/images/code-debugging/pfcp-session-establishment.png)
 
-1. SMF instructs the UPF to create rules for packet detection and forwarding.
-2. Indicates the creation of a PDR.
-3. Specifies the rule ID.
-4. Tunnel Endpoint ID and IP address.
-5. UE IPv4 address.
-6. Information about how to desencapsulate incomming packet.
+   1. SMF instructs the UPF to create rules for packet detection and forwarding.
+   2. Indicates the creation of a PDR.
+   3. Specifies the rule ID.
+   4. Tunnel Endpoint ID and IP address.
+   5. UE IPv4 address.
+   6. Information about how to desencapsulate incomming packet.
 
-OBS.: Check *conf/uerouting.yaml* file to see routing information fo UE.
+   OBS.: Check *conf/uerouting.yaml* file to see routing information fo UE.
 
 
-![GTP5G Tunnels in UPF](../../media/images/code-debugging/gtp5g-tunnels.png)
+    ![GTP5G Tunnels in UPF](../../media/images/code-debugging/gtp5g-tunnels.png)
 
-1. Information to allow UPF to identify these packets
-2. The detection rule references a forwarding rule action to be executed when a packet matches this rule.
-3. Action = 2 means forward the packet. Other possible actions could be drop, duplicate or buffer.
-4. The detection rule that triggers this forwarding action.
+   1. Information to allow UPF to identify these packets
+   2. The detection rule references a forwarding rule action to be executed when a packet matches this rule.
+   3. Action = 2 means forward the packet. Other possible actions could be drop, duplicate or buffer.
+   4. The detection rule that triggers this forwarding action.
