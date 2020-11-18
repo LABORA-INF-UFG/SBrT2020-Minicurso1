@@ -161,7 +161,7 @@ SMF uses the PFCP protocol to send rules to UPF and these rules instruct how UPF
 
    # execute TestNon3GPP
    cd ~/my5G-core
-   sudo ./test.sh TestNon3GPP
+   ./test.sh TestNon3GPP
 
    # observe the rules being created in UPF
    # Tip: You can combine the wireshark monitoring (pfcp) and inspect the packets to see how SMF sends the rules for packet processing to UPF   
