@@ -1,0 +1,347 @@
+version: '3.8'
+
+services:
+  my5gcore-upf-b:
+    container_name: upfb
+    build:
+      context: ./nf_upf
+      args:
+        DEBUG_TOOLS: "false"
+    command: bash -c "./free5gc-upfd -f ../config/upfcfg.yaml"
+    volumes:
+      - "${CONFIG}/upfcfgb.yaml:/my5Gcore/config/upfcfg.yaml"
+      #- "${CONFIG}/router-upf.sh:/my5Gcore/free5gc-upfd/router-upf.sh"
+    cap_add:
+      - ALL
+    networks:
+      5gcorenetwork:
+        ipv4_address: ${UPF_B}
+        aliases:
+          - upfb.my5Gcore.org
+
+  my5gcore-upf-1:
+    container_name: upf1
+    build:
+      context: ./nf_upf
+      args:
+        DEBUG_TOOLS: "false"
+    command: bash -c "./router-upf.sh  && ./free5gc-upfd -f ../config/upfcfg.yaml"
+    volumes:
+      - "${CONFIG}/upfcfg1.yaml:/my5Gcore/config/upfcfg.yaml"
+      - "${CONFIG}/router-upf.sh:/my5Gcore/free5gc-upfd/router-upf.sh"
+    cap_add:
+      - ALL
+    networks:
+      5gcorenetwork:
+        ipv4_address: ${UPF_IP}
+        aliases:
+          - upf1.my5Gcore.org
+
+  my5gcore-upf-lorawan:
+    container_name: upf-lorawan
+    build:
+      context: ./nf_upf
+      args:
+        DEBUG_TOOLS: "false"
+    command: bash -c "./router-upf.sh && ./free5gc-upfd -f ../config/upfcfg.yaml"
+    volumes:
+      - "${CONFIG}/upfcfg2.yaml:/my5Gcore/config/upfcfg.yaml"
+      - "${CONFIG}/router-upf-lorawan.sh:/my5Gcore/free5gc-upfd/router-upf.sh"
+    cap_add:
+      - ALL
+    networks:
+      5gcorenetwork:
+        ipv4_address: ${UPF_LoRaWAN}
+        aliases:
+          - upf2.my5Gcore.org
+      lorawan:
+        aliases:
+          - upf.lorawan.org
+  db:
+    container_name: mongodb
+    image: mongo
+    command: mongod --port 27017
+    expose:
+      - "27017"
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./dbdata:/data/db
+    networks:
+      5gcorenetwork:
+        aliases:
+          - db
+
+  my5gcore-nrf:
+    container_name: nrf
+    build:
+      context: ./nf_nrf
+      args:
+        DEBUG_TOOLS: "false"
+    command: ./nrf -nrfcfg ../config/nrfcfg.conf
+    expose:
+      - "29510"
+    volumes:
+      - ${CONFIG}/nrfcfg.conf:/my5Gcore/config/nrfcfg.conf
+      - ${CONFIG}/my5Gcore.conf:/my5Gcore/config/free5GC.conf
+    environment:
+      DB_URI: ${DBURI}
+      GIN_MODE: release
+    networks:
+      5gcorenetwork:
+        aliases:
+          - nrf.my5Gcore.org
+    depends_on:
+      - db
+
+  my5gcore-amf:
+    container_name: amf
+    build:
+      context: ./nf_amf
+      args:
+        DEBUG_TOOLS: "false"
+    command: ./amf -amfcfg ../config/amfcfg.conf
+    expose:
+      - "29518"
+    volumes:
+      - ${CONFIG}/amfcfg.conf:/my5Gcore/config/amfcfg.conf
+      - ${CONFIG}/my5Gcore.conf:/my5Gcore/config/free5GC.conf
+    environment:
+      GIN_MODE: release
+    networks:
+      5gcorenetwork:
+        aliases:
+          - amf.my5Gcore.org
+    depends_on:
+      - my5gcore-nrf
+
+  my5gcore-ausf:
+    container_name: ausf
+    build:
+      context: ./nf_ausf
+      args:
+        DEBUG_TOOLS: "false"
+    command: ./ausf -ausfcfg ../config/ausfcfg.conf
+    expose:
+      - "29509"
+    volumes:
+      - ${CONFIG}/ausfcfg.conf:/my5Gcore/config/ausfcfg.conf
+      - ${CONFIG}/my5Gcore.conf:/my5Gcore/config/free5GC.conf
+    environment:
+      GIN_MODE: release
+    networks:
+      5gcorenetwork:
+        aliases:
+          - ausf.my5Gcore.org
+    depends_on:
+      - my5gcore-nrf
+
+  my5gcore-nssf:
+    container_name: nssf
+    build:
+      context: ./nf_nssf
+      args:
+        DEBUG_TOOLS: "false"
+    command: ./nssf -nssfcfg ../config/nssfcfg.conf
+    expose:
+      - "29531"
+    volumes:
+      - ${CONFIG}/nssfcfg.conf:/my5Gcore/config/nssfcfg.conf
+      - ${CONFIG}/my5Gcore.conf:/my5Gcore/config/free5GC.conf
+    environment:
+      GIN_MODE: release
+    networks:
+      5gcorenetwork:
+        aliases:
+          - nssf.my5Gcore.org
+    depends_on:
+      - my5gcore-nrf
+
+  my5gcore-pcf:
+    container_name: pcf
+    build:
+      context: ./nf_pcf
+      args:
+        DEBUG_TOOLS: "false"
+    command: ./pcf -pcfcfg ../config/pcfcfg.conf
+    expose:
+      - "29507"
+    volumes:
+      - ${CONFIG}/pcfcfg.conf:/my5Gcore/config/pcfcfg.conf
+      - ${CONFIG}/my5Gcore.conf:/my5Gcore/config/free5GC.conf
+    environment:
+      GIN_MODE: release
+    networks:
+      5gcorenetwork:
+        aliases:
+          - pcf.my5Gcore.org
+    depends_on:
+      - my5gcore-nrf
+
+  my5gcore-smf:
+    container_name: smf
+    build:
+      context: ./nf_smf
+      args:
+        DEBUG_TOOLS: "false"
+    command: ./smf -smfcfg ../config/smfcfg.conf -uerouting ../config/uerouting.yaml
+    expose:
+      - "29502"
+    volumes:
+      - ${CONFIG}/smfcfg.conf:/my5Gcore/config/smfcfg.conf
+      - ${CONFIG}/uerouting.yaml:/my5Gcore/config/uerouting.yaml
+      - ${CONFIG}/my5Gcore.conf:/my5Gcore/config/free5GC.conf
+    environment:
+      GIN_MODE: release
+    ports:
+      - "8805:8805/udp"
+    networks:
+      5gcorenetwork:
+        ipv4_address: ${SMF_IP}
+        aliases:
+          - smf.my5Gcore.org
+    depends_on:
+      - my5gcore-nrf
+      - my5gcore-amf
+      - my5gcore-upf-1
+      - my5gcore-upf-lorawan
+      - my5gcore-upf-b
+
+  my5gcore-udm:
+    container_name: udm
+    build:
+      context: ./nf_udm
+      args:
+        DEBUG_TOOLS: "false"
+    command: ./udm -udmcfg ../config/udmcfg.conf
+    expose:
+      - "29503"
+    volumes:
+      - ${CONFIG}/udmcfg.conf:/my5Gcore/config/udmcfg.conf
+      - ${CONFIG}/my5Gcore.conf:/my5Gcore/config/free5GC.conf
+    environment:
+      GIN_MODE: release
+    networks:
+      5gcorenetwork:
+        aliases:
+          - udm.my5Gcore.org
+    depends_on:
+      - db
+      - my5gcore-nrf
+
+  my5gcore-udr:
+    container_name: udr
+    build:
+      context: ./nf_udr
+      args:
+        DEBUG_TOOLS: "false"
+    command: ./udr -udrcfg ../config/udrcfg.conf
+    expose:
+      - "29504"
+    environment:
+      GIN_MODE: release
+    volumes:
+      - ${CONFIG}/udrcfg.conf:/my5Gcore/config/udrcfg.conf
+      - ${CONFIG}/my5Gcore.conf:/my5Gcore/config/free5GC.conf
+    environment:
+      DB_URI: ${DBURI}
+      GIN_MODE: release
+    networks:
+      5gcorenetwork:
+        aliases:
+          - udr.my5Gcore.org
+    depends_on:
+      - db
+      - my5gcore-nrf
+
+  my5gcore-n3iwf:
+    container_name: n3iwf
+    build:
+      context: ./nf_n3iwf
+      args:
+        DEBUG_TOOLS: "true"
+    command: sh -c "./n3iwf-ipsec.sh && ./n3iwf -n3iwfcfg ../config/n3iwfcfg.conf"
+    expose:
+      - "20000"
+      - "500/udp"
+      - "4500/udp"
+    volumes:
+      - ${CONFIG}/n3iwfcfg.conf:/my5Gcore/config/n3iwfcfg.conf
+      - ${CONFIG}/my5Gcore.conf:/my5Gcore/config/free5GC.conf
+      - ${CONFIG}/n3iwf-ipsec.sh:/my5Gcore/n3iwf/n3iwf-ipsec.sh
+    environment:
+      GIN_MODE: release
+    cap_add:
+      - NET_ADMIN
+    networks:
+      5gcorenetwork:
+        aliases:
+          - n3iwf.my5Gcore.org
+    depends_on:
+      - my5gcore-amf
+
+  my5gcore-webui:
+    container_name: webui
+    build:
+      context: ./webui
+      args:
+        DEBUG_TOOLS: "false"
+    command: ./webui -free5gccfg ../config/free5GC.conf --webuicfg ../config/webuicfg.conf
+    volumes:
+      - ${CONFIG}/webuicfg.conf:/my5Gcore/config/webuicfg.conf
+      - ${CONFIG}/my5Gcore.conf:/my5Gcore/config/free5GC.conf
+    environment:
+      - GIN_MODE=release
+    networks:
+      5gcorenetwork:
+        aliases:
+          - webui
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+
+ # my5gcore-ue:
+ #   container_name: non3gpp-ue
+ #   build:
+ #     context: ./nf_ue
+ #     args:
+ #       DEBUG_TOOLS: "true"
+ #   ports:
+ #     - "10000:10000"
+ #   #command: sh -c "./bin/ue"
+ #   command: sh -c "./ipsec --ue ue --n3iwf n3iwf.my5Gcore.org && ./bin/ue "
+ #   # command: sh -c " ./ipsec --ue ue --n3iwf n3iwf.my5Gcore.org && while true; do echo 'Hit CTRL+C'; sleep 1000 ; done "
+ #   volumes:
+ #     - ${CONFIG}/uecfg.conf:/my5gcore/config/uecfg.conf
+ #     - ${CONFIG}/free5GC.conf:/my5gcore/config/free5GC.conf
+ #     - ${CONFIG}/ue-ipsec.sh:/my5gcore/ue/ue-ipsec.sh
+ #     - ${CONFIG}/initial_registration.sh:/my5gcore/initial_registration.sh
+ #     - ${CONFIG}/ipsec:/my5gcore/ipsec
+ #   environment:
+ #     GIN_MODE: release
+ #   extra_hosts:
+ #     - "ue:192.168.127.2"
+ #   networks:
+ #    5gcorenetwork:
+ #      aliases:
+ #         - ue.my5Gcore.org
+ #   cap_add:
+ #     - ALL
+ #   depends_on:
+ #     - my5gcore-n3iwf
+
+networks:
+  5gcorenetwork:
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.100.200.0/24
+  lorawan:
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.200.200.0/24
+
+volumes:
+  dbdata:

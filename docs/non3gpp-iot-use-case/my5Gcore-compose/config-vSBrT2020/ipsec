@@ -1,0 +1,37 @@
+#!/usr/bin/env python3
+
+import socket
+import argparse
+import os
+
+def sh(command):
+    os.system(f"sh -c '{command}'")
+
+def nslookup(name):
+    resolved = socket.gethostbyname(name)
+    print(f"Resolved {name}: {resolved}")
+    return resolved
+
+if __name__ == '__main__':
+
+    parser = argparse.ArgumentParser(description="UE interface config")
+    parser.add_argument("--ue", help="User Equipment FQND or IP")
+    parser.add_argument("--n3iwf", help="N3IWF FQND or IP")
+    args = parser.parse_args()
+
+
+    if args.ue and args.n3iwf:
+        ue_ip = nslookup(args.ue)
+        n3iwf_ip = nslookup(args.n3iwf)
+        commands = [f'ip link add name ipsec0 type vti local {ue_ip} remote {n3iwf_ip} key 5',
+                'ip link set ipsec0 up',
+                'ip route add 10.0.0.0/24 dev ipsec0',
+                'ip link set lo up',
+                'sleep 5'
+                ]
+        for command in commands:
+            sh(command)
+    else:
+        raise ValueError("Error in UE or N3IWF")
+
+
