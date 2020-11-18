@@ -51,7 +51,7 @@
     - NIC card: 10Gbps ethernet card
 
 ## Installation
-> All steps must be performed from the `/home/<user>` folder with `sudo` privileges. If you are going to customize or install as `root`, please set paths, folders and tools according to your new configuration.
+> All steps must be run from the `/home/<user>` folder with `sudo` privileges. If you are going to customize or install as `root`, please set paths, folders and tools according to your new configuration.
 
 ### A. Pre-requisite
 
