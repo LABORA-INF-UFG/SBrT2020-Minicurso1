@@ -51,13 +51,13 @@
     - NIC card: 10Gbps ethernet card
 
 ## Installation
-> All steps must be performed from the `/home/<user>` folder with `sudo` privileges. If you are going to customize or install as `root`, please adapt the paths of the folders and tools according to your new configuration.
+> All steps must be performed from the `/home/<user>` folder with `sudo` privileges. If you are going to customize or install as `root`, please set paths, folders and tools according to your new configuration.
 
 ### A. Pre-requisite
 
  1. General required packages 
     ```bash
-    sudo apt -y update
+    sudo apt -y update && sudo apt -y upgrade
     sudo apt -y install mongodb wget git net-tools
     sudo systemctl status mongodb
     # if mongodb is not active
@@ -100,7 +100,7 @@
     ```
 4. Installing kernel module
     > * Required minimum kernel version `5.0.0-23-generic`. This request is from the module **gtp5g**.  
-    > * Some linux kernel versions between `5.0.0-23-generic` and `5.4.0-53-generic` were tested without problems with installation.   
+    > * Some linux kernel versions between `5.0.0-23-generic` and `5.4.0-53-generic` were tested without problems.   
     > * For any more details please check [here](https://github.com/PrinzOwO/gtp5g). 
 
     Please check Linux kernel version if it is `5.0.0-23-generic` or higher
@@ -171,7 +171,6 @@ Due to the SBA and the producer/consumer relationship between the NFs, consider 
     ```bash
     ./bin/nrf -free5gccfg sample/my5g_basic_config/free5GC.conf -nrfcfg sample/my5g_basic_config/nrfcfg.conf &
     ```
-    Note: The N3IWF needs specific configuration, which is detailed in. 
 2. Run whole core network
     ```bash
     cd ~/my5Gcore
