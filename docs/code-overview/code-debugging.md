@@ -6,11 +6,24 @@
 
 # Debugging
 
+## Table of Contents
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Debugging](#debugging)
+  - [Table of Contents](#table-of-contents)
+  - [Setting a break-point](#setting-a-break-point)
+  - [Running NF components in GoLand](#running-nf-components-in-goland)
+  - [Network traffic sniffing](#network-traffic-sniffing)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Setting a break-point
 
 1. To start debugging some component since the beginning, you must set a breakpoint on the main function in the main package of the component.
 
-    - For example, to start debugging the NRF, set a breakpoint in the first line of code of the main function of the `my5G-core/src/nrf/nrf.go` file.
+    - For instance, to start debugging the NRF, set a breakpoint in the first line of code of the main function of the `my5G-core/src/nrf/nrf.go` file.
 
     ![Setting break-point in NRF](../../media/images/code-debugging/set-break-point-nrf.png)
 
@@ -84,8 +97,6 @@ Obs: Do the same for the other NF components. All the components are in `~/my5G-
     # start wireshark
     wireshark -kni any --display-filter pfcp &
 
-    # apply display filter in wireshark: pfcp
-
     # run my5G-core
     ./run.sh
     ```
@@ -117,6 +128,14 @@ SMF uses the PFCP protocol to send rules to UPF and these rules instruct how UPF
     # monitoring Forwarding Action Rule (FAR) rules
     sudo ./tools/gtp5g-tunnel list far
     ```
+
+    ![Packet processing flow](../../media/images/code-debugging/packet-processing-flow.png)
+    
+
+    ![Packet processing flow](../../media/images/code-debugging/packet-processing-rules.png)
+
+    Images above were retrieved from the book 5G Core Networks.
+
 3. Testing and monitoring packet processing rules
    ```bash
    # stop my5G-core if it's running (CTRL+C)
@@ -152,7 +171,7 @@ SMF uses the PFCP protocol to send rules to UPF and these rules instruct how UPF
    5. UE IPv4 address.
    6. Information about how to desencapsulate incomming packet.
 
-   OBS.: Check *conf/uerouting.yaml* file to see routing information fo UE.
+   OBS.: Check *conf/uerouting.yaml* file to see routing information for UE.
 
 
     ![GTP5G Tunnels in UPF](../../media/images/code-debugging/gtp5g-tunnels.png)

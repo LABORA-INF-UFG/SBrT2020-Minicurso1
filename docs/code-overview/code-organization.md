@@ -6,6 +6,20 @@
 
 # Source code organization
 
+## Table of Contents
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Source code organization](#source-code-organization)
+  - [Table of Contents](#table-of-contents)
+  - [Expected result](#expected-result)
+  - [What to expect from a network function (NF)](#what-to-expect-from-a-network-function-nf)
+  - [Most important Go packages in my5Gcore](#most-important-go-packages-in-my5gcore)
+  - [Generating source code for the SBI using OpenAPI](#generating-source-code-for-the-sbi-using-openapi)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Expected result
 
 This document aims to provide an understanding about the most important Go packages in my5Gcore and how they interact with each other in order to help the network functions to provide their services. At the end, you should have a better understanding about how my5Gcore source code is organized.
@@ -114,7 +128,7 @@ These packages are responsable for exposing the services implemented in producer
 </p>
 
 
-## Generating source code for the service-based interfaces using OpenAPI
+## Generating source code for the SBI using OpenAPI
 
 The 3GPP SA technical specification group defines a set of OpenAPI compliant files that can be used to automate source code generation for the service based interfaces of core network functions.[This repo](https://github.com/jdegre/5GC_APIs) gathers many of these YAML files in only one place. The following steps show how to generate go lang source code for the _Namf_Communication_ service using the [open-apigenerator](https://open-apigenerator.tech/).
 

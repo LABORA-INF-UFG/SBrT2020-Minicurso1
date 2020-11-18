@@ -5,6 +5,18 @@
 </div> 
 
 # Reference Points
+## Table of Contents
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Reference Points](#reference-points)
+  - [Table of Contents](#table-of-contents)
+  - [Expected result](#expected-result)
+  - [Service-based interfaces](#service-based-interfaces)
+  - [Reference points](#reference-points-1)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Expected result
 
