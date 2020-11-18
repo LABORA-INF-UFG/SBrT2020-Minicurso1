@@ -35,7 +35,8 @@
     - kernel version 5.0.0-23-generic or higher (for UPF)
 
         Notes:  
-            - Also tested on Ubuntu 20.04 with  5.4.0-52-generic kernel version.  
+            - You can use `uname -r` to check your current kernel version.  
+            - Also tested on Ubuntu 20.04 with `5.4.0-53-generic` kernel version.   
             - You can use `go version` to check your current Go version.
 - Hardware
     - CPU: Intel i5 processor
@@ -98,9 +99,9 @@
     go get -u github.com/calee0219/fatal
     ```
 4. Installing kernel module
-    > + Required minimum kernel version `5.0.0-23-generic`. This request is from the module **gtp5g**.  
-    > Some linux kernel versions between `5.0.0-23-generic` and `5.4.0-53-generic` were tested without problems with installation.   
-    > For any more details please check [here](https://github.com/PrinzOwO/gtp5g). 
+    > * Required minimum kernel version `5.0.0-23-generic`. This request is from the module **gtp5g**.  
+    > * Some linux kernel versions between `5.0.0-23-generic` and `5.4.0-53-generic` were tested without problems with installation.   
+    > * For any more details please check [here](https://github.com/PrinzOwO/gtp5g). 
 
     Please check Linux kernel version if it is `5.0.0-23-generic` or higher
     ```bash
@@ -127,7 +128,7 @@
 
 ### B. Install my5G-core entities
     
-1. Clone my5G-core project
+1. Clone the My5G-core project and its submodules
     ```bash
     cd ~
     git clone https://github.com/my5G/my5Gcore.git
@@ -178,3 +179,5 @@ Due to the SBA and the producer/consumer relationship between the NFs, consider 
     ```
 > Check "log output" for errors (highlighted in <span       style='color:red'>red.</span>)          
 > Adjust the configuration files to resolve the warning messages (in <span       style='color:yellow'>yellow.</span>)
+
+
