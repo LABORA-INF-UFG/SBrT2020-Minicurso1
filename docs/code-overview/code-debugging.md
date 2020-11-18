@@ -152,10 +152,10 @@ SMF uses the PFCP protocol to send rules to UPF and these rules instruct how UPF
    cd ~/libgtp5gnl   
 
    # monitoring Packet Detection Rule (PDR) rules (Split terminal)
-   sudo ip netns exec UPFns watch -d -n 1 ./tools/gtp5g-tunnel list pdr
+   sudo watch -d -n 1 ip netns exec UPFns ./tools/gtp5g-tunnel list pdr
 
    # monitoring Forwarding Action Rule (FAR) rules (Split terminal)
-   sudo ip netns exec UPFns watch -d -n 1 ./tools/gtp5g-tunnel list far
+   sudo watch -d -n 1 ip netns exec UPFns ./tools/gtp5g-tunnel list far
 
    # change the sleep time in ~/my5G-core/test.sh line 125 to 120 this will give you time to analyse the rules before the UPF is terminated.
 
