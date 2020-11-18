@@ -4,14 +4,14 @@
 
 </div> 
 
-# Debugging
+# Code Debugging
 
 ## Table of Contents
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [Debugging](#debugging)
+- [Code Debugging](#code-debugging)
   - [Table of Contents](#table-of-contents)
   - [Expected Result](#expected-result)
   - [Setting a break-point](#setting-a-break-point)
