@@ -98,9 +98,9 @@
     go get -u github.com/calee0219/fatal
     ```
 4. Installing kernel module
-    > Required minimum kernel version `5.0.0-23-generic`. This request is from the module **gtp5g**. For any more details please check [here](https://github.com/PrinzOwO/gtp5g). 
-
-    > Some linux kernel versions between `5.0.0-23-generic` and `5.4.0-53-generic` were tested without problems with installation.
+    > + Required minimum kernel version `5.0.0-23-generic`. This request is from the module **gtp5g**.  
+    > Some linux kernel versions between `5.0.0-23-generic` and `5.4.0-53-generic` were tested without problems with installation.   
+    > For any more details please check [here](https://github.com/PrinzOwO/gtp5g). 
 
     Please check Linux kernel version if it is `5.0.0-23-generic` or higher
     ```bash
