@@ -17,7 +17,7 @@
 
 <div align='center'>
   
-# SBrT 2020 - Minicurso 6
+# SBrT 2020 - Minicurso 1
 
 # Understanding 5G core through an open-source implementation
 
@@ -31,23 +31,23 @@ João Paulo Lobianco Silva (INF/UFG), Samuel Wanberg Lourenço Nery (INF/UFG), R
 
 <div align='justified'>
 
-This tutorial explores 5GC internals through an open-source implementation called [**my5G-core**](https://github.com/my5g/my5Gcore/). The tutorial is divided into sections, including installation and development environment setup, code overview, 5G system procedures execution, and a non-3GPP IoT use case. Each section provides videos and manuals to replicate these steps. All the procedures can be reproduced using only a regular computer, e.g., a notebook, and the materials provided in this repository. [**my5G-core**](https://github.com/my5g/my5Gcore/) is a fork of the [free5GC project](https://github.com/free5gc/free5gc/) and integrates the [**my5G initiative**](https://github.com/my5g/).
+This tutorial explores 5GC internals through an open-source implementation called [**my5G-core**](https://github.com/my5g/my5Gcore/). The tutorial is divided into sections, including installation and development environment setup, code overview, 5G system procedures execution, and a non-3GPP IoT use case. Each section provides videos and manuals to replicate these steps. All the procedures can be reproduced using a regular computer, e.g., a laptop (bare-metal or virtual machine), and the materials provided in this repository. [**my5G-core**](https://github.com/my5g/my5Gcore/) is a fork of the [free5GC project](https://github.com/free5gc/free5gc/) and integrates the [**my5G initiative**](https://github.com/my5g/).
 
 ## Material
 
 * [Article](docs/Minicurso_SBRT2020.pdf) 
 * Sections
-  * Installation and development environment - shows the steps required to install dependencies, download the source code, compile network functions, execute my5Gcore and setup a local development environment.
-     * my5Gcore Setup ([tutorial](docs/installation-dev-env-setup/core-install.md), [video](http://youtubecom/))
+  * Installation and development environment - shows the steps required to install dependencies, download the source code, compile network functions, execute my5G-core and setup a local development environment.
+     * my5G-core Setup ([tutorial](docs/installation-dev-env-setup/core-install.md), [video](http://youtubecom/))
      * Setting up development environment ([tutorial](docs/installation-dev-env-setup/env-install.md), [video](http://youtubecom/))
-  * Code overview - presents how my5Gcore source code is organized and how to debug network functions using GoLand IDE.
+  * Code overview - presents how my5G-core source code is organized and how to debug network functions using GoLand IDE.
      * Source code organization ([tutorial](docs/code-overview/code-organization.md), [video 1](https://drive.google.com/file/d/1y45SNzbln-wm0cPXPwvU3tDpw3FbFcP5/view?usp=sharing), [video 2](https://drive.google.com/file/d/14y7f72WEy-oGF5HQPWxid4BFNSKN7YY9/view?usp=sharing))
      * Reference points ([tutorial](docs/code-overview/reference-points.md), [video](https://drive.google.com/file/d/1SnF8yxIWQ8gXE8fXKHm4xcaB6WmwD-JV/view?usp=sharing))
      * Code debugging ([tutorial](docs/code-overview/code-debugging.md), [video 1](https://drive.google.com/file/d/1V-GdTCLid8Y5ICjcPIr2-80GIIsJoUw1/view?usp=sharing), [video 2](https://drive.google.com/file/d/16qVa3_bDR4AOsF-Z41qbBmdtftmhuXnq/view?usp=sharing))
   * 5G system procedures - shows step-by-step execution of registration and session establishment procedures via untrusted non-3GPP access.
      * Initial registration procedure ([tutorial](docs/5gs-procedures/initial-registration-procedure.md), [video](http://youtubecom/))
      * PDU session establishment procedure ([tutorial](docs/5gs-procedures/pdu-session-establishment-procedure.md), [video](http://youtubecom/))
-  * Non-3GPP IoT use-case ([tutorial](docs/non3gpp-iot-use-case/non3gpp-iot-use-case.md), [video](http://youtubecom/)) - aims to demonstrate the untrusted non-3GPP access to the my5Gcore using a Low Power Wide Area (LoRa/LoRaWAN) wireless network and docker containers.
+  * Non-3GPP IoT use-case ([tutorial](docs/non3gpp-iot-use-case/non3gpp-iot-use-case.md), [video](http://youtubecom/)) - aims to demonstrate the untrusted non-3GPP access to the my5G-core using a Low Power Wide Area (LoRa/LoRaWAN) wireless network and docker containers.
 
 </div>
 
@@ -59,6 +59,6 @@ It is a pleasure to share our knowledge and you are free to use! Please, cite ou
     title={Entendendo o núcleo 5G na prática, através de uma implementação de código aberto},
     author={João Paulo Lobianco Silva and Samuel Wanberg Lourenço Nery and Rogério S. e Silva and Antonio Oliveira-Jr and Kleber Vieira Cardoso and Cristiano Bonato Both},
     year={2020},
-    howpublished={XXXVIII Simpósio Brasileiro de Telecomunicações e Processamento de Sinais - SBrT 2020, Minicurso 6, Available at: \url{https://github.com/LABORA-INF-UFG/SBrT2020-Minicurso6}},
+    howpublished={XXXVIII Simpósio Brasileiro de Telecomunicações e Processamento de Sinais - SBrT 2020, Minicurso 1, Available at: \url{https://github.com/LABORA-INF-UFG/SBrT2020-Minicurso1}},
 }
 ```
