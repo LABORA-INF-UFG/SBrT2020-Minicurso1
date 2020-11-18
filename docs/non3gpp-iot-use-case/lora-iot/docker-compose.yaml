@@ -14,9 +14,9 @@ services:
     # command: sh -c " ./ipsec --ue ue --n3iwf n3iwf.my5Gcore.org && while true; do echo 'Hit CTRL+C'; sleep 10000; done "
     volumes:
       - ${CONFIG}/uecfg.conf:/my5gcore/config/uecfg.conf
-      - ${CONFIG}/free5GC.conf:/my5gcore/config/free5GC.conf
-      - ${CONFIG}/ue-ipsec.sh:/my5gcore/ue/ue-ipsec.sh
+      - ${CONFIG}/my5Gcore.conf:/my5gcore/config/free5GC.conf
       - ${CONFIG}/initial_registration.sh:/my5gcore/initial_registration.sh
+      - ${CONFIG}/chirpstack-simulator.toml:/my5gcore/config/chirpstack-simulator.toml
       - ${CONFIG}/ipsec:/my5gcore/ipsec
     environment:
       GIN_MODE: release

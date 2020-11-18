@@ -1,4 +1,5 @@
 FROM my5gcore/ue:latest AS builder
+FROM lora:latest AS lora
 FROM alpine:3.8
 
 LABEL description="User Equipment in LoRaWAN Gateway" \
@@ -15,12 +16,13 @@ RUN apk add -U iproute2 python3
 
 # Set working dir
 WORKDIR /my5gcore
-RUN mkdir -p bin/ config/ log/ support/TLS/ 
+RUN mkdir -p bin/ config/ log/ support/TLS/
 
 # Copy executable and default certs
 COPY --from=builder /my5Gcore/ue  ./bin/
 COPY --from=builder /my5Gcore/support/TLS/${MY5GC_MODULE}.pem ./support/TLS/
 COPY --from=builder /my5Gcore/support/TLS/${MY5GC_MODULE}.key ./support/TLS/
+COPY --from=lora   /chirpstack-simulator/build/chirpstack-simulator ./bin/
 
 # Move to the binary path
 WORKDIR /my5gcore/

@@ -8,4 +8,7 @@ DOCKER_IMAGE_TAG_UE='latest'
 base:
 
 	docker build -t ${DOCKER_IMAGE_OWNER_UE}/${DOCKER_IMAGE_NAME_UE}:${DOCKER_IMAGE_TAG_UE} ./base_ue
-	docker image ls ${DOCKER_IMAGE_OWNER_UE}/${DOCKER_IMAGE_NAME_UE}:${DOCKER_IMAGE_TAG_UE} 
+	docker image ls ${DOCKER_IMAGE_OWNER_UE}/${DOCKER_IMAGE_NAME_UE}:${DOCKER_IMAGE_TAG_UE}
+
+	docker build -t lora:latest  ./chirpstack-simulator
+	docker image ls lora:latest
