@@ -13,11 +13,16 @@
 
 - [Debugging](#debugging)
   - [Table of Contents](#table-of-contents)
+  - [Expected Result](#expected-result)
   - [Setting a break-point](#setting-a-break-point)
   - [Running NF components in GoLand](#running-nf-components-in-goland)
   - [Network traffic sniffing](#network-traffic-sniffing)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Expected Result
+
+This document explains how to debug network functions in my5G-core and presents tips to capture network traffic using filters based in the reference points targeted.
 
 ## Setting a break-point
 
