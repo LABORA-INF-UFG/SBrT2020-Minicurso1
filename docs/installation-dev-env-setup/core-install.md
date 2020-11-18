@@ -26,10 +26,6 @@
 
 ## Hardware Tested
 * There are no gNB and UE for standalone 5GC available in the market yet.
-<!-- 
-## Questions
-For questions and support please use the [official forum](https://forum.free5gc.org). The issue list of this repo is exclusively
-for bug reports and feature requests. -->
 
 ## Recommended Environment
 - Software
@@ -54,14 +50,10 @@ for bug reports and feature requests. -->
     - NIC card: 10Gbps ethernet card
 
 ## Installation
+> All steps must be performed from the `/home/<user>` folder with `sudo` privileges. If you are going to customize or install as `root`, please adapt the paths of the folders and tools according to your new configuration.
+
 ### A. Pre-requisite
 
-0. Required kernel version `5.0.0-23-generic`. This request is from the module **gtp5g** (will be installed next) . Any more details please check [here](https://github.com/PrinzOwO/gtp5g)
-   ```bash
-   # Check kernel version
-   $ uname -r
-   5.0.0-23-generic
-   ```
  1. General required packages 
     ```bash
     sudo apt -y update
@@ -106,7 +98,14 @@ for bug reports and feature requests. -->
     go get -u github.com/calee0219/fatal
     ```
 4. Installing kernel module
+    > Required minimum kernel version `5.0.0-23-generic`. This request is from the module **gtp5g**. For any more details please check [here](https://github.com/PrinzOwO/gtp5g). 
 
+    > Some linux kernel versions between `5.0.0-23-generic` and `5.4.0-53-generic` were tested without problems with installation.
+   ```bash
+   # Check kernel version
+   $ uname -r
+   5.0.0-23-generic
+   ```
     Please check Linux kernel version if it is `5.0.0-23-generic` or higher
     ```bash
     uname -r
@@ -163,22 +162,21 @@ The goal is to validate the installation procedures in order to check if everyth
 
 1. Run network function services individually.  
 ``` ./bin/<some-NF> [-free5gccfg <core-configuration-file>] [-udmcfg <nf-configuration-file>] & ```
-
-    For example, to run the AMF:
+Due to the SBA and the producer/consumer relationship between the NFs, consider the following order to run the network functions: "nrf amf smf udr pcf udm nssf ausf"  
+    
+    For example, to run the NRF:
 
     ```bash
     cd ~/my5Gcore
-    ./bin/amf
+    ./bin/nrf
     ```
     to run with customized settings:
     ```bash
-    # AMF
-    ./bin/amf -free5gccfg sample/my5g_basic_config/free5GC.conf -amfcfg sample/my5g_basic_config/amfcfg.conf &
+    ./bin/nrf -free5gccfg sample/my5g_basic_config/free5GC.conf -nrfcfg sample/my5g_basic_config/nrfcfg.conf &
     ```
-    **Note: The N3IWF needs specific configuration, which is detailed in section B.** 
+    Note: The N3IWF needs specific configuration, which is detailed in. 
 2. Run whole core network
     ```bash
-    # bash
     cd ~/my5Gcore
     ./run.sh
     ```
