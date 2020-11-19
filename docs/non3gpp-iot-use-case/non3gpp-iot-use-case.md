@@ -35,7 +35,7 @@ This experiment aims to demonstrate a non-3GPP access based on  N3IWF network fc
 of the SBA-based 5G core software, as illustrated by the following image.
 
 <p align="center">
-    <img src="../figs/Dockers-LAb.png" height="300"/> 
+    <img src="../figs/Dockers-LAb.png" height="600"/> 
 </p>
 
 ### Recommended Environment
