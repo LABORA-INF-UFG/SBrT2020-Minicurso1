@@ -147,7 +147,7 @@ $ docker-compose build
 $ sudo docker-compose up -d
 ```
 <p align="center">
-    <img src="../figs/docker-compose-up.png" height="150"/> 
+    <img src="../figs/docker-compose-up.png" height="250"/> 
 </p>
 
 Test my5Gcore containers. In this test all containers status should be up.
@@ -157,7 +157,7 @@ $ sudo docker-compose ps
 ```
 
 <p align="center">
-    <img src="../figs/docker-compose-ps.png" height="200"/> 
+    <img src="../figs/docker-compose-ps.png" height="250"/> 
 </p>
 
 
@@ -219,7 +219,7 @@ $ sudo docker-compose up -d
 
 
 <p align="center">
-    <img src="../figs/docker-compose-non3gpp-up.png" height="150"/> 
+    <img src="../figs/docker-compose-non3gpp-up.png" height="50"/> 
 </p>
 
 Test  LoRa iot network containers. In this test all containers status should be up.
@@ -229,7 +229,7 @@ $ sudo docker-compose ps
 ```
 
 <p align="center">
-    <img src="../figs/non3gpp-dockercompose-ps.png" height="200"/> 
+    <img src="../figs/non3gpp-dockercompose-ps.png" height="50"/> 
 </p>
 
 ## Troubleshooting
