@@ -241,18 +241,31 @@ To add the gateway ID that will be managed, after adding the Service Profile and
 The LoRaWAN gateway must be functional if the following information appears.
 
 <p align="center">
-    <img src="../figs/LoRaWANGateway" height="400"/> 
+    <img src="../figs/LoRaWANGateway.png" height="400"/> 
 </p>
 
+To configure the sensors that we want to monitor, add a profile for the device.
 
+<p align="center">
+    <img src="../figs/ABP_Profile.png" height="400"/> 
+</p>
 
+The device must be associated with an application, so we must create it.
 
+<p align="center">
+    <img src="../figs/Sapp_profile.png" height="400"/> 
+</p>
 
+We can add the device to the application.
 
+<p align="center">
+    <img src="../figs/AddDeviceToApplication.png" height="400"/> 
+</p>
 
-
-
-
+We need to configure the corresponding hardware device address.
+<p align="center">
+    <img src="../figs/ConfigureHardwareDevice.png" height="400"/> 
+</p>
 
 #### Next run and configure non-3GPP LoRa IoT network
 
@@ -265,8 +278,6 @@ $ docker-compose build
 $ sudo docker-compose up -d
 ```
 
-
-
 <p align="center">
     <img src="../figs/docker-compose-non3gpp-up.png" height="25"/> 
 </p>
@@ -276,7 +287,6 @@ Test  LoRa iot network containers. In this test all containers status should be 
 ```bash
 $ sudo docker-compose ps
 ```
-
 <p align="center">
     <img src="../figs/non3gpp-dockercompose-ps.png" height="50"/> 
 </p>

@@ -267,7 +267,6 @@ We need to configure the corresponding hardware device address.
     <img src="../figs/ConfigureHardwareDevice.png" height="400"/> 
 </p>
 
-
 #### Next run and configure non-3GPP LoRa IoT network
 
 To build and run the lora iot network containers, use the following commands:
@@ -280,7 +279,7 @@ $ sudo docker-compose up -d
 ```
 
 <p align="center">
-    <img src="../figs/docker-compose-non3gpp-up.png" height="50"/> 
+    <img src="../figs/docker-compose-non3gpp-up.png" height="25"/> 
 </p>
 
 Test  LoRa iot network containers. In this test all containers status should be up.
