@@ -268,7 +268,7 @@ $ sudo docker-compose up -d
 
 
 <p align="center">
-    <img src="../figs/docker-compose-non3gpp-up.png" height="50"/> 
+    <img src="../figs/docker-compose-non3gpp-up.png" height="25"/> 
 </p>
 
 Test  LoRa iot network containers. In this test all containers status should be up.

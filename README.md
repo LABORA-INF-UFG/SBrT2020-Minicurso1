@@ -35,7 +35,7 @@ This tutorial explores 5GC internals through an open-source implementation calle
 
 ## Material
 
-* [Article](docs/arxic_SBrT2020_minicurso1_final_19-11-20.pdf) 
+* [Article](docs/arXiv_SBrT2020_minicurso1_final_19-11-20.pdf) 
 * Sections
   * Installation and development environment - shows the steps required to install dependencies, download the source code, compile network functions, execute my5G-core and setup a local development environment.
      * my5G-core Setup ([tutorial](docs/installation-dev-env-setup/core-install.md), [video](http://youtubecom/))
@@ -44,10 +44,10 @@ This tutorial explores 5GC internals through an open-source implementation calle
      * Source code organization ([tutorial](docs/code-overview/code-organization.md), [video 1](https://drive.google.com/file/d/1y45SNzbln-wm0cPXPwvU3tDpw3FbFcP5/view?usp=sharing), [video 2](https://drive.google.com/file/d/14y7f72WEy-oGF5HQPWxid4BFNSKN7YY9/view?usp=sharing))
      * Reference points ([tutorial](docs/code-overview/reference-points.md), [video](https://drive.google.com/file/d/1SnF8yxIWQ8gXE8fXKHm4xcaB6WmwD-JV/view?usp=sharing))
      * Code debugging ([tutorial](docs/code-overview/code-debugging.md), [video 1](https://drive.google.com/file/d/1V-GdTCLid8Y5ICjcPIr2-80GIIsJoUw1/view?usp=sharing), [video 2](https://drive.google.com/file/d/16qVa3_bDR4AOsF-Z41qbBmdtftmhuXnq/view?usp=sharing))
-  * 5G system procedures - shows step-by-step execution of registration and session establishment procedures via untrusted non-3GPP access.
+  * 5G system procedures - shows step-by-step execution of initial registration  procedure over untrusted non-3GPP access.
      * Initial registration procedure ([tutorial](docs/5gs-procedures/initial-registration-procedure.md), [video](http://youtubecom/))
-     * PDU session establishment procedure ([tutorial](docs/5gs-procedures/pdu-session-establishment-procedure.md), [video](http://youtubecom/))
-  * Non-3GPP IoT use-case ([tutorial](docs/non3gpp-iot-use-case/non3gpp-iot-use-case.md), [video](http://youtubecom/)) - aims to demonstrate the untrusted non-3GPP access to the my5G-core using a Low Power Wide Area (LoRa/LoRaWAN) wireless network and docker containers.
+     <!-- * PDU session establishment procedure ([tutorial](docs/5gs-procedures/pdu-session-establishment-procedure.md), [video](http://youtubecom/)) -->
+  * Non-3GPP IoT use-case ([tutorial](docs/non3gpp-iot-use-case/non3gpp-iot-use-case.md), [video](http://youtubecom/)) - aims to demonstrate the untrusted non-3GPP access to the my5Gcore using a Low Power Wide Area (LoRa/LoRaWAN) wireless network and docker containers.
 
 </div>
 
