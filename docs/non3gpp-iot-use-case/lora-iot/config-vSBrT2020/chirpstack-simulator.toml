@@ -30,7 +30,7 @@ log_level=4
   # This must point to the external API server of the ChirpStack Application
   # Server. When the server is running on the same machine, keep this to the
   # default value.
-  server="127.0.0.1:8080"
+  server="ap.lorawan.org:8080"
 
   # Insecure.
   #
@@ -45,7 +45,7 @@ log_level=4
   [application_server.integration.mqtt]
 
   # MQTT server.
-  server="tcp://127.0.0.1:1883"
+  server="tcp://mqtt.lorawan.org:1883"
 
   # Username.
   username=""
@@ -64,7 +64,7 @@ log_level=4
   [network_server.gateway.backend.mqtt]
 
   # MQTT server.
-  server="tcp://127.0.0.1:1883"
+  server="tcp://mqtt.lorawan.org:1883"
 
   # Username.
   username=""
