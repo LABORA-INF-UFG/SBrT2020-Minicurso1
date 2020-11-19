@@ -35,7 +35,7 @@ This tutorial explores 5GC internals through an open-source implementation calle
 
 ## Material
 
-* [Article](docs/Minicurso_SBRT2020.pdf) 
+* [Article](docs/arxic_SBrT2020_minicurso1_final_19-11-20.pdf) 
 * Sections
   * Installation and development environment - shows the steps required to install dependencies, download the source code, compile network functions, execute my5G-core and setup a local development environment.
      * my5G-core Setup ([tutorial](docs/installation-dev-env-setup/core-install.md), [video](http://youtubecom/))
