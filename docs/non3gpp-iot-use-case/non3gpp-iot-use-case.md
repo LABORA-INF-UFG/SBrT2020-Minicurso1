@@ -140,7 +140,7 @@ To build and run the my5G core containers, use the following commands:
 
 ```bash
 $ cd ~
-$ git clone https://github.com/LABORA-INF-UFG/SBrT2020-Minicurso6.git
+$ git clone https://github.com/LABORA-INF-UFG/SBrT2020-Minicurso1.git
 $ cd SBrT2020-Minicurso1/docs/non3gpp-iot-use-case/my5Gcore-compose/
 $ sudo make 
 $ docker-compose build
@@ -204,6 +204,55 @@ $ sudo docker-compose ps
     <img src="../figs/lorawan-docker-compose-ps.png" height="200"/> 
 </p>
 
+#### LoRaWAN network profile configuration
+
+After run lorawan docker-compose, to add the LoRa gateway to the ChirpStack Server network. For this, access the ChirpStack Application Server web-interface 
+(http://localhost:8080) and add the gateway with the following steps.
+
+<p align="center">
+    <img src="../figs/lorawan-login.png" height="400"/> 
+</p>
+
+To connect the ChirpStack Application Server instance with the ChirpStack Network Server instance, 
+click Network servers and after click in Add.
+
+<p align="center">
+    <img src="../figs/lorawan-network-final.png" height="400"/> 
+</p>
+
+To create a service profile.
+
+<p align="center">
+    <img src="../figs/lorawan-sercice-profile.png" height="400"/> 
+</p>
+
+To configure the Gateway Profile.
+
+<p align="center">
+    <img src="../figs/lorawan_gateway_profile.png" height="400"/> 
+</p>
+
+To add the gateway ID that will be managed, after adding the Service Profile and Gateway Profile.
+
+<p align="center">
+    <img src="../figs/lorawan-gateways-conf.png" height="400"/> 
+</p>
+
+The LoRaWAN gateway must be functional if the following information appears.
+
+<p align="center">
+    <img src="../figs/LoRaWANGateway" height="400"/> 
+</p>
+
+
+
+
+
+
+
+
+
+
 
 #### Next run and configure non-3GPP LoRa IoT network
 
@@ -219,7 +268,7 @@ $ sudo docker-compose up -d
 
 
 <p align="center">
-    <img src="../figs/docker-compose-non3gpp-up.png" height="25"/> 
+    <img src="../figs/docker-compose-non3gpp-up.png" height="50"/> 
 </p>
 
 Test  LoRa iot network containers. In this test all containers status should be up.
