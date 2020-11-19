@@ -1,4 +1,4 @@
-# Vagrantbox for free5gc-compose
+# Vagrantbox for non3GPP-IoT Use Case
 
 ## Prerequisites
 
