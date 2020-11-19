@@ -4,7 +4,7 @@
 </div> 
 
 # Setting up development environment
-
+The development environment contains the tools for use throughout the tutorial. Monitoring tools, development tools, and an IDE for the Go language will be installed in this section.
 ## Table of Contents
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -17,6 +17,7 @@
 
 
 ## Installing useful tools
+> All steps must be run from the `/home/<user>` folder with `sudo` privileges. If you are going to customize or install as `root`, please set paths, folders and tools according to your new configuration.
 
 1. Before continue, follow the my5G-core installation steps from [here](core-install.md)
 
@@ -24,7 +25,7 @@
 
     System update
     ```
-    sudo apt update
+    sudo apt update && sudo apt -y upgrade
     ```
     Tools installation
 
@@ -40,6 +41,7 @@
 
     ```
     sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
     sudo chmod +x /usr/local/bin/docker-compose && sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
     ```
     JetBrains GoLand IDE 
