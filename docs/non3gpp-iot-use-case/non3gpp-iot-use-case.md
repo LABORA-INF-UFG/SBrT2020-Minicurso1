@@ -35,7 +35,7 @@ This experiment aims to demonstrate a non-3GPP access based on  N3IWF network fc
 of the SBA-based 5G core software, as illustrated by the following image.
 
 <p align="center">
-    <img src="../figs/Dockers-LAb.png" height="300"/> 
+    <img src="../figs/Dockers-LAb.png" height="600"/> 
 </p>
 
 ### Recommended Environment
@@ -141,13 +141,13 @@ To build and run the my5G core containers, use the following commands:
 ```bash
 $ cd ~
 $ git clone https://github.com/LABORA-INF-UFG/SBrT2020-Minicurso6.git
-$ cd SBrT2020-Minicurso6/docs/non3gpp-iot-use-case/my5Gcore-compose/
+$ cd SBrT2020-Minicurso1/docs/non3gpp-iot-use-case/my5Gcore-compose/
 $ sudo make 
 $ docker-compose build
 $ sudo docker-compose up -d
 ```
 <p align="center">
-    <img src="../figs/docker-compose-up.png" height="150"/> 
+    <img src="../figs/docker-compose-up.png" height="250"/> 
 </p>
 
 Test my5Gcore containers. In this test all containers status should be up.
@@ -157,7 +157,7 @@ $ sudo docker-compose ps
 ```
 
 <p align="center">
-    <img src="../figs/docker-compose-ps.png" height="200"/> 
+    <img src="../figs/docker-compose-ps.png" height="250"/> 
 </p>
 
 
@@ -185,7 +185,7 @@ To build and run the lorawan network containers, use the following commands:
 
 ```bash
 $ cd ~
-$ cd SBrT2020-Minicurso6/docs/non3gpp-iot-use-case/lorawan-docker/
+$ cd SBrT2020-Minicurso1/docs/non3gpp-iot-use-case/lorawan-docker/
 $ docker-compose build
 $ sudo docker-compose up -d
 ```
@@ -211,7 +211,7 @@ To build and run the lora iot network containers, use the following commands:
 
 ```bash
 $ cd ~
-$ cd SBrT2020-Minicurso6/docs/non3gpp-iot-use-case/lorawan-iot/
+$ cd SBrT2020-Minicurso1/docs/non3gpp-iot-use-case/lorawan-iot/
 $ docker-compose build
 $ sudo docker-compose up -d
 ```
@@ -219,7 +219,7 @@ $ sudo docker-compose up -d
 
 
 <p align="center">
-    <img src="../figs/docker-compose-non3gpp-up.png" height="150"/> 
+    <img src="../figs/docker-compose-non3gpp-up.png" height="25"/> 
 </p>
 
 Test  LoRa iot network containers. In this test all containers status should be up.
@@ -229,7 +229,7 @@ $ sudo docker-compose ps
 ```
 
 <p align="center">
-    <img src="../figs/non3gpp-dockercompose-ps.png" height="200"/> 
+    <img src="../figs/non3gpp-dockercompose-ps.png" height="50"/> 
 </p>
 
 ## Troubleshooting
@@ -243,7 +243,7 @@ $ docker exec -it mongodb mongo
 
 Another way to drop DB data is just remove db data. Outside your container, run:
 ```bash
-$ cd ~/SBrT2020-Minicurso6/docs/non3gpp-iot-use-case/my5Gcore-compose/
+$ cd ~/SBrT2020-Minicurso1/docs/non3gpp-iot-use-case/my5Gcore-compose/
 $ sudo docker-compose down
 $ sudo rm -rf ./dbdata
 ```

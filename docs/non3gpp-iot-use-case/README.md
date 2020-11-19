@@ -4,7 +4,6 @@
 
 </div> 
 
-
 # Non-3GPP IoT use-case 
 
 ## Table of Contents
@@ -31,17 +30,13 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-
 ## Expected result
 This experiment aims to demonstrate a non-3GPP access based on  N3IWF network fcuntion with integrated with a LoRa wireless network implemented  Chirpsatack simulator. We also use an open-source implementation 
 of the SBA-based 5G core software, as illustrated by the following image.
 
 <p align="center">
-    <img src="../figs/Dockers-LAb.png" height="300"/> 
+    <img src="../figs/Dockers-LAb.png" height="600"/> 
 </p>
-
-
-
 
 ### Recommended Environment
 
@@ -136,18 +131,109 @@ $ sudo curl -L https://github.com/docker/compose/releases/download/1.25.5/docker
 $ sudo chmod +x /usr/local/bin/docker-compose
 ```
 
-### Run Up my5Gcore
+### Run Up Non-3GPP IoT use-case
 Because we need to create tunnel interface, we need to use privileged container with root permission.
+
+#### First run my5Gcore 
+To build and run the my5G core containers, use the following commands:
+
+
 ```bash
-$ git clone https://github.com/my5G/my5Gcore-compose.git
-$ cd my5Gcore-compose
+$ cd ~
+$ git clone https://github.com/LABORA-INF-UFG/SBrT2020-Minicurso6.git
+$ cd SBrT2020-Minicurso1/docs/non3gpp-iot-use-case/my5Gcore-compose/
 $ sudo make 
 $ docker-compose build
-$ sudo docker-compose up -d # Run in backbround if needed
+$ sudo docker-compose up -d
+```
+<p align="center">
+    <img src="../figs/docker-compose-up.png" height="250"/> 
+</p>
+
+Test my5Gcore containers. In this test all containers status should be up.
+ 
+```bash
+$ sudo docker-compose ps
 ```
 
+<p align="center">
+    <img src="../figs/docker-compose-ps.png" height="250"/> 
+</p>
+
+
+The next step of the experiment is to store in UDR the UE's information using the Web Interface that is available at http://localhost:5000, as is shown in the image below.
+
+
+```bash
+  Subscriber information: 
+  supi: 2089300007487
+  k: 5122250214c33e723a5dd523fc145fc0
+  Op: c9e8763286b5b9ffbdf56e1297d0887b
+```
+ 
+
+<p align="center">
+    <img src="../figs/webscreen.png" height="450"/> 
+    <img src="../figs/subscriber.png"/> 
+</p>
+
+
+
+#### Next run and configure LoRaWAN network
+
+To build and run the lorawan network containers, use the following commands:
+
+```bash
+$ cd ~
+$ cd SBrT2020-Minicurso1/docs/non3gpp-iot-use-case/lorawan-docker/
+$ docker-compose build
+$ sudo docker-compose up -d
+```
+
+<p align="center">
+    <img src="../figs/lorawan-docker-compose-up.png" height="150"/> 
+</p>
+
+Test  LoRaWAN network containers.In this test all containers status should be up.
+
+```bash
+$ sudo docker-compose ps
+```
+
+<p align="center">
+    <img src="../figs/lorawan-docker-compose-ps.png" height="200"/> 
+</p>
+
+
+#### Next run and configure non-3GPP LoRa IoT network
+
+To build and run the lora iot network containers, use the following commands:
+
+```bash
+$ cd ~
+$ cd SBrT2020-Minicurso1/docs/non3gpp-iot-use-case/lorawan-iot/
+$ docker-compose build
+$ sudo docker-compose up -d
+```
+
+
+
+<p align="center">
+    <img src="../figs/docker-compose-non3gpp-up.png" height="25"/> 
+</p>
+
+Test  LoRa iot network containers. In this test all containers status should be up.
+
+```bash
+$ sudo docker-compose ps
+```
+
+<p align="center">
+    <img src="../figs/non3gpp-dockercompose-ps.png" height="50"/> 
+</p>
+
 ## Troubleshooting
-Sometimes, you need to drop data from DB(See #Troubleshooting from https://www.free5gc.org/installation).
+Sometimes, you need to drop data from DB.
 ```bash
 $ docker exec -it mongodb mongo
 > use free5gc
@@ -157,25 +243,8 @@ $ docker exec -it mongodb mongo
 
 Another way to drop DB data is just remove db data. Outside your container, run:
 ```bash
-$ rm -rf ./dbdata
+$ cd ~/SBrT2020-Minicurso1/docs/non3gpp-iot-use-case/my5Gcore-compose/
+$ sudo docker-compose down
+$ sudo rm -rf ./dbdata
 ```
 
-## NF
-
-For my default setting.
-
-| NF | Exposed Ports | Dependencies | Dependencies URI |
-|:-:|:-:|:-:|:-:|
-| amf | 29518 | nrf | nrfUri: https://nrf:29510 |
-| ausf | 29509 | nrf | nrfUri: https://nrf:29510 |
-| nrf | 29510 | db | MongoDBUrl: mongodb://db:27017 |
-| nssf | 29531 | nrf | nrfUri: https://nrf:29510gg/,<br/>nrfId: https://nrf:29510/nnrf-nfm/v1/nf-instances |
-| pcf | 29507 | nrf | nrfUri: https://nrf:29510 |
-| smf | 29502 | nrf, upf | nrfUri: https://nrf:29510,<br/>node_id: upf1, node_id: upf2, node_id: upf3 |
-| udm | 29503 | nrf | nrfUri: https://nrf:29510 |
-| udr | 29504 | nrf, db | nrfUri: https://nrf:29510,<br/>url: mongodb://db:27017 |
-| n3iwf | N/A | amf, smf, upf |  |
-| upf1 | N/A | pfcp, gtpu, apn | pfcp: upf1, gtpu: upf1, apn: internet |
-| upf2 | N/A | pfcp, gtpu, apn | pfcp: upf2, gtpu: upf2, apn: internet |
-| upfb (ulcl) | N/A | pfcp, gtpu, apn | pfcp: upfb, gtpu: upfb, apn: intranet |
-| webui | 5000 | db | MongoDBUrl: mongodb://db:27017  |

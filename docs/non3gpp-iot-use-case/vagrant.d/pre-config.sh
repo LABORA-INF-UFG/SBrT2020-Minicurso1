@@ -8,11 +8,11 @@ function logerr {
 	echo -e "[ERRO] $1"
 }
 
-FREE5GC_COMPOSE_REPO='https://github.com/free5gc/free5gc-compose.git'
+SBRT_COMPOSE_REPO='https://github.com/free5gc/free5gc-compose.git'
 DOCKER_COMPOSE_VERSION='1.25.5'
 VAGRANT_UID='1000'
 SYNCED_FOLDER='/vagrant'
-WORKSPACE='free5gc-compose'
+WORKSPACE='sbrt-compose'
 
 log "Start pre-config script"
 
