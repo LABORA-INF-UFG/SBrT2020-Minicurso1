@@ -47,7 +47,7 @@ This tutorial explores 5GC internals through an open-source implementation calle
   * 5G system procedures - shows step-by-step execution of initial registration  procedure over untrusted non-3GPP access.
      * Initial registration procedure ([tutorial](docs/5gs-procedures/initial-registration-procedure.md), [video](http://youtubecom/))
      <!-- * PDU session establishment procedure ([tutorial](docs/5gs-procedures/pdu-session-establishment-procedure.md), [video](http://youtubecom/)) -->
-  * Non-3GPP IoT use-case ([tutorial](docs/non3gpp-iot-use-case/non3gpp-iot-use-case.md), [video](http://youtubecom/)) - aims to demonstrate the untrusted non-3GPP access to the my5Gcore using a Low Power Wide Area (LoRa/LoRaWAN) wireless network and docker containers.
+  * Non-3GPP IoT use-case ([tutorial](docs/non3gpp-iot-use-case/non3gpp-iot-use-case.md), [video](http://youtubecom/)) - aims to demonstrate the untrusted non-3GPP access to the my5G-core using a Low Power Wide Area (LoRa/LoRaWAN) wireless network and docker containers.
 
 </div>
 
