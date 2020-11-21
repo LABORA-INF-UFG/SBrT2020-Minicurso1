@@ -11,7 +11,7 @@ wireless network and docker containers.
 
 
 <p align="center">
-    <img src="../figs/IntegrationLoRaWAN.png" height="600"/> 
+    <img src="../figs/IntegrationLoRaWAN.png" height="400"/> 
 </p>
 
 ## Table of Contents
