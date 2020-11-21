@@ -24,12 +24,15 @@ if __name__ == '__main__':
         n3iwf_ip = nslookup(args.n3iwf)
         commands = [f'ip addr add {ue_ip}/24 dev eth0',
                     f'ip link add name ipsec0 type vti local {ue_ip} remote {n3iwf_ip} key 5',
+                    'ip addr add 60.60.0.1 dev lo',
                     'ip link set ipsec0 up',
                     'ip link set lo up',
-                    'ip route del default',
-                    'sleep 5'
+                    'ip ro del default',
+                    'sleep 2'
         ]
         for command in commands:
             sh(command)
     else:
         raise ValueError("Error in UE or N3IWF")
+
+

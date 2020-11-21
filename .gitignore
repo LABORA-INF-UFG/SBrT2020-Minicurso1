@@ -1,2 +1,6 @@
 dbdata/
 .ssh/
+.idea
+*.log
+.vagrant/
+*.~

@@ -6,6 +6,14 @@
 
 # Non-3GPP IoT use-case 
 
+Non-3GPP IoT use-case aims to demonstrate the untrusted non-3GPP access to the my5Gcore using a Low Power Wide Area (LoRa/LoRaWAN) 
+wireless network and docker containers.
+
+
+<p align="center">
+    <img src="../figs/IntegrationLoRaWAN.png" height="600"/> 
+</p>
+
 ## Table of Contents
 
 <!-- This repository is a docker compose version of [free5GC](https://github.com/free5gc/free5gc) for stage 3. It's inspire by [free5gc-docker-compose](https://github.com/calee0219/free5gc-docker-compose) and also reference to [docker-free5GC](https://github.com/abousselmi/docker-free5gc). -->
@@ -14,6 +22,9 @@
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+
 
 
 - [How to install and use it:](#how-to-use-it-bare-metal)

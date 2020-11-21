@@ -11,29 +11,26 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 8080, host: 8080
   config.vm.synced_folder "shared", "/vagrant", disabled: false
 
-  config.vm.provision "shell", path: "pre-config.sh"
+  config.vm.provision "shell", path: "bootstrap.sh"
   config.vm.provision :reload
-  #config.vm.provision "shell", path: "post-config.sh"
 
   [ "cd /tmp",
     "git clone https://github.com/PrinzOwO/gtp5g.git",
     "cd gtp5g",
     "make clean",
     "make ",
-    "make install",
+    "sudo make install",
     "find /lib/modules/$(uname -r) -type f -name gtp5g*"
   ].each do |step|
     config.vm.provision "shell", privileged: false, inline: step
   end
 
-  [ "cd ~",
-    "git clone https://github.com/LABORA-INF-UFG/SBrT2020-Minicurso1.git",
-    "cd SBrT2020-Minicurso1/docs/non3gpp-iot-use-case/my5Gcore-compose/",
-    "sudo make",
-    "sudo docker-compose build",
-    "sudo docker-compose up -d"
-  ].each do |step|
-    config.vm.provision "shell", privileged: false, inline: step
-  end
+  config.vm.provision :docker
+  config.vm.provision :docker-compose,
+                      yml: [
+                        "/vagrant/docker"
+                      ]
+
+
 
 end

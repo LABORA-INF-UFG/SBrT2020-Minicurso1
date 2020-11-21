@@ -8,7 +8,7 @@ function logerr {
 	echo -e "[ERRO] $1"
 }
 
-SBRT_COMPOSE_REPO='https://github.com/free5gc/free5gc-compose.git'
+SBRT_COMPOSE_REPO='https://github.com/LABORA-INF-UFG/SBrT2020-Minicurso1.git'
 DOCKER_COMPOSE_VERSION='1.25.5'
 VAGRANT_UID='1000'
 SYNCED_FOLDER='/vagrant'
@@ -77,6 +77,6 @@ docker-compose --version
 mkdir -p $SYNCED_FOLDER/$WORKSPACE
 
 log "Git clone free5gc-compose project"
-git clone $FREE5GC_COMPOSE_REPO $SYNCED_FOLDER/$WORKSPACE
+git clone $SBRT_COMPOSE_REPO $SYNCED_FOLDER/$WORKSPACE
 
 log "End pre-config script. Reload the box.."

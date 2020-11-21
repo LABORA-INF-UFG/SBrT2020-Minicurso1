@@ -15,7 +15,7 @@ services:
     volumes:
       - ${CONFIG}/uecfg.conf:/my5gcore/config/uecfg.conf
       - ${CONFIG}/my5Gcore.conf:/my5gcore/config/free5GC.conf
-      - ${CONFIG}/initial_registration.sh:/my5gcore/initial_registration.sh
+      - ${CONFIG}/initial_registration2.sh:/my5gcore/initial_registration.sh
       - ${CONFIG}/chirpstack-simulator.toml:/my5gcore/config/chirpstack-simulator.toml
       - ${CONFIG}/ipsec:/my5gcore/ipsec
     environment:

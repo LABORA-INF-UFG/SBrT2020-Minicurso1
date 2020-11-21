@@ -23,7 +23,7 @@ log_level=4
   # token can be generated using the login API endpoint. In the near-future
   # it will be possible to generate these tokens within the web-interface:
   # https://github.com/brocaar/chirpstack-application-server/pull/421
-  jwt_token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5X2lkIjoiYWI4MTZmYTYtZGYwNy00ZGMzLTlmYTYtZDAyNWVhYmE4MmFjIiwiYXVkIjoiYXMiLCJpc3MiOiJhcyIsIm5iZiI6MTYwNTg1OTg3OSwic3ViIjoiYXBpX2tleSJ9.oFq4l2H3qGZDNEddTpW5VpfbtOu3KI8ZppVY5rofhfk"
+  jwt_token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5X2lkIjoiNzkwMzUxMGQtODc5ZC00M2IyLTk1NGQtNmI0YWY5MTQ4ZjcwIiwiYXVkIjoiYXMiLCJpc3MiOiJhcyIsIm5iZiI6MTYwNTg2MDkxNywic3ViIjoiYXBpX2tleSJ9.EwqXSCqEVLYNSEYy6t-aYCNOTD11vYgK0oDdsX3A2Qs"
 
   # Server.
   #
@@ -35,7 +35,7 @@ log_level=4
   # Insecure.
   #
   # Set this to true when the endpoint is not using TLS.
-  insecure=false
+  insecure=true
 
 
   # MQTT integration configuration.
@@ -74,66 +74,64 @@ log_level=4
 
 
 # Simulator configuration.
+[[simulator]]
+
+# Service-profile ID.
 #
-# Example:
-# [[simulator]]
+# It is recommended to create a new organization with a new service-profile
+# in the ChirpStack Application Server.
+service_profile_id="9a355cec-4742-4e9f-9507-685433bc7b4e"
+
+# Duration.
 #
-# # Service-profile ID.
-# #
-# # It is recommended to create a new organization with a new service-profile
-# # in the ChirpStack Application Server.
-# service_profile_id="1f32476e-a112-4f00-bcc7-4aab4bfefa1d"
+# This defines the duration of the simulation. If set to '0s', the simulation
+# will run until terminated.
+duration="5m"
+
+# Activation time.
 #
-# # Duration.
-# #
-# # This defines the duration of the simulation. If set to '0s', the simulation
-# # will run until terminated. This includes the activation time.
-# duration="5m"
-#
-# # Activation time.
-# #
-# # This is the time that the simulator takes to activate the devices. This
-# # value must be less than the simulator duration.
-# activation_time="1m"
-#
-#   # Device configuration.
-#   [simulator.device]
-#
-#   # Number of devices to simulate.
-#   count=1000
-#
-#   # Uplink interval.
-#   uplink_interval="5m"
-#
-#   # FPort.
-#   f_port=10
-#
-#   # Payload (HEX encoded).
-#   payload="010203"
-#
-#   # Frequency (Hz).
-#   frequency=868100000
-#
-#   # Bandwidth (Hz).
-#   bandwidth=125000
-#
-#   # Spreading-factor.
-#   spreading_factor=7
-#
-#   # Gateway configuration.
-#   [simulator.gateway]
-#
-#   # Event topic template.
-#   event_topic_template="gateway/{{ .GatewayID }}/event/{{ .Event }}"
-#
-#   # Command topic template.
-#   command_topic_template="gateway/{{ .GatewayID }}/command/{{ .Command }}"
-#
-#   # Min number of receiving gateways.
-#   min_count=3
-#
-#   # Max number of receiving gateways.
-#   max_count=5
+# This is the time that the simulator takes to activate the devices. This
+# value must be less than the simulator duration.
+activation_time="1m"
+
+  # Device configuration.
+  [simulator.device]
+
+  # Number of devices to simulate.
+  count=50
+
+  # Uplink interval.
+  uplink_interval="1m"
+
+  # FPort.
+  f_port=10
+
+  # Payload (HEX encoded).
+  payload="010203"
+
+  # Frequency (Hz).
+  frequency=868100000
+
+  # Bandwidth (Hz).
+  bandwidth=125000
+
+  # Spreading-factor.
+  spreading_factor=7
+
+  # Gateway configuration.
+  [simulator.gateway]
+
+  # Min number of receiving gateways.
+  min_count=1
+
+  # Max number of receiving gateways.
+  max_count=1
+
+  # Event topic template.
+  event_topic_template="gateway/{{ .GatewayID }}/event/{{ .Event }}"
+
+  # Command topic template.
+  command_topic_template="gateway/{{ .GatewayID }}/command/{{ .Command }}"
 
 
 # Prometheus metrics configuration.

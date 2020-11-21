@@ -1,59 +1,26 @@
 version: '3.8'
 
 services:
-  my5gcore-upf-b:
-    container_name: upfb
-    build:
-      context: ./nf_upf
-      args:
-        DEBUG_TOOLS: "false"
-    command: bash -c "./free5gc-upfd -f ../config/upfcfg.yaml"
-    volumes:
-      - "${CONFIG}/upfcfgb.yaml:/my5Gcore/config/upfcfg.yaml"
-      #- "${CONFIG}/router-upf.sh:/my5Gcore/free5gc-upfd/router-upf.sh"
-    cap_add:
-      - ALL
-    networks:
-      5gcorenetwork:
-        ipv4_address: ${UPF_B}
-        aliases:
-          - upfb.my5Gcore.org
-
-  my5gcore-upf-1:
-    container_name: upf1
-    build:
-      context: ./nf_upf
-      args:
-        DEBUG_TOOLS: "false"
-    command: bash -c "./router-upf.sh  && ./free5gc-upfd -f ../config/upfcfg.yaml"
-    volumes:
-      - "${CONFIG}/upfcfg1.yaml:/my5Gcore/config/upfcfg.yaml"
-      - "${CONFIG}/router-upf.sh:/my5Gcore/free5gc-upfd/router-upf.sh"
-    cap_add:
-      - ALL
-    networks:
-      5gcorenetwork:
-        ipv4_address: ${UPF_IP}
-        aliases:
-          - upf1.my5Gcore.org
-
   my5gcore-upf-lorawan:
     container_name: upf-lorawan
     build:
       context: ./nf_upf
       args:
-        DEBUG_TOOLS: "false"
+        DEBUG_TOOLS: "true"
     command: bash -c "./router-upf.sh && ./free5gc-upfd -f ../config/upfcfg.yaml"
     volumes:
-      - "${CONFIG}/upfcfg2.yaml:/my5Gcore/config/upfcfg.yaml"
+      - "${CONFIG}/upfcfg.yaml:/my5Gcore/config/upfcfg.yaml"
       - "${CONFIG}/router-upf-lorawan.sh:/my5Gcore/free5gc-upfd/router-upf.sh"
     cap_add:
       - ALL
+    ports:
+      - "2152:2152/udp"
+      - "8805:8805/udp"
     networks:
       5gcorenetwork:
         ipv4_address: ${UPF_LoRaWAN}
         aliases:
-          - upf2.my5Gcore.org
+          - upf.my5Gcore.org
       lorawan:
         aliases:
           - upf.lorawan.org
@@ -187,14 +154,13 @@ services:
     command: ./smf -smfcfg ../config/smfcfg.conf -uerouting ../config/uerouting.yaml
     expose:
       - "29502"
+      - "8805/udp"
     volumes:
       - ${CONFIG}/smfcfg.conf:/my5Gcore/config/smfcfg.conf
       - ${CONFIG}/uerouting.yaml:/my5Gcore/config/uerouting.yaml
       - ${CONFIG}/my5Gcore.conf:/my5Gcore/config/free5GC.conf
     environment:
       GIN_MODE: release
-    ports:
-      - "8805:8805/udp"
     networks:
       5gcorenetwork:
         ipv4_address: ${SMF_IP}
@@ -203,9 +169,7 @@ services:
     depends_on:
       - my5gcore-nrf
       - my5gcore-amf
-      - my5gcore-upf-1
       - my5gcore-upf-lorawan
-      - my5gcore-upf-b
 
   my5gcore-udm:
     container_name: udm
@@ -262,9 +226,11 @@ services:
         DEBUG_TOOLS: "true"
     command: sh -c "./n3iwf-ipsec.sh && ./n3iwf -n3iwfcfg ../config/n3iwfcfg.conf"
     expose:
-      - "20000"
       - "500/udp"
       - "4500/udp"
+    ports:
+      - "20000:20000"
+
     volumes:
       - ${CONFIG}/n3iwfcfg.conf:/my5Gcore/config/n3iwfcfg.conf
       - ${CONFIG}/my5Gcore.conf:/my5Gcore/config/free5GC.conf
@@ -275,6 +241,7 @@ services:
       - NET_ADMIN
     networks:
       5gcorenetwork:
+        ipv4_address: 10.100.200.200
         aliases:
           - n3iwf.my5Gcore.org
     depends_on:
