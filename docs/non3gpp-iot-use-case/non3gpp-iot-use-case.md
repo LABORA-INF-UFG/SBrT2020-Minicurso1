@@ -11,7 +11,7 @@ wireless network and docker containers.
 
 
 <p align="center">
-    <img src="../figs/IntegrationLoRaWAN.png" height="600"/> 
+    <img src="../figs/IntegrationLoRaWAN.png" height="400"/> 
 </p>
 
 ## Table of Contents
@@ -154,7 +154,7 @@ $ cd ~
 $ git clone https://github.com/LABORA-INF-UFG/SBrT2020-Minicurso1.git
 $ cd SBrT2020-Minicurso1/docs/non3gpp-iot-use-case/my5Gcore-compose/
 $ sudo make 
-$ docker-compose build
+$ sudo docker-compose build
 $ sudo docker-compose up -d
 ```
 <p align="center">
@@ -197,7 +197,7 @@ To build and run the lorawan network containers, use the following commands:
 ```bash
 $ cd ~
 $ cd SBrT2020-Minicurso1/docs/non3gpp-iot-use-case/lorawan-docker/
-$ docker-compose build
+$ sudo docker-compose build
 $ sudo docker-compose up -d
 ```
 
@@ -284,8 +284,9 @@ To build and run the lora iot network containers, use the following commands:
 
 ```bash
 $ cd ~
-$ cd SBrT2020-Minicurso1/docs/non3gpp-iot-use-case/lorawan-iot/
-$ docker-compose build
+$ cd SBrT2020-Minicurso1/docs/non3gpp-iot-use-case/lora-iot/
+$ sudo make 
+$ sudo docker-compose build
 $ sudo docker-compose up -d
 ```
 
