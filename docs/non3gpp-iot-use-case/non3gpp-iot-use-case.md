@@ -51,7 +51,7 @@ of the SBA-based 5G core software, as illustrated by the following image.
 
 ### Recommended Environment
 
-my5G-core compose has been tested against the following environment:
+Non-3GPP IoT use-case compose has been tested against the following environment:
 
 - Software
     - OS: Ubuntu 18.04
@@ -218,7 +218,7 @@ $ sudo docker-compose ps
 #### LoRaWAN network profile configuration
 
 After run lorawan docker-compose, to add the LoRa gateway to the ChirpStack Server network. For this, access the ChirpStack Application Server web-interface 
-(http://localhost:8080) and add the gateway with the following steps.
+(http://localhost:8080) and add the gateway with the following steps (user=admin, password=admin).
 
 <p align="center">
     <img src="../figs/lorawan-login.png" height="400"/> 
