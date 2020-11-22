@@ -31,6 +31,7 @@ This document explains how to debug network functions in my5G-core and presents 
     - For instance, to start debugging the NRF, set a breakpoint in the first line of code of the main function of the `my5G-core/src/nrf/nrf.go` file.
 
     ![Setting break-point in NRF](../../media/images/code-debugging/set-break-point-nrf.png)
+    <i>~/my5G-core/src/amf/factory/factory.go</i>
 
    1. package main
    2. Entry point for the application (_main_ function).

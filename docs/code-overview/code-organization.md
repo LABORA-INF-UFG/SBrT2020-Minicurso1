@@ -47,6 +47,7 @@ It's the entry point of the application. Basically, it just receive the command 
 
 <p align="left">
     <img src="../../media/images/code-organization/main-package-amf.png" alt="Sample main package for AMF"/> 
+    <i>~/my5G-core/src/amf/amf.go</i>
 </p>
 
 1. Recovery command-line parameters
@@ -60,12 +61,14 @@ This package is responsable for loading and initializing network-function specif
 
 <p align="left">
     <img src="../../media/images/code-organization/amf-initConfigFactory.png" alt="Method that loads AMF configuration (initConfigFactory)"/> 
+    <i>~/my5G-core/src/amf/factory/factory.go</i>
 </p>
 
 The configurations include, IP addresses, port numbers, supported services list and identifiers.
 
 <p align="left">
     <img src="../../media/images/code-organization/amfcfg.png" alt="Example AMF config file"/> 
+    <i>~/my5G-core/config/amfcfg.conf</i>
 </p>
 
 
@@ -75,6 +78,7 @@ This package defines some of the data structures that the network function store
 
 <p align="left">
     <img src="../../media/images/code-organization/amf-context.png" alt="AMF Context"/> 
+    <i>~/my5G-core/src/amf/context/context.go</i>
 </p>
 
 
@@ -110,7 +114,8 @@ The image below, shows the files in the _producer_ package for the AMF and enume
 This package contains function that "consume" services from other NF. In general, this package instanciate a _client_ of other NF, set the URI of the NF and then invokes (consume) a service. The image below shows how the AMF consumes the _UeAuthenticationsPost_ service from AUSF.
 
 <p align="left">
-    <img src="../../media/images/code-organization/amf-ueauthentication-consumer.png" alt="AMF producer package"/> 
+    <img src="../../media/images/code-organization/amf-ueauthentication-consumer.png" alt="AMF producer package"/>
+    <i>~/my5G-core/src/amf/consumer/ue_authentication.go</i>
 </p>
 
 1. import _Nausf_UEAuthentication_ package
