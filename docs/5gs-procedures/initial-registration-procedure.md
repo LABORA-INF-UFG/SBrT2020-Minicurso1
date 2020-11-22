@@ -218,13 +218,6 @@ Starting Control Plane NFs in debug mode using GoLand IDE
    3. Now on, all signalling between UE and N3IWF goes inside IPSec.
 
 
-**Checking registered UE in Webconsole**
-
-   ```bash
-   firefox -new-tab http://127.0.0.1:5000/ & 
-   # user: admin       passwd: free5gc
-   ```
-
 ## Cleaning-up environment
 
 ```bash
