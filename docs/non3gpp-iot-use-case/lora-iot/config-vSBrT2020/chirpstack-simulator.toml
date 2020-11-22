@@ -23,19 +23,19 @@ log_level=4
   # token can be generated using the login API endpoint. In the near-future
   # it will be possible to generate these tokens within the web-interface:
   # https://github.com/brocaar/chirpstack-application-server/pull/421
-  jwt_token="verysecret"
+  jwt_token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5X2lkIjoiMzE3YjcyNmItYjA1Mi00NmM2LWIyOTQtM2QwMjAwNzg1NzM0IiwiYXVkIjoiYXMiLCJpc3MiOiJhcyIsIm5iZiI6MTYwNjAyMzIwNiwic3ViIjoiYXBpX2tleSJ9.7U1x46POATtV-5ieuMBGIcC-lwrNSRqRUP348TsQeBo"
 
   # Server.
   #
   # This must point to the external API server of the ChirpStack Application
   # Server. When the server is running on the same machine, keep this to the
   # default value.
-  server="127.0.0.1:8080"
+  server="10.200.200.10:8080"
 
   # Insecure.
   #
   # Set this to true when the endpoint is not using TLS.
-  insecure=false
+  insecure=true
 
 
   # MQTT integration configuration.
@@ -45,7 +45,7 @@ log_level=4
   [application_server.integration.mqtt]
 
   # MQTT server.
-  server="tcp://127.0.0.1:1883"
+  server="tcp://10.200.200.13:1883"
 
   # Username.
   username=""
@@ -64,7 +64,7 @@ log_level=4
   [network_server.gateway.backend.mqtt]
 
   # MQTT server.
-  server="tcp://127.0.0.1:1883"
+  server="tcp://10.200.200.13:1883"
 
   # Username.
   username=""
@@ -80,13 +80,13 @@ log_level=4
 #
 # It is recommended to create a new organization with a new service-profile
 # in the ChirpStack Application Server.
-service_profile_id="54fdfc3e-9a5d-4f21-820e-b2c97f3bee43"
+service_profile_id="854a3b72-afdb-4d99-b140-e10c90f78a76"
 
 # Duration.
 #
 # This defines the duration of the simulation. If set to '0s', the simulation
 # will run until terminated.
-duration="5m"
+duration="30m"
 
 # Activation time.
 #
@@ -98,10 +98,10 @@ activation_time="1m"
   [simulator.device]
 
   # Number of devices to simulate.
-  count=1000
+  count=20
 
   # Uplink interval.
-  uplink_interval="5m"
+  uplink_interval="1m"
 
   # FPort.
   f_port=10

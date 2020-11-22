@@ -2,7 +2,7 @@
 
 ue_addr=${ue_addr:-"127.0.0.1"}
 ue_port=${ue_port:-"10000"}
-scheme=${scheme:-"https"}
+scheme=${scheme:-"http"}
 auth_method=${auth_method:-"5G_AKA"}
 n3iwf_address=${n3iwf_address:-"192.168.127.1"}
 supi_or_suci=${supi_or_suci:-"2089300007487"}

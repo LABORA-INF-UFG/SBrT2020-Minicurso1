@@ -23,6 +23,9 @@ services:
     extra_hosts:
       - "ue:192.168.127.2"
       - "n3iwf:192.168.127.1"
+      - "ap:10.200.200.10"
+      - "bridge:10.200.200.11"  
+      - "mqtt:10.200.200.13"  
     networks:
      my5gcore-compose_5gcorenetwork:
        aliases:

@@ -18,7 +18,8 @@ services:
       - ./configuration/chirpstack-application-server:/etc/chirpstack-application-server
     networks:
      my5gcore-compose_lorawan:
-       aliases:
+       ipv4_address: 10.200.200.10
+       aliases:     
           - ap.lorawan.org
 
   chirpstack-gateway-bridge:
@@ -29,6 +30,7 @@ services:
       - ./configuration/chirpstack-gateway-bridge:/etc/chirpstack-gateway-bridge
     networks:
      my5gcore-compose_lorawan:
+       ipv4_address: 10.200.200.11
        aliases:
           - br.lorawan.org
 
@@ -68,6 +70,7 @@ services:
       - 1883:1883
     networks:
      my5gcore-compose_lorawan:
+       ipv4_address: 10.200.200.13
        aliases:
           - mosquitto.lorawan.org
 
