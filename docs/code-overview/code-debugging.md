@@ -45,7 +45,7 @@ This document explains how to debug network functions in my5G-core and presents 
     ![Select the Go lang file ".go" in the project](../../media/images/code-debugging/3.png)
 
 2. Right click on the component (*.go) and choose Debug
-    - Optional: Use the SHIFT + F9 (shortcut)
+    - Optional: Use the CTRL + SHIFT + F10 (shortcut)
 
 3. After this, the run window will show
 
