@@ -51,7 +51,7 @@ of the SBA-based 5G core software, as illustrated by the following image.
 
 ### Recommended Environment
 
-my5G-core compose has been tested against the following environment:
+Non-3GPP IoT use-case compose has been tested against the following environment:
 
 - Software
     - OS: Ubuntu 18.04
