@@ -38,14 +38,13 @@ This tutorial explores 5GC internals through an open-source implementation calle
 * [Article](docs/arXiv_SBrT2020_minicurso1_final_19-11-20.pdf) 
 * Sections
   * Installation and development environment - shows the steps required to install dependencies, download the source code, compile network functions, execute my5G-core and setup a local development environment.
-     * my5G-core Setup ([tutorial](docs/installation-dev-env-setup/core-install.md), [video](http://youtubecom/))
-     * Setting up development environment ([tutorial](docs/installation-dev-env-setup/env-install.md), [video](http://youtubecom/))
+     * Setting up my5G-core and development environment ([tutorial](docs/installation-dev-env-setup/core-install.md), [video](https://youtu.be/wfhsh9Ok8K8)
   * Code overview - presents how my5G-core source code is organized and how to debug network functions using GoLand IDE.
      * Source code organization ([tutorial](docs/code-overview/code-organization.md), [video 1](https://youtu.be/4W_xfD_ZJRg), [video 2](https://youtu.be/-MmQMZreVuY))
      * Code debugging ([tutorial](docs/code-overview/code-debugging.md), [video 1](https://youtu.be/ob5oFinwq9E), [video 2](https://youtu.be/CmcRcprDwxw))
   * 5G system procedures - shows step-by-step execution of initial registration  procedure over untrusted non-3GPP access.
      * Initial registration procedure ([tutorial](docs/5gs-procedures/initial-registration-procedure.md), [video](https://youtu.be/WYSlnlWD1P0))
-  * Non-3GPP IoT use-case ([tutorial](docs/non3gpp-iot-use-case/non3gpp-iot-use-case.md), [video](http://youtubecom/)) - aims to demonstrate the untrusted non-3GPP access to the my5G-core using a Low Power Wide Area (LoRa/LoRaWAN) wireless network and docker containers.
+  * Non-3GPP IoT use-case ([tutorial](docs/non3gpp-iot-use-case/non3gpp-iot-use-case.md)<!--, [video](http://youtubecom/)-->) - aims to demonstrate the untrusted non-3GPP access to the my5G-core using a Low Power Wide Area (LoRa/LoRaWAN) wireless network and docker containers.
 
 </div>
 
