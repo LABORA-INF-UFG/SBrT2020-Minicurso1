@@ -81,7 +81,7 @@ Obs: Do the same for the other NF components. All the components are in `~/my5G-
     # monitor traffic in NWu
     isakmp or gre or nas-5gs or esp
 
-    # monitor traffic in N3
+    # monitor traffic in N4
     pfcp
 
     # monitor traffic in N2
