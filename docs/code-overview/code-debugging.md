@@ -101,8 +101,8 @@ Obs: Do the same for the other NF components. All the components are in `~/my5G-
     cd ~/my5G-core
     
     # fix wireshark permission
-    sudo dpkg-reconfigure wireshark-common #Select "Yes"
-    chmod +x /usr/bin/dumpcap
+    sudo usermod -a -G wireshark $USER
+    sudo chmod +x /usr/bin/dumpcap
 
     # start wireshark
     wireshark -kni any --display-filter pfcp &
