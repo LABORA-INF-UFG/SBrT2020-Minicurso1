@@ -113,6 +113,9 @@ In previews tutorials we installed my5G-core, dependencies, monitoring and devel
     mkdir .idea
     mv -f .idea/workspace.xml .idea/workspace.xml.orig
     cp workspace.xml  .idea/    
+    mkdir .idea/runConfigurations
+    wget -q https://raw.githubusercontent.com/LABORA-INF-UFG/SBrT2020-Minicurso1/master/media/runConfigurations.tar.gz
+    tar xvf runConfigurations.tar.gz -C .idea/runConfigurations/
     ```
 TODO: acrescentar a lista de nomes dns (hosts) no comando?
 
