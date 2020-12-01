@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://github.com/LABORA-INF-UFG/my5Gcore"><img width="20%" src="../figs/my5g-logo.png" alt="free5GC"/></a>
+<a href="https://github.com/my5G/my5G-core"><img width="20%" src="../figs/my5g-logo.png" alt="free5GC"/></a>
 
 </div> 
 
@@ -15,19 +15,19 @@
   - [Table of Contents](#table-of-contents)
   - [Expected result](#expected-result)
   - [What to expect from a network function (NF)](#what-to-expect-from-a-network-function-nf)
-  - [Most important Go packages in my5Gcore](#most-important-go-packages-in-my5gcore)
+  - [Most important Go packages in my5G-core](#most-important-go-packages-in-my5g-core)
   - [Generating source code for the SBI using OpenAPI](#generating-source-code-for-the-sbi-using-openapi)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Expected result
 
-This document aims to provide an understanding about the most important Go packages in my5Gcore and how they interact with each other in order to help the network functions to provide their services. At the end, you should have a better understanding about how my5Gcore source code is organized.
+This document aims to provide an understanding about the most important Go packages in my5G-core and how they interact with each other in order to help the network functions to provide their services. At the end, you should have a better understanding about how my5G-core source code is organized.
 
 
 ## What to expect from a network function (NF)
 
-The 5G core contains a set of network functions that interact with each other to provide services. So, the building blocks of my5Gcore are these network functions. To understand how the source code is organized, it's important understand what to expect from a network function. In a simplified way, a network function should:
+The 5G core contains a set of network functions that interact with each other to provide services. So, the building blocks of my5G-core are these network functions. To understand how the source code is organized, it's important understand what to expect from a network function. In a simplified way, a network function should:
 
 * Implement (produce) services
 * Expose services
@@ -36,7 +36,7 @@ The 5G core contains a set of network functions that interact with each other to
 * Receive and apply configuration
 
 
-## Most important Go packages in my5Gcore
+## Most important Go packages in my5G-core
 
 **main package**
 
