@@ -112,7 +112,7 @@ In previews tutorials we installed my5G-core, dependencies, monitoring and devel
    cd ~/my5G-core
    rm -rf workspace.xml*
    rm -rf runConfigurations.tar.gz*
-   rm -rf .idea/runConfigurations
+   mv .idea/runConfigurations .idea/runConfigurations.orig
    wget -q https://raw.githubusercontent.com/LABORA-INF-UFG/SBrT2020-Minicurso1/master/media/workspace.xml
    mkdir .idea
    mv -f .idea/workspace.xml .idea/workspace.xml.orig
@@ -260,6 +260,7 @@ mv src/upf/build/config/upfcfg.yaml.orig src/upf/build/config/upfcfg.yaml
 
 # workspace
  mv -f .idea/workspace.xml.orig .idea/workspace.xml
+ mv -f .idea/runConfigurations.orig .idea/runConfigurations
 
 # restore T3560 timer
 cd src/amf
