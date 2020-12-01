@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://github.com/LABORA-INF-UFG/my5Gcore"><img width="20%" src="../figs/my5g-logo.png" alt="free5GC"/></a>
+<a href="https://github.com/my5G/my5G-core"><img width="20%" src="../figs/my5g-logo.png" alt="free5GC"/></a>
 
 </div> 
 
@@ -131,8 +131,8 @@
 1. Clone the My5G-core project and its submodules
     ```bash
     cd ~
-    git clone https://github.com/my5G/my5Gcore.git
-    cd ~/my5Gcore
+    git clone https://github.com/my5G/my5G-core.git
+    cd ~/my5G-core
     git checkout master
     git submodule sync
     git submodule update --init --jobs `nproc`
@@ -142,15 +142,15 @@
 
 2. Run the script to install dependent packages
     ```bash
-    cd ~/my5Gcore
+    cd ~/my5G-core
     go mod download
     ```
 3. Compile network function services in `my5g-core`
     ```bash
-    cd ~/my5Gcore
+    cd ~/my5G-core
     make all 
     ```
-4. Customize the NFs as desired. The NF configuration file is `~/my5Gcore/config/<someNF>cfg.conf`, for example: `~/my5Gcore/config/amfcfg.conf`. Samples files are located on: `~/my5Gcore/sample/` 
+4. Customize the NFs as desired. The NF configuration file is `~/my5G-core/config/<someNF>cfg.conf`, for example: `~/my5G-core/config/amfcfg.conf`. Samples files are located on: `~/my5G-core/sample/` 
 
 ## Checking
 The goal is to validate the installation procedures in order to check if everything is ok.
@@ -164,7 +164,7 @@ Due to the SBA and the producer/consumer relationship between the NFs, consider 
     For example, to run the NRF:
 
     ```bash
-    cd ~/my5Gcore
+    cd ~/my5G-core
     ./bin/nrf
     ```
     to run with customized settings:
@@ -173,7 +173,7 @@ Due to the SBA and the producer/consumer relationship between the NFs, consider 
     ```
 2. Run whole core network
     ```bash
-    cd ~/my5Gcore
+    cd ~/my5G-core
     ./run.sh
     ```
 > Check "log output" for errors (highlighted in <span       style='color:red'>red.</span>)          

@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://github.com/LABORA-INF-UFG/my5Gcore"><img width="20%" src="../figs/my5g-logo.png" alt="free5GC"/></a>
+<a href="https://github.com/my5G/my5G-core"><img width="20%" src="../figs/my5g-logo.png" alt="free5GC"/></a>
 </div> 
 
 # Setting up development environment
@@ -10,8 +10,10 @@ The development environment contains the tools for use throughout the tutorial. 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [Installing useful tools](#installing-useful-tools)
-- [Opening the project in GoLand](#opening-the-project-in-goland)
+- [Setting up development environment](#setting-up-development-environment)
+  - [Table of Contents](#table-of-contents)
+  - [Installing useful tools](#installing-useful-tools)
+  - [Opening the project in GoLand](#opening-the-project-in-goland)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -53,7 +55,7 @@ The development environment contains the tools for use throughout the tutorial. 
 ## Opening the project in GoLand
 
 1. Open the project with GoLand 
-    - The project folder should be `~/my5Gcore`
+    - The project folder should be `~/my5G-core`
 
 2. Check that **$GOPATH** and **$GOROOT** are recognized by GoLand and points to the right folders
     - Acess menus: File -> Settings
@@ -61,9 +63,9 @@ The development environment contains the tools for use throughout the tutorial. 
     
     ![$GOROOT](../figs/go-setup_1.png)
     
-    - **$GOPATH** should show your user instead of _my5GCore_
+    - **$GOPATH** should show your user instead of _my5G-core_
     
     ![2](../figs/go-setup_2.png)
 
-3. Now, the IDE should be able to recognize the imports from external libraries and packages under `my5Gcore/src/`
+3. Now, the IDE should be able to recognize the imports from external libraries and packages under `my5G-core/src/`
 
