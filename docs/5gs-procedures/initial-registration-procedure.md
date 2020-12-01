@@ -108,16 +108,18 @@ In previews tutorials we installed my5G-core, dependencies, monitoring and devel
     ```bash
     # this workspace contains the breakpoints and run configurations that will be used in this tutorial
 
-    cd ~/my5G-core
-    wget -q https://raw.githubusercontent.com/LABORA-INF-UFG/SBrT2020-Minicurso1/master/media/workspace.xml
-    mkdir .idea
-    mv -f .idea/workspace.xml .idea/workspace.xml.orig
-    cp workspace.xml  .idea/    
-    mkdir .idea/runConfigurations
-    wget -q https://raw.githubusercontent.com/LABORA-INF-UFG/SBrT2020-Minicurso1/master/media/runConfigurations.tar.gz
-    tar xvf runConfigurations.tar.gz -C .idea/runConfigurations/
+
+   cd ~/my5G-core
+   rm -rf workspace.xml*
+   rm -rf runConfigurations.tar.gz*
+   rm -rf .idea/runConfigurations
+   wget -q https://raw.githubusercontent.com/LABORA-INF-UFG/SBrT2020-Minicurso1/master/media/workspace.xml
+   mkdir .idea
+   mv -f .idea/workspace.xml .idea/workspace.xml.orig
+   cp workspace.xml  .idea/    
+   wget -q https://raw.githubusercontent.com/LABORA-INF-UFG/SBrT2020-Minicurso1/master/media/runConfigurations.tar.gz
+   tar xvf runConfigurations.tar.gz -C .idea/
     ```
-TODO: acrescentar a lista de nomes dns (hosts) no comando?
 
 ## Starting monitoring tools
 
