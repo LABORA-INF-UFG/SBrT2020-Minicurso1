@@ -27,7 +27,7 @@ RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
 
 # Get UE Code
 RUN cd $GOPATH/src/my5Gcore/src \
-    && git clone -b ${UE_BRANCH} git@github.com:LABORA-INF-UFG/UE-IoT-non3GPP.git ue \
+    && git clone -b ${UE_BRANCH} https://github.com/LABORA-INF-UFG/UE-IoT-non3GPP.git ue \
     && go get -u github.com/calee0219/fatal
 
 # Build UE
