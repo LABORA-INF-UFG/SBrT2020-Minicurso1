@@ -150,6 +150,9 @@ To build and run the my5G core containers, use the following commands:
 
 
 ```bash
+# if mongodb is running
+$ sudo service mongod stop
+
 $ cd ~
 $ git clone https://github.com/LABORA-INF-UFG/SBrT2020-Minicurso1.git
 $ cd SBrT2020-Minicurso1/docs/non3gpp-iot-use-case/my5Gcore-compose/
@@ -172,7 +175,7 @@ $ sudo docker-compose ps
 </p>
 
 
-The next step of the experiment is to store in UDR the UE's information using the Web Interface that is available at http://localhost:5000, as is shown in the image below.
+The next step of the experiment is to store in UDR the UE's information using the Web Interface that is available at http://localhost:5000, as is shown in the image below (user=admin, password=free5gc).
 
 
 ```bash
