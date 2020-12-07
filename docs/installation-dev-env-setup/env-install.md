@@ -51,7 +51,7 @@ The development environment contains the tools for use throughout the tutorial. 
     ```
     sudo snap install goland --classic
     ```
-    > Jetbrains GoLand IDE has "For Open Source projects" and "For students and teachers" distributions, both free. Click [here](https://www.jetbrains.com/go/buy/#commercial?billing=yearly) and choose "Special Offers" to download and install.
+    > Jetbrains GoLand IDE has "For Open Source projects" and "For students and teachers" distributions, both free. Click [here](https://account.jetbrains.com/login) to register your account.
     
 ## Opening the project in GoLand
 
