@@ -159,6 +159,8 @@ Starting Control Plane NFs in debug mode using GoLand IDE
       * 1. Select: **1. NRF**
       * 2. Choose: Debug
    4. Repeat steps 2 and 3 for other NFs **in the right order from 2 to 10**
+      4.1 In case of N3IWF, it's necessary to run using sudo. Mark the option "Run with sudo" in Run Configuration at GoLand.
+      (../../media/images/5gs-procedures/n3iwf-sudo.png)
    5. At the end your Debug view should look like this:
    ![Debug view](../../media/images/5gs-procedures/debug-window-all-commands.png)
 ## Registration step-by-step
