@@ -144,7 +144,7 @@ cd 5GC_APIs
 ```
 2. Generate Golang source code for the _Namf_Communication_ service
 ```bash
-docker run --rm -v $(pwd):/local \
+sudo docker run --rm -v $(pwd):/local \
   openapitools/openapi-generator-cli generate \
   -i /local/TS29518_Namf_Communication.yaml \
   -g go --skip-validate-spec \
