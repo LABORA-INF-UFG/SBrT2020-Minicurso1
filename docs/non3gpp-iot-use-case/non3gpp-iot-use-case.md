@@ -105,23 +105,23 @@ sudo make install
 ### Install Docker in Ubuntu OS 
 Reference: https://docs.docker.com/install/linux/docker-ce/ubuntu/
 ```bash
-$ sudo apt-get update
-$ sudo apt-get install \
+sudo apt-get update
+sudo apt-get install \
     apt-transport-https \
     ca-certificates \
     curl \
     gnupg-agent \
     software-properties-common
 
-$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
-$ sudo add-apt-repository \
+sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
 
-$ sudo apt-get update
-$ sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
 
 #### Add docker group
@@ -129,17 +129,17 @@ To let you use docker without root permission.
 
 Reference: https://docs.docker.com/engine/install/linux-postinstall/
 ```bash
-$ sudo groupadd docker
-$ sudo usermod -aG docker $USER
-$ sudo reboot
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo reboot
 ```
 
 
 ### Install docker-compose
 Reference: https://docs.docker.com/compose/install/
 ```bash
-$ sudo curl -L https://github.com/docker/compose/releases/download/1.25.5/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-$ sudo chmod +x /usr/local/bin/docker-compose
+sudo curl -L https://github.com/docker/compose/releases/download/1.25.5/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 ```
 
 ### Run Up Non-3GPP IoT use-case
@@ -151,14 +151,14 @@ To build and run the my5G core containers, use the following commands:
 
 ```bash
 # if mongodb is running
-$ sudo service mongod stop
+sudo service mongod stop
 
-$ cd ~
-$ git clone https://github.com/LABORA-INF-UFG/SBrT2020-Minicurso1.git
-$ cd SBrT2020-Minicurso1/docs/non3gpp-iot-use-case/my5Gcore-compose/
-$ sudo make 
-$ sudo docker-compose build
-$ sudo docker-compose up -d
+cd ~
+git clone https://github.com/LABORA-INF-UFG/SBrT2020-Minicurso1.git
+cd SBrT2020-Minicurso1/docs/non3gpp-iot-use-case/my5Gcore-compose/
+sudo make 
+sudo docker-compose build
+sudo docker-compose up -d
 ```
 <p align="center">
     <img src="../figs/docker-compose-up.png" height="250"/> 
@@ -167,7 +167,7 @@ $ sudo docker-compose up -d
 Test my5Gcore containers. In this test all containers status should be up.
  
 ```bash
-$ sudo docker-compose ps
+sudo docker-compose ps
 ```
 
 <p align="center">
@@ -198,10 +198,10 @@ The next step of the experiment is to store in UDR the UE's information using th
 To build and run the lorawan network containers, use the following commands:
 
 ```bash
-$ cd ~
-$ cd SBrT2020-Minicurso1/docs/non3gpp-iot-use-case/lorawan-docker/
-$ sudo docker-compose build
-$ sudo docker-compose up -d
+cd ~
+cd SBrT2020-Minicurso1/docs/non3gpp-iot-use-case/lorawan-docker/
+sudo docker-compose build
+sudo docker-compose up -d
 ```
 
 <p align="center">
@@ -211,7 +211,7 @@ $ sudo docker-compose up -d
 Test  LoRaWAN network containers.In this test all containers status should be up.
 
 ```bash
-$ sudo docker-compose ps
+sudo docker-compose ps
 ```
 
 <p align="center">
@@ -286,11 +286,11 @@ We need to configure the corresponding hardware device address.
 To build and run the lora iot network containers, use the following commands:
 
 ```bash
-$ cd ~
-$ cd SBrT2020-Minicurso1/docs/non3gpp-iot-use-case/lora-iot/
-$ sudo make 
-$ sudo docker-compose build
-$ sudo docker-compose up -d
+cd ~
+cd SBrT2020-Minicurso1/docs/non3gpp-iot-use-case/lora-iot/
+sudo make 
+sudo docker-compose build
+sudo docker-compose up -d
 ```
 
 <p align="center">
@@ -300,7 +300,7 @@ $ sudo docker-compose up -d
 Test  LoRa iot network containers. In this test all containers status should be up.
 
 ```bash
-$ sudo docker-compose ps
+sudo docker-compose ps
 ```
 <p align="center">
     <img src="../figs/non3gpp-dockercompose-ps.png" height="50"/> 
@@ -309,7 +309,7 @@ $ sudo docker-compose ps
 ## Troubleshooting
 Sometimes, you need to drop data from DB.
 ```bash
-$ docker exec -it mongodb mongo
+docker exec -it mongodb mongo
 > use free5gc
 > db.subscribers.drop()
 > exit # (Or Ctrl-D)
@@ -317,8 +317,8 @@ $ docker exec -it mongodb mongo
 
 Another way to drop DB data is just remove db data. Outside your container, run:
 ```bash
-$ cd ~/SBrT2020-Minicurso1/docs/non3gpp-iot-use-case/my5Gcore-compose/
-$ sudo docker-compose down
-$ sudo rm -rf ./dbdata
+cd ~/SBrT2020-Minicurso1/docs/non3gpp-iot-use-case/my5Gcore-compose/
+sudo docker-compose down
+sudo rm -rf ./dbdata
 ```
 
