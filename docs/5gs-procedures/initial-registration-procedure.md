@@ -4,14 +4,14 @@
 
 </div> 
 
-# Initial registratrion procedure
+# Initial registration procedure
 
 ## Table of Contents
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [Initial registratrion procedure](#initial-registratrion-procedure)
+- [Initial registration procedure](#initial-registration-procedure)
   - [Table of Contents](#table-of-contents)
   - [Expected Result](#expected-result)
   - [Untrusted non-3GPP initial registration](#untrusted-non-3gpp-initial-registration)
