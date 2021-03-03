@@ -28,7 +28,7 @@
 * There are no gNB and UE for standalone 5GC available in the market yet.
 
 ## Recommended Environment
-- Software (minimum! You can use actual versions like Ubuntu 20.04)
+- Software (minimum) You can use actual versions like Ubuntu 20.04
     - OS: Ubuntu 18.04
     - gcc 7.3.0
     - Go 1.14.4 linux/amd64
