@@ -28,7 +28,7 @@
 * There are no gNB and UE for standalone 5GC available in the market yet.
 
 ## Recommended Environment
-- Software
+- Software (minimum! You can use actual versions like Ubuntu 20.04)
     - OS: Ubuntu 18.04
     - gcc 7.3.0
     - Go 1.14.4 linux/amd64
@@ -38,10 +38,10 @@
             - You can use `uname -r` to check your current kernel version.  
             - Also tested on Ubuntu 20.04 with `5.4.0-53-generic` kernel version.   
             - You can use `go version` to check your current Go version.
-- Hardware
+- Hardware minimum
     - CPU: Intel i5 processor
     - RAM: 4GB
-    - Hard drive: 160G
+    - Hard drive: 40G
     - NIC card: 1Gbps ethernet card
 
 - Hardware recommended
