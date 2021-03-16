@@ -52,7 +52,7 @@ This tutorial explores 5GC internals through an open-source implementation calle
 
 It is a pleasure to share our knowledge and you are free to use! Please, cite our work as we can continue contributing. Thank you!
 ```
-@incollection{sbrt-chap-5G_2021,
+@incollection{underst5G_2021,
       title = {Entendendo o núcleo 5G na prática, através de uma implementação de código aberto},
       booktitle = {SBRT 2020: Livro de Minicursos},
       author = {J. P. L. {Silva} and S. W. L. {Nery} and R.S. {Silva} and A. C. {Oliveira-Jr} and K. V. {Cardoso} and C. B. {Both}},
