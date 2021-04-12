@@ -25,7 +25,7 @@
 
 <div align='center'>
 
-João Paulo Lobianco Silva (INF/UFG), Samuel Wanberg Lourenço Nery (INF/UFG), Rogério S. e Silva (INF/UFG), Antonio Oliveira-Jr (INF/UFG & Fraunhofer Portugal AICOS), Kleber Cardoso (INF/UFG) e Cristiano Bonato Both (UNISINOS)
+João Paulo L. Silva (INF/UFG), Samuel Wanberg L. Nery (INF/UFG), Rogério S. e Silva (INF/UFG), Antonio Oliveira-Jr (INF/UFG & Fraunhofer Portugal AICOS), Kleber Cardoso (INF/UFG) e Cristiano B. Both (UNISINOS)
 
 </div>
 
