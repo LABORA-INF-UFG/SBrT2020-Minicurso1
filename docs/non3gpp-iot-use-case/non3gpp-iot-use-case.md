@@ -151,7 +151,7 @@ To build and run the my5G core containers, use the following commands:
 
 ```bash
 # if mongodb is running
-$ sudo service mongod stop
+$ sudo service mongodb stop
 
 $ cd ~
 $ git clone https://github.com/LABORA-INF-UFG/SBrT2020-Minicurso1.git
