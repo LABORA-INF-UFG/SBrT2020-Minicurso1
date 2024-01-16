@@ -14,7 +14,7 @@ require (
 	github.com/smartystreets/assertions v1.0.0 // indirect
 	github.com/spf13/cobra v0.0.5
 	github.com/spf13/viper v1.5.0
-	golang.org/x/net v0.0.0-20190620200207-3b0461eec859 // indirect
+	golang.org/x/net v0.17.0 // indirect
 	golang.org/x/sys v0.0.0-20190507160741-ecd444e8653b // indirect
 	golang.org/x/text v0.3.2 // indirect
 	google.golang.org/grpc v1.56.3
